@@ -72,7 +72,6 @@
         }
         .memory-tip i { color: #2d7d5a; margin: 0 0.3rem; }
 
-        /* Reaction Types Grid */
         .reaction-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
@@ -91,7 +90,6 @@
         }
         .reaction-type i { margin-right: 6px; color: #2d7d5a; }
 
-        /* Info Cards */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -110,7 +108,6 @@
         .info-card p { font-size: 0.85rem; color: #3d5a4e; }
         .info-card .formula { font-family: 'Courier New', monospace; background: #e8eeec; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; }
 
-        /* Real World Examples */
         .examples {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -124,7 +121,6 @@
         .examples .example-item { font-size: 0.9rem; color: #1a3a2e; }
         .examples .example-item i { color: #2d7d5a; width: 1.5rem; }
 
-        /* Quiz */
         .quiz-container { margin-top: 2rem; border-top: 2px solid #e8eeec; padding-top: 1.5rem; }
         .quiz-header {
             display: flex;
@@ -242,13 +238,10 @@
         .btn-start:hover { background: #236a4b; transform: translateY(-2px); }
 
         .hidden { display: none; }
-
-        .reaction-icon { font-size: 1.2rem; margin-right: 4px; }
     </style>
 </head>
 <body>
 <div class="paper">
-    <!-- HEADER -->
     <div class="header">
         <div>
             <h1><i class="fas fa-flask"></i>Types of Chemical Reactions</h1>
@@ -264,13 +257,11 @@
         <i class="fas fa-chevron-right" style="color:#2d7d5a;"></i> Describe important types of chemical reactions & explain how they impact the natural and built environment
     </div>
 
-    <!-- MEMORY TIP -->
     <div class="memory-tip">
         <i class="fas fa-music"></i> "CAN DOGS SING DURING CONCERTS" 
         <span style="font-weight:400;color:#4d6b5e;">— Combination, Decomposition, Single Replacement, Double Replacement, Combustion</span>
     </div>
 
-    <!-- REACTION TYPES -->
     <div class="reaction-grid">
         <span class="reaction-type"><i class="fas fa-plus-circle"></i> Combination (Synthesis)</span>
         <span class="reaction-type"><i class="fas fa-minus-circle"></i> Decomposition</span>
@@ -279,7 +270,6 @@
         <span class="reaction-type"><i class="fas fa-fire"></i> Combustion</span>
     </div>
 
-    <!-- DETAILED INFO -->
     <div class="info-grid">
         <div class="info-card"><h4><i class="fas fa-plus-circle" style="color:#2d7d5a;"></i> Combination</h4><p>A + B → AB</p><p class="formula">2H₂ + O₂ → 2H₂O</p><p style="font-size:0.8rem;color:#5a7a6a;">Two or more substances combine to form one product</p></div>
         <div class="info-card"><h4><i class="fas fa-minus-circle" style="color:#2d7d5a;"></i> Decomposition</h4><p>AB → A + B</p><p class="formula">2H₂O₂ → 2H₂O + O₂</p><p style="font-size:0.8rem;color:#5a7a6a;">One compound breaks down into simpler substances</p></div>
@@ -289,7 +279,6 @@
         <div class="info-card"><h4><i class="fas fa-sun" style="color:#2d7d5a;"></i> Photosynthesis</h4><p>6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</p><p style="font-size:0.8rem;color:#5a7a6a;">Plants convert sunlight, CO₂, and water into glucose and oxygen</p></div>
     </div>
 
-    <!-- REAL WORLD EXAMPLES -->
     <div class="examples">
         <div class="example-item"><i class="fas fa-utensils"></i> <strong>Grilling:</strong> New compounds form (aroma)</div>
         <div class="example-item"><i class="fas fa-wine-bottle"></i> <strong>Fermentation:</strong> CO₂ bubbles produced</div>
@@ -301,7 +290,6 @@
         <div class="example-item"><i class="fas fa-building"></i> <strong>Acid Rain:</strong> Acids react with carbonates → weathering</div>
     </div>
 
-    <!-- QUIZ -->
     <div class="quiz-container" id="quizApp">
         <div id="startScreen" class="start-screen">
             <h2><i class="fas fa-question-circle" style="color:#2d7d5a;"></i> 50-Question Quiz</h2>
@@ -336,21 +324,17 @@
 <script>
     (function() {
         // ---------- 50 QUESTIONS with SCENARIOS ----------
-        const questions = [
-            // Photosynthesis (Combination)
+        // correct: 0=A, 1=B, 2=C, 3=D (original positions)
+        const questionsData = [
             { q: "Which best describes the chemical reaction happening in plants during photosynthesis?", a: "Carbon dioxide + water → glucose + oxygen", b: "Glucose + oxygen → carbon dioxide + water", c: "Metal + acid → salt + hydrogen", d: "Salt + water → acid + base", correct: 0, scenario: "🌿 Plants on the balcony use sunlight to produce their own food." },
             { q: "What type of reaction is photosynthesis?", a: "Combination (Synthesis)", b: "Decomposition", c: "Single Replacement", d: "Combustion", correct: 0, scenario: "Plants convert CO₂ and H₂O into glucose and O₂ using light energy." },
             { q: "Why is photosynthesis important for the environment?", a: "It produces oxygen and supports the food chain", b: "It releases carbon dioxide", c: "It causes air pollution", d: "It depletes nutrients", correct: 0 },
-            
-            // Combination
             { q: "What type of reaction combines two or more substances to form a single product?", a: "Combination", b: "Decomposition", c: "Single Replacement", d: "Double Replacement", correct: 0 },
             { q: "What is the general formula for a combination reaction?", a: "A + B → AB", b: "AB → A + B", c: "A + BC → AC + B", d: "AB + CD → AD + CB", correct: 0 },
             { q: "Which is an example of a combination reaction?", a: "2H₂ + O₂ → 2H₂O", b: "2H₂O₂ → 2H₂O + O₂", c: "Zn + 2HCl → ZnCl₂ + H₂", d: "AgNO₃ + NaCl → AgCl + NaNO₃", correct: 0 },
             { q: "The Haber process combines Nitrogen and Hydrogen to create Ammonia (NH₃). What type of reaction is this?", a: "Combination", b: "Decomposition", c: "Single Replacement", d: "Combustion", correct: 0 },
             { q: "What is the equation for the Haber process?", a: "N₂ + 3H₂ → 2NH₃", b: "N₂ + H₂ → NH₃", c: "2N₂ + 3H₂ → 2NH₃", d: "N₂ + 2H₂ → 2NH₃", correct: 0 },
             { q: "Combination reactions are important in the fertilizer industry because:", a: "They help crops grow faster and increase food production", b: "They release harmful gases", c: "They deplete soil nutrients", d: "They cause acid rain", correct: 0 },
-            
-            // Decomposition
             { q: "What type of reaction breaks down a single compound into simpler substances?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Double Replacement", correct: 0 },
             { q: "What is the general formula for decomposition?", a: "AB → A + B", b: "A + B → AB", c: "A + BC → AC + B", d: "AB + CD → AD + CB", correct: 0 },
             { q: "Hydrogen peroxide decomposes into water and oxygen. What type of reaction is this?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Combustion", correct: 0 },
@@ -360,8 +344,6 @@
             { q: "Rotting is a natural and slow process of which reaction type?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Double Replacement", correct: 0 },
             { q: "What is often needed to break apart a compound in decomposition?", a: "Heat, light, or electricity", b: "Another compound", c: "A catalyst only", d: "Water only", correct: 0 },
             { q: "Food scraps break down in a compost pit. What type of reaction is this?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Combustion", correct: 0 },
-            
-            // Single Replacement
             { q: "What type of reaction occurs when one element replaces another in a compound?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
             { q: "What is the general formula for single replacement?", a: "A + BC → AC + B", b: "AB + CD → AD + CB", c: "A + B → AB", d: "AB → A + B", correct: 0 },
             { q: "Zinc + hydrochloric acid → zinc chloride + hydrogen. What type of reaction is this?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
@@ -371,8 +353,6 @@
             { q: "Aluminum foil placed in a copper chloride solution undergoes which type of reaction?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
             { q: "Acid + Metal → Salt + Hydrogen gas. This is an example of:", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
             { q: "Magnesium + Sulfuric acid → Magnesium sulfate + Hydrogen. This is:", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
-            
-            // Double Replacement
             { q: "What type of reaction occurs when two compounds exchange parts to form two new compounds?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
             { q: "What is the general formula for double replacement?", a: "AB + CD → AD + CB", b: "A + BC → AC + B", c: "A + B → AB", d: "AB → A + B", correct: 0 },
             { q: "Silver nitrate + sodium chloride → silver chloride + sodium nitrate. What type of reaction is this?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
@@ -381,8 +361,6 @@
             { q: "What indicates a double replacement reaction has occurred?", a: "Formation of a precipitate", b: "Release of gas", c: "Color change", d: "All of the above", correct: 3 },
             { q: "Neutralization reaction between an acid and a base is an example of:", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
             { q: "Acid + Base → Salt + Water is what type of reaction?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
-            
-            // Combustion
             { q: "What type of reaction occurs when a substance reacts with oxygen and releases heat and light?", a: "Combustion", b: "Combination", c: "Decomposition", d: "Single Replacement", correct: 0 },
             { q: "What is the general formula for combustion?", a: "Fuel + O₂ → CO₂ + H₂O + Energy", b: "Fuel + O₂ → CO₂ + Energy", c: "Fuel + O₂ → H₂O + Energy", d: "Fuel + O₂ → CO₂ + H₂O", correct: 0 },
             { q: "A candle burns continuously while producing light and heat. Which substances are reacting?", a: "Wax vapor and oxygen", b: "Wax and water", c: "Wick and metal", d: "Air and water", correct: 0, scenario: "🕯️ A candle burns continuously while producing light and heat." },
@@ -391,8 +369,6 @@
             { q: "What is released during combustion reactions?", a: "Heat and light", b: "Only heat", c: "Only light", d: "Sound and heat", correct: 0 },
             { q: "Combustion reactions are essential for energy production but contribute to:", a: "Air pollution and climate change", b: "Water pollution", c: "Soil erosion", d: "Deforestation", correct: 0 },
             { q: "Magnesium ribbon burns with a bright white flame. What type of reaction is this?", a: "Combustion", b: "Combination", c: "Decomposition", d: "Single Replacement", correct: 0 },
-            
-            // Real-world Applications
             { q: "What gas is responsible for the bubbles produced during wine fermentation?", a: "Carbon dioxide", b: "Oxygen", c: "Hydrogen", d: "Nitrogen", correct: 0, scenario: "🍷 Fermentation produces bubbles during the early stage of wine making." },
             { q: "What does the smell of food being grilled indicate?", a: "New compounds are being formed", b: "No change is happening", c: "Food is freezing", d: "Air is being removed", correct: 0, scenario: "🍖 Food releases aroma while being grilled." },
             { q: "Acids reacting with carbonates lead to the weathering of rocks and deterioration of buildings. This is:", a: "Acid-carbonate reaction", b: "Combustion", c: "Photosynthesis", d: "Respiration", correct: 0 },
@@ -400,14 +376,20 @@
             { q: "Which reaction is vital for maintaining life on Earth by producing oxygen?", a: "Photosynthesis", b: "Respiration", c: "Combustion", d: "Decomposition", correct: 0 },
             { q: "When barium chloride is mixed with sodium sulfate, a white solid forms. What type of reaction?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
             { q: "Decomposition reactions help break down dead organisms and return nutrients to the soil. This is:", a: "Useful for the environment", b: "Harmful to the environment", c: "Neither", d: "Both useful and harmful", correct: 0 },
-            { q: "Combustion reactions are used in cars, factories, and electricity generation. This is an example of:", a: "Useful application", b: "Harmful application", c: "Neither", d: "Both useful and harmful", correct: 0 },
-            { q: "Which reaction type is described as 'like mixing ingredients to make one final product'?", a: "Combination", b: "Decomposition", c: "Single Replacement", d: "Double Replacement", correct: 0 },
-            { q: "Which reaction type is described as 'One element kicks out another and takes its place'?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
-            { q: "Which reaction type is described as 'Two substances swap partners, like changing dance partners'?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
-            { q: "Acids on metals cause corrosion which damages structures. This is an example of:", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
-            { q: "The pH scale measures the concentration of which ions?", a: "Hydrogen ions (H⁺)", b: "Hydroxide ions (OH⁻)", c: "Both H⁺ and OH⁻", d: "Neither", correct: 0 },
-            { q: "A neutralization reaction produces:", a: "Salt and water", b: "Salt and hydrogen", c: "Water and oxygen", d: "Acid and base", correct: 0 }
+            { q: "Which reaction type is described as 'like mixing ingredients to make one final product'?", a: "Combination", b: "Decomposition", c: "Single Replacement", d: "Double Replacement", correct: 0 }
         ];
+
+        // Shuffle function
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // Shuffle questions once at start
+        let questions = shuffleArray([...questionsData]);
 
         // ---------- STATE ----------
         let currentIndex = 0;
@@ -431,6 +413,18 @@
         function renderQuestion(index) {
             const q = questions[index];
             if (!q) return;
+
+            // Build options array with correct flag
+            const options = [
+                { text: q.a, isCorrect: q.correct === 0 },
+                { text: q.b, isCorrect: q.correct === 1 },
+                { text: q.c, isCorrect: q.correct === 2 },
+                { text: q.d, isCorrect: q.correct === 3 }
+            ];
+
+            // Shuffle the options
+            const shuffledOptions = shuffleArray([...options]);
+
             qCounter.textContent = `Question ${index+1} / ${questions.length}`;
             scoreDisplay.textContent = `${score} correct`;
 
@@ -443,12 +437,13 @@
 
             optionsContainer.innerHTML = '';
             const labels = ['A', 'B', 'C', 'D'];
-            const texts = [q.a, q.b, q.c, q.d];
-            texts.forEach((t, i) => {
+
+            shuffledOptions.forEach((option, i) => {
                 const div = document.createElement('div');
                 div.className = 'option';
-                div.textContent = `${labels[i]}. ${t}`;
+                div.textContent = `${labels[i]}. ${option.text}`;
                 div.dataset.index = i;
+                div.dataset.isCorrect = option.isCorrect;
                 div.addEventListener('click', () => onOptionClick(i));
                 optionsContainer.appendChild(div);
             });
@@ -460,13 +455,19 @@
                 opts.forEach((opt, idx) => {
                     opt.classList.add('disabled-opt');
                     if (idx === selectedIdx) {
-                        if (idx === q.correct) opt.classList.add('selected-correct');
-                        else opt.classList.add('selected-wrong');
+                        if (opt.dataset.isCorrect === 'true') {
+                            opt.classList.add('selected-correct');
+                        } else {
+                            opt.classList.add('selected-wrong');
+                        }
                     }
-                    if (idx === q.correct) opt.classList.add('show-correct');
+                    if (opt.dataset.isCorrect === 'true') {
+                        opt.classList.add('show-correct');
+                    }
                 });
-                const correctText = [q.a, q.b, q.c, q.d][q.correct];
-                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+                const correctText = shuffledOptions.find(opt => opt.isCorrect === true).text;
+                const correctLabel = labels[shuffledOptions.findIndex(opt => opt.isCorrect === true)];
+                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${correctLabel}. ${correctText}</span>`;
             } else {
                 document.querySelectorAll('.option').forEach(opt => opt.classList.remove('disabled-opt'));
             }
@@ -476,24 +477,33 @@
 
         function onOptionClick(index) {
             if (answered) return;
-            const q = questions[currentIndex];
             const opts = document.querySelectorAll('.option');
             opts.forEach(o => o.classList.add('disabled-opt'));
 
             selectedIdx = index;
-            const isCorrect = (index === q.correct);
+            const isCorrect = opts[index].dataset.isCorrect === 'true';
+
             if (isCorrect) {
                 opts[index].classList.add('selected-correct');
                 score++;
             } else {
                 opts[index].classList.add('selected-wrong');
-                opts[q.correct].classList.add('show-correct');
+                opts.forEach(opt => {
+                    if (opt.dataset.isCorrect === 'true') {
+                        opt.classList.add('show-correct');
+                    }
+                });
             }
-            opts[q.correct].classList.add('show-correct');
+            opts.forEach(opt => {
+                if (opt.dataset.isCorrect === 'true') {
+                    opt.classList.add('show-correct');
+                }
+            });
 
             const labels = ['A', 'B', 'C', 'D'];
-            const correctText = [q.a, q.b, q.c, q.d][q.correct];
-            feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+            const correctText = Array.from(opts).find(opt => opt.dataset.isCorrect === 'true')?.textContent || '';
+            const correctLabel = Array.from(opts).findIndex(opt => opt.dataset.isCorrect === 'true');
+            feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[correctLabel]}. ${correctText}`;
 
             answered = true;
             scoreDisplay.textContent = `${score} correct`;
@@ -509,13 +519,17 @@
 
         function nextQuestion() {
             if (!answered && currentIndex < questions.length) {
-                const q = questions[currentIndex];
                 const opts = document.querySelectorAll('.option');
                 opts.forEach(o => o.classList.add('disabled-opt'));
-                opts[q.correct].classList.add('show-correct');
+                opts.forEach(opt => {
+                    if (opt.dataset.isCorrect === 'true') {
+                        opt.classList.add('show-correct');
+                    }
+                });
                 const labels = ['A', 'B', 'C', 'D'];
-                const correctText = [q.a, q.b, q.c, q.d][q.correct];
-                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+                const correctText = Array.from(opts).find(opt => opt.dataset.isCorrect === 'true')?.textContent || '';
+                const correctLabel = Array.from(opts).findIndex(opt => opt.dataset.isCorrect === 'true');
+                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[correctLabel]}. ${correctText}`;
                 answered = true;
                 return;
             }
@@ -537,6 +551,7 @@
         }
 
         function resetQuiz() {
+            questions = shuffleArray([...questionsData]);
             currentIndex = 0;
             score = 0;
             answered = false;
