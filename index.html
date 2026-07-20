@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clyReviewer · Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f0f2f5;
+            font-family: "Inter", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+        .landing {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.07), 0 10px 30px rgba(0,0,0,0.03);
+            padding: 3.5rem 3.5rem 4rem;
+            border: 1px solid #e8edf0;
+            position: relative;
+            overflow: hidden;
+        }
+        .landing::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45,125,90,0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .landing::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(45,125,90,0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        @media (max-width: 640px) { .landing { padding: 2rem 1.5rem 2.5rem; } }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #2d7d5a, #1a5a44);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 20px rgba(45,125,90,0.25);
+        }
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #1a2f26;
+            letter-spacing: -0.02em;
+        }
+        .logo h1 span {
+            color: #2d7d5a;
+        }
+        .logo .sub {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #6d8a7c;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: #4d6b5e;
+            max-width: 500px;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .tagline strong {
+            color: #1a3a2e;
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 1.5rem 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) { .subjects { grid-template-columns: 1fr; } }
+
+        .subject-card {
+            background: #f8faf9;
+            border-radius: 28px;
+            padding: 2rem 2rem 2.2rem;
+            border: 1px solid #e4e9e7;
+            transition: 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .subject-card:hover {
+            transform: translateY(-6px);
+            border-color: #c0d4ca;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+            background: #ffffff;
+        }
+        .subject-card .icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .subject-card .icon-wrap.green { background: #e6f0ec; color: #2d7d5a; }
+        .subject-card .icon-wrap.orange { background: #f5ede7; color: #b97c5a; }
+        .subject-card .icon-wrap.purple { background: #ede7f5; color: #7a5a9b; }
+
+        .subject-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a2f26;
+            margin-bottom: 0.3rem;
+        }
+        .subject-card p {
+            font-size: 0.92rem;
+            color: #4d6b5e;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+        }
+        .subject-card .meta {
+            font-size: 0.8rem;
+            color: #6d8a7c;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .subject-card .meta span {
+            background: #e8eeec;
+            padding: 0.15rem 0.7rem;
+            border-radius: 40px;
+        }
+        .subject-card .arrow {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.8rem;
+            font-size: 1.2rem;
+            color: #2d7d5a;
+            opacity: 0.5;
+            transition: 0.2s;
+        }
+        .subject-card:hover .arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        .features {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8eeec;
+            position: relative;
+            z-index: 1;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: #4d6b5e;
+        }
+        .feature i {
+            color: #2d7d5a;
+            font-size: 1rem;
+        }
+
+        .footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8aa89a;
+            position: relative;
+            z-index: 1;
+        }
+        .footer i { color: #2d7d5a; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .logo h1 { font-size: 1.5rem; }
+            .logo-icon { width: 44px; height: 44px; font-size: 1.3rem; }
+            .subject-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1>cly<span>Reviewer</span></h1>
+                    <div class="sub"><i class="fas fa-chevron-right"></i> Study Smarter</div>
+                </div>
+            </div>
+            <div style="display:flex; gap:0.5rem;">
+                <span style="background:#e6f0ec; padding:0.3rem 1rem; border-radius:40px; font-size:0.75rem; font-weight:600; color:#1a5a44;">
+                    <i class="fas fa-book-open"></i> 100+ Questions
+                </span>
+            </div>
+        </div>
+
+        <!-- TAGLINE -->
+        <div class="tagline">
+            <strong>Review and master</strong> key concepts in Science and Creative Industries with interactive quizzes and comprehensive lessons.
+        </div>
+
+        <!-- SUBJECT CARDS -->
+        <div class="subjects">
+            <!-- Card 1: Chemical Reactions -->
+            <a href="ChemicalReactions.html" class="subject-card" id="chemCard">
+                <div class="icon-wrap green">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Types of Chemical Reactions</h3>
+                <p>Combination · Decomposition · Single Replacement · Double Replacement · Combustion</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Quiz</span>
+                    <span><i class="fas fa-graduation-cap"></i> Science 10</span>
+                    <span><i class="fas fa-leaf"></i> Week 2</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Card 2: Orange Economy -->
+            <a href="OrangeEconomy.html" class="subject-card" id="orangeCard">
+                <div class="icon-wrap orange">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Orange Economy</h3>
+                <p>Philippine Creative Industries · RA 11904 · 9 Domains · Music Tech & Videoke</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Quiz</span>
+                    <span><i class="fas fa-film"></i> Creative Industries</span>
+                    <span><i class="fas fa-music"></i> Music Innovation</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Interactive quizzes with instant feedback</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <span>Track your progress with score counter</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Works on any device</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-book"></i>
+                <span>Comprehensive lesson summaries</span>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <i class="fas fa-heart" style="color:#b97c5a;"></i> clyReviewer · Study Materials for Enhanced K12 Curriculum
+        </div>
+    </div>
+
+    <script>
+        // Smooth click handling – just use regular anchor links
+        // But we can add a small animation or tracking if needed
+        document.querySelectorAll('.subject-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Let the browser handle navigation
+                // No need to prevent default since we're using href
+                // But we can add a subtle click effect
+                this.style.transition = 'transform 0.15s';
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        console.log('📚 clyReviewer · Choose a subject to review');
+    </script>
+</body>
+</html>

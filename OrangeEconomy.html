@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviewer  ·  ZZZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f2ede8;
+            font-family: "Inter", sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+        .paper {
+            max-width: 1100px;
+            width: 100%;
+            background: #fffcf9;
+            border-radius: 42px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06), 0 8px 20px rgba(0,0,0,0.02);
+            padding: 2.5rem 2.8rem;
+            border: 1px solid rgba(235, 215, 200, 0.3);
+        }
+        @media (max-width: 640px) { .paper { padding: 1.5rem; } }
+
+        .landing { display: block; }
+        .landing.hide { display: none; }
+        .subject-grid { display: flex; flex-wrap: wrap; gap: 1.2rem; margin: 2rem 0 1.5rem; }
+        .subject-card {
+            background: white;
+            padding: 1.8rem 1.8rem 1.5rem;
+            border-radius: 28px;
+            flex: 1 1 200px;
+            border: 1px solid #eee3da;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+            transition: 0.15s ease;
+            cursor: pointer;
+        }
+        .subject-card:hover {
+            border-color: #d4b8a2;
+            background: #fffaf5;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+        }
+        .subject-card i { font-size: 2rem; color: #b97c5a; margin-bottom: 0.3rem; }
+        .subject-card h3 { font-weight: 600; font-size: 1.1rem; color: #3d2c1e; }
+        .subject-card p { font-size: 0.9rem; color: #7a6a5c; margin-top: 0.3rem; }
+
+        .lesson-container { display: none; }
+        .lesson-container.active { display: block; }
+
+        .quiz-container { display: none; }
+        .quiz-container.active { display: block; }
+
+        h1 { font-size: 2.4rem; font-weight: 600; letter-spacing: -0.02em; color: #2d1f13; margin-bottom: 0.2rem; }
+        .subhead { color: #7b6b5d; font-weight: 400; border-left: 4px solid #e7c9b4; padding-left: 1rem; margin: 0.2rem 0 1.8rem; }
+        h2 { font-size: 1.6rem; font-weight: 500; color: #3e2c1d; margin-top: 2.2rem; margin-bottom: 1rem; border-bottom: 1px solid #efe3da; padding-bottom: 0.4rem; }
+        .badge { background: #f5ede7; color: #7b5f4b; font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.8rem; border-radius: 40px; display: inline-block; }
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+            gap: 0.6rem 0.8rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .domain-item {
+            background: #fcf6f1;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #3d2e21;
+            border: 1px solid #efe3da;
+        }
+        .highlight { background: #fcf3ec; padding: 0.1rem 0.5rem; border-radius: 12px; color: #aa6f4b; }
+        .music-timeline {
+            background: #f9f3ed;
+            border-radius: 24px;
+            padding: 1rem 1.8rem;
+            margin: 1rem 0;
+        }
+        .music-timeline li { list-style: none; padding: 0.3rem 0; border-bottom: 1px dashed #e5d5c8; }
+        .music-timeline li:last-child { border: none; }
+        .music-timeline i { color: #b77d5a; width: 1.8rem; }
+
+        .info-block {
+            background: #f5f0eb;
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0;
+        }
+        .info-block p { margin: 0.4rem 0; }
+
+        .quiz-box {
+            margin: 1.5rem 0 1rem;
+            background: #fcf8f5;
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #eee3da;
+        }
+        .q-counter { font-weight: 500; color: #6b5a4b; margin-bottom: 0.3rem; }
+        .q-text { font-size: 1.25rem; font-weight: 500; margin: 0.5rem 0 1.4rem; color: #2a1d13; }
+        .options { display: flex; flex-direction: column; gap: 0.7rem; margin: 1rem 0; }
+        .option {
+            background: white;
+            padding: 0.8rem 1.4rem;
+            border-radius: 60px;
+            border: 1px solid #e5d7cc;
+            cursor: pointer;
+            transition: 0.1s ease;
+            font-weight: 450;
+            color: #2d1f14;
+        }
+        .option:hover:not(.disabled-opt) { background: #f5ede7; border-color: #c9b09b; }
+        .option.selected-correct { background: #d4edda; border-color: #2b7d4b; color: #1a4a2e; }
+        .option.selected-wrong { background: #f8dddd; border-color: #b55a5a; color: #7a3434; }
+        .option.show-correct { background: #d4edda; border-color: #2b7d4b; }
+        .option.disabled-opt { cursor: default; opacity: 0.8; }
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.8rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .btn {
+            background: white;
+            border: 1px solid #d2c0b2;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #3d2c1e;
+            cursor: pointer;
+            transition: 0.1s ease;
+            font-size: 0.95rem;
+        }
+        .btn-primary { background: #dbb8a0; border-color: #c6a088; color: #2b1c11; }
+        .btn-primary:hover:not(:disabled) { background: #d0ab90; }
+        .btn:disabled { opacity: 0.4; pointer-events: none; }
+        .btn-back { background: #f1e8e2; border-color: #dbccc1; }
+        .btn-start-quiz {
+            background: #b97c5a;
+            border-color: #a06d4e;
+            color: white;
+            padding: 0.8rem 2.5rem;
+            font-size: 1.1rem;
+        }
+        .btn-start-quiz:hover { background: #a86d4d; }
+        .back-landing {
+            background: #efe5de;
+            border: none;
+            padding: 0.4rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #4e3b2c;
+            cursor: pointer;
+        }
+        #feedbackMsg { font-weight: 400; color: #6e5b4b; }
+        #scoreDisplay { background: #ede3db; padding: 0.1rem 1.2rem; border-radius: 40px; }
+
+        .quiz-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 480px) { .quiz-box { padding: 1.2rem; } .option { padding: 0.7rem 1rem; } }
+    </style>
+</head>
+<body>
+<div class="paper" id="app">
+
+    <!-- LANDING -->
+    <div id="landing" class="landing">
+        <h1><i class="fas fa-palette" style="color:#b97c5a; margin-right: 10px;"></i>Reviewer  ·  ZZZ</h1>
+        <div class="subhead">review · creative industries · philippines</div>
+        <p style="margin: 1.5rem 0 0.8rem; color: #4b3b2e; font-weight: 500;">Choose a subject to review:</p>
+        <div class="subject-grid">
+            <div class="subject-card" data-subject="orange">
+                <i class="fas fa-film"></i>
+                <h3>Philippine Creative Industries</h3>
+                <p>RA 11904 · 9 Domains · Music tech & Videoke</p>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #9a897c;"><i class="fas fa-book-open"></i> Click the card to start the lesson.</p>
+    </div>
+
+    <!-- LESSON -->
+    <div id="lessonContainer" class="lesson-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div>
+                <span class="badge"><i class="fas fa-book"></i> RA 11904</span>
+                <h1 style="font-size: 2rem; margin-top: 0.2rem;">Creative Industries</h1>
+            </div>
+            <div>
+                <button class="btn btn-start-quiz" id="startQuizBtn"><i class="fas fa-pencil-alt"></i> Start Quiz</button>
+                <button class="back-landing" id="backToLandingBtn" style="margin-left: 0.5rem;"><i class="fas fa-arrow-left"></i> Subjects</button>
+            </div>
+        </div>
+        <div class="subhead"><i class="fas fa-cubes" style="margin-right: 8px;"></i> Orange Economy · 9 Domains</div>
+
+        <div class="domain-grid">
+            <span class="domain-item">1 · Audiovisual</span>
+            <span class="domain-item">2 · Digital Interactive</span>
+            <span class="domain-item">3 · Creative Services</span>
+            <span class="domain-item">4 · Design</span>
+            <span class="domain-item">5 · Publishing</span>
+            <span class="domain-item">6 · Performing Arts</span>
+            <span class="domain-item">7 · Visual Arts</span>
+            <span class="domain-item">8 · Traditional Expressions</span>
+            <span class="domain-item">9 · Cultural Sites</span>
+        </div>
+
+        <h2><i class="fas fa-headphones" style="color:#b77d5a;"></i> Audiovisual & Music Innovation</h2>
+        <ul class="music-timeline">
+            <li><i class="fas fa-record-vinyl"></i> <strong>Phonograph (1877)</strong> – first recorded music in homes</li>
+            <li><i class="fas fa-guitar"></i> <strong>Electric Guitar (1940s)</strong> – birth of Rock 'n' Roll</li>
+            <li><i class="fas fa-synthesizer"></i> <strong>Synthesizer</strong> – infinite orchestral sounds electronically</li>
+            <li><i class="fas fa-microphone-alt"></i> <strong>Multitrack Recording</strong> – piece-by-piece studio magic</li>
+            <li><i class="fas fa-wave-square"></i> <strong>Pitch Manipulation (AutoTune)</strong> & Vocoder – modify vocal intonation</li>
+            <li><i class="fas fa-laptop"></i> <strong>PC & Internet</strong> – bedroom talents go global without major studio backing</li>
+        </ul>
+
+        <h2><i class="fas fa-gamepad"></i> Digital Interactive Media</h2>
+        <div class="info-block">
+            <p><span class="highlight">Karaoke vs Videoke:</span> Karaoke (Japan 1971) · Videoke (PH, Roberto del Rosario, 1975) – interactive scoring, video bg, pitch control.</p>
+            <p><span class="highlight">Game Music:</span> dopamine boost, modular cues, emotional variation. Treat the game canvas like an interactive film.</p>
+            <p><span class="highlight">Philippine context:</span> rising frontier, but faces scarcity of highly trained software developers and resistance to microtransaction monetization.</p>
+        </div>
+
+        <h2><i class="fas fa-theater-masks"></i> Performing Arts & Cultural</h2>
+        <div class="info-block">
+            <p><strong>Broadway Music · Electronic Dance Music · Film Music Composition · Musical Theater</strong></p>
+            <p><strong>Karaoke Music · Music Performance · Video Game Music · Videoke Music</strong></p>
+            <p style="margin-top: 0.6rem;">Categorization: Audiovisual Media & Digital Interactive Domain · Creative Services, Design & Publishing Domain · Performing Arts & Traditional Cultural Domain.</p>
+        </div>
+
+        <h2><i class="fas fa-globe-asia"></i> Why the Creative Economy Matters for Developing Nations</h2>
+        <div class="info-block">
+            <p>✅ Providing diverse employment for performance, technical, and creative sectors.</p>
+            <p>✅ Boosting national wealth through tax revenues and intellectual property exports.</p>
+            <p>✅ Preserving unique local identities and traditions through creative expression.</p>
+        </div>
+
+        <div style="text-align: center; margin: 2.5rem 0 1rem; padding: 2rem; background: #f9f3ed; border-radius: 32px;">
+            <p style="font-size: 1.2rem; font-weight: 500; color: #3d2c1e;">Ready to test your knowledge?</p>
+            <button class="btn btn-start-quiz" id="startQuizBtn2" style="margin-top: 1rem;"><i class="fas fa-pencil-alt"></i> Start 50-Question Quiz</button>
+        </div>
+    </div>
+
+    <!-- QUIZ CONTAINER -->
+    <div id="quizContainer" class="quiz-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <div>
+                <span class="badge"><i class="fas fa-question-circle"></i> Quiz</span>
+                <h1 style="font-size: 1.8rem; margin-top: 0.2rem;">Creative Industries Quiz</h1>
+            </div>
+            <div>
+                <button class="back-landing" id="backToLessonBtn"><i class="fas fa-arrow-left"></i> Back to Lesson</button>
+            </div>
+        </div>
+
+        <div class="quiz-box" id="quizBox">
+            <div class="quiz-header-bar">
+                <span class="q-counter" id="qCounter">Question 1 / 50</span>
+                <span id="scoreDisplay">0 correct</span>
+            </div>
+            <div class="q-text" id="qText">Loading question...</div>
+            <div class="options" id="optionsContainer"></div>
+
+            <div class="quiz-nav">
+                <button class="btn btn-back" id="prevBtn"><i class="fas fa-chevron-left"></i> Prev</button>
+                <button class="btn btn-primary" id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div style="margin-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <span id="feedbackMsg"></span>
+                <button class="btn" id="resetQuizBtn" style="background: #efe5de; border: none;"><i class="fas fa-redo-alt"></i> Reset</button>
+            </div>
+        </div>
+        <div style="margin-top: 1.2rem; font-size: 0.85rem; color: #8b7a6b; border-top: 1px solid #eee3da; padding-top: 1rem;">
+            <i class="fas fa-info-circle"></i> Select an answer, then click Next. Correct answer will be shown.
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- 50 QUIZ QUESTIONS WITH MIXED CORRECT ANSWERS ----------
+        const questions = [
+            { q: "What is the Orange Economy?", a: "Businesses from art, culture & creativity", b: "Agriculture exports", c: "Financial services", d: "Mining industry", correct: 0 },
+            { q: "Which domain includes movies, TV, and music?", a: "Audiovisual", b: "Design", c: "Publishing", d: "Cultural Sites", correct: 0 },
+            { q: "The Philippine Creative Industries Act is also known as:", a: "RA 11904", b: "RA 10931", c: "RA 11648", d: "RA 11223", correct: 0 },
+            { q: "How many domains are in RA 11904?", a: "7", b: "8", c: "9", d: "10", correct: 2 },
+            { q: "Which domain covers software and apps requiring user input?", a: "Digital Interactive Media", b: "Audiovisual", c: "Creative Services", d: "Design", correct: 0 },
+            { q: "Karaoke translates literally to:", a: "Empty orchestra", b: "Sing along", c: "Voice box", d: "Melody machine", correct: 0 },
+            { q: "Who patented the Sing-Along System (Videoke) in 1975?", a: "Roberto del Rosario", b: "Daisuke Inoue", c: "Jose Rizal", d: "Fernando Poe Jr.", correct: 0 },
+            { q: "The Phonograph was invented in:", a: "1877", b: "1901", c: "1925", d: "1950", correct: 0 },
+            { q: "Which instrument changed music and gave birth to Rock 'n' Roll?", a: "Electric Guitar", b: "Synthesizer", c: "Piano", d: "Violin", correct: 0 },
+            { q: "Multitrack recording allows:", a: "Piece-by-piece studio recording", b: "Live concert recording", c: "Vinyl pressing", d: "Radio broadcast", correct: 0 },
+            { q: "AutoTune is used for:", a: "Pitch manipulation", b: "Volume boost", c: "Reverb effect", d: "Noise reduction", correct: 0 },
+            { q: "Which era allowed bedroom talents to go global without major studios?", a: "PC & Internet", b: "Vinyl era", c: "Radio era", d: "Cassette era", correct: 0 },
+            { q: "Videoke is an interactive Filipino iteration of:", a: "Karaoke", b: "Jukebox", c: "MP3 player", d: "Radio", correct: 0 },
+            { q: "Game music can boost focus by increasing:", a: "Dopamine", b: "Serotonin", c: "Adrenaline", d: "Cortisol", correct: 0 },
+            { q: "Composing modular sound 'cues' is a best practice for:", a: "Video Game Music", b: "Pop music", c: "Classical", d: "Jazz", correct: 0 },
+            { q: "Which domain covers Broadway and musical theater?", a: "Performing Arts", b: "Audiovisual", c: "Design", d: "Publishing", correct: 0 },
+            { q: "Traditional Cultural Expressions is which domain?", a: "Domain 8", b: "Domain 3", c: "Domain 5", d: "Domain 9", correct: 0 },
+            { q: "Cultural Sites is domain number:", a: "9", b: "7", c: "6", d: "4", correct: 0 },
+            { q: "The Synthesizer replicates:", a: "Orchestral sounds", b: "Guitar sounds", c: "Percussion", d: "Human voice", correct: 0 },
+            { q: "Which Philippine industry faces scarcity of local software developers?", a: "Digital Interactive Media", b: "Audiovisual", c: "Publishing", d: "Design", correct: 0 },
+            { q: "Videoke scoring system is based on:", a: "AI & pitch/echo", b: "Audience claps", c: "Decibel meter", d: "Tempo", correct: 0 },
+            { q: "Karaoke was invented in:", a: "Japan", b: "Philippines", c: "USA", d: "Korea", correct: 0 },
+            { q: "Which is NOT a domain under RA 11904?", a: "Finance", b: "Audiovisual", c: "Design", d: "Publishing", correct: 0 },
+            { q: "Music Technology includes all EXCEPT:", a: "Agriculture", b: "Phonograph", c: "Synthesizer", d: "Multitrack", correct: 0 },
+            { q: "The Electric Guitar was popularized in the:", a: "1940s", b: "1920s", c: "1960s", d: "1890s", correct: 0 },
+            { q: "What does the Digital Interactive Media domain reject?", a: "Passive audience", b: "User input", c: "Active participation", d: "Software", correct: 0 },
+            { q: "Which is a rising frontier in the Philippines?", a: "Digital Interactive Media", b: "Mining", c: "Agriculture", d: "Fishing", correct: 0 },
+            { q: "Microtransaction resistance is a challenge in:", a: "Philippine game market", b: "Movie industry", c: "Publishing", d: "Tourism", correct: 0 },
+            { q: "Which best practice involves playing the game to target emotions?", a: "Playtesting", b: "Looping", c: "Sampling", d: "Mastering", correct: 0 },
+            { q: "The Vocoder is used for:", a: "Modifying vocal intonation", b: "Reverb", c: "Delay", d: "Compression", correct: 0 },
+            { q: "Which domain includes Creative Services?", a: "Domain 3", b: "Domain 1", c: "Domain 6", d: "Domain 8", correct: 0 },
+            { q: "Design Domains is which number?", a: "4", b: "2", c: "5", d: "7", correct: 0 },
+            { q: "Publishing and Printed Media is Domain:", a: "5", b: "3", c: "6", d: "9", correct: 0 },
+            { q: "Which is NOT part of Audiovisual Domain?", a: "Sculpture", b: "Film", c: "TV Shows", d: "Music", correct: 0 },
+            { q: "The Philippine Creative Industries Act was enacted in:", a: "2022", b: "2020", c: "2021", d: "2019", correct: 0 },
+            { q: "Which domain covers tourism and heritage?", a: "Cultural Sites", b: "Performing Arts", c: "Design", d: "Publishing", correct: 0 },
+            { q: "Interactive media requires:", a: "Active user input", b: "Passive viewing", c: "One-way communication", d: "Broadcast only", correct: 0 },
+            { q: "Which Filipino invention is related to music?", a: "Videoke", b: "Patis", c: "Jeepney", d: "Bayanihan", correct: 0 },
+            { q: "Game music composition draws inspiration from:", a: "Orchestral & EDM", b: "Country & folk", c: "Jazz & blues", d: "Heavy metal", correct: 0 },
+            { q: "Karaoke was invented by:", a: "Daisuke Inoue", b: "Roberto del Rosario", c: "Yamaha", d: "Sony", correct: 0 },
+            { q: "Which is a traditional cultural expression?", a: "Folk dance", b: "Digital art", c: "Video game", d: "Film", correct: 0 },
+            { q: "The global patent for Sing-Along System is held by:", a: "Filipino inventor", b: "Japanese inventor", c: "American inventor", d: "Korean inventor", correct: 0 },
+            { q: "Which technology enabled infinite orchestral sounds?", a: "Synthesizer", b: "Electric Guitar", c: "Phonograph", d: "Multitrack", correct: 0 },
+            { q: "Which sector benefits from intellectual property exports?", a: "Creative Industries", b: "Agriculture", c: "Mining", d: "Construction", correct: 0 },
+            { q: "What is a key challenge for Philippine game developers?", a: "Scarcity of trained developers", b: "Too many developers", c: "Cheap labor", d: "Government support", correct: 0 },
+            { q: "The term 'Videoke' is associated with:", a: "Philippines", b: "Japan", c: "Korea", d: "USA", correct: 0 },
+            { q: "Which domain includes 2D/3D animation?", a: "Audiovisual", b: "Design", c: "Publishing", d: "Digital Interactive", correct: 0 },
+            { q: "Which act promotes creative industries in the Philippines?", a: "RA 11904", b: "RA 10066", c: "RA 9165", d: "RA 8550", correct: 0 },
+            { q: "Which is a form of music technology?", a: "Multitrack Recording", b: "Printing press", c: "Camera", d: "Loom", correct: 0 },
+            { q: "The Orange Economy generates wealth from:", a: "Art, culture, creativity", b: "Real estate", c: "Manufacturing", d: "Finance", correct: 0 }
+        ];
+
+        // ---------- STATE ----------
+        let currentIndex = 0;
+        let score = 0;
+        let answered = false;
+        let selectedIdx = -1;
+
+        const landing = document.getElementById('landing');
+        const lessonContainer = document.getElementById('lessonContainer');
+        const quizContainer = document.getElementById('quizContainer');
+        const subjectCards = document.querySelectorAll('.subject-card');
+        const backToLanding = document.getElementById('backToLandingBtn');
+        const backToLesson = document.getElementById('backToLessonBtn');
+        const startQuizBtn = document.getElementById('startQuizBtn');
+        const startQuizBtn2 = document.getElementById('startQuizBtn2');
+
+        const qCounter = document.getElementById('qCounter');
+        const qText = document.getElementById('qText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const resetBtn = document.getElementById('resetQuizBtn');
+        const feedback = document.getElementById('feedbackMsg');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+
+        function renderQuestion(index) {
+            const q = questions[index];
+            if (!q) return;
+            qCounter.textContent = `Question ${index+1} / ${questions.length}`;
+            qText.textContent = q.q;
+            scoreDisplay.textContent = `${score} correct`;
+
+            optionsContainer.innerHTML = '';
+            const labels = ['A', 'B', 'C', 'D'];
+            const texts = [q.a, q.b, q.c, q.d];
+            texts.forEach((t, i) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                div.textContent = `${labels[i]}. ${t}`;
+                div.dataset.index = i;
+                div.addEventListener('click', () => onOptionClick(i));
+                optionsContainer.appendChild(div);
+            });
+
+            feedback.textContent = '';
+
+            if (answered) {
+                const opts = document.querySelectorAll('.option');
+                opts.forEach((opt, idx) => {
+                    opt.classList.add('disabled-opt');
+                    if (idx === selectedIdx) {
+                        if (idx === q.correct) opt.classList.add('selected-correct');
+                        else opt.classList.add('selected-wrong');
+                    }
+                    if (idx === q.correct) opt.classList.add('show-correct');
+                });
+                const correctText = [q.a, q.b, q.c, q.d][q.correct];
+                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+            } else {
+                document.querySelectorAll('.option').forEach(opt => opt.classList.remove('disabled-opt'));
+            }
+            prevBtn.disabled = (index === 0);
+            nextBtn.disabled = false;
+        }
+
+        function onOptionClick(index) {
+            if (answered) return;
+            const q = questions[currentIndex];
+            const opts = document.querySelectorAll('.option');
+            opts.forEach(o => o.classList.add('disabled-opt'));
+
+            selectedIdx = index;
+            const isCorrect = (index === q.correct);
+            if (isCorrect) {
+                opts[index].classList.add('selected-correct');
+                score++;
+            } else {
+                opts[index].classList.add('selected-wrong');
+                opts[q.correct].classList.add('show-correct');
+            }
+            opts[q.correct].classList.add('show-correct');
+
+            const labels = ['A', 'B', 'C', 'D'];
+            const correctText = [q.a, q.b, q.c, q.d][q.correct];
+            feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+
+            answered = true;
+            scoreDisplay.textContent = `${score} correct`;
+        }
+
+        function goTo(index) {
+            if (index < 0 || index >= questions.length) return;
+            currentIndex = index;
+            answered = false;
+            selectedIdx = -1;
+            renderQuestion(index);
+        }
+
+        function nextQuestion() {
+            if (!answered && currentIndex < questions.length) {
+                const q = questions[currentIndex];
+                const opts = document.querySelectorAll('.option');
+                opts.forEach(o => o.classList.add('disabled-opt'));
+                opts[q.correct].classList.add('show-correct');
+                const labels = ['A', 'B', 'C', 'D'];
+                const correctText = [q.a, q.b, q.c, q.d][q.correct];
+                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+                answered = true;
+                return;
+            }
+            if (currentIndex < questions.length - 1) {
+                goTo(currentIndex + 1);
+            } else {
+                feedback.innerHTML = `<span style="font-weight:600;">🎉 Quiz completed! Score: ${score}/${questions.length}</span>`;
+                nextBtn.disabled = true;
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                goTo(currentIndex - 1);
+                answered = false;
+                selectedIdx = -1;
+                renderQuestion(currentIndex);
+            }
+        }
+
+        function resetQuiz() {
+            currentIndex = 0;
+            score = 0;
+            answered = false;
+            selectedIdx = -1;
+            nextBtn.disabled = false;
+            renderQuestion(0);
+            feedback.textContent = 'Quiz reset.';
+        }
+
+        function showLesson() {
+            landing.classList.add('hide');
+            lessonContainer.classList.add('active');
+            quizContainer.classList.remove('active');
+        }
+
+        function showQuiz() {
+            lessonContainer.classList.remove('active');
+            quizContainer.classList.add('active');
+            resetQuiz();
+        }
+
+        function showLanding() {
+            landing.classList.remove('hide');
+            lessonContainer.classList.remove('active');
+            quizContainer.classList.remove('active');
+        }
+
+        subjectCards.forEach(card => {
+            card.addEventListener('click', showLesson);
+        });
+
+        backToLanding.addEventListener('click', showLanding);
+        backToLesson.addEventListener('click', showLesson);
+        startQuizBtn.addEventListener('click', showQuiz);
+        startQuizBtn2.addEventListener('click', showQuiz);
+
+        prevBtn.addEventListener('click', prevQuestion);
+        nextBtn.addEventListener('click', nextQuestion);
+        resetBtn.addEventListener('click', resetQuiz);
+
+        landing.classList.remove('hide');
+        lessonContainer.classList.remove('active');
+        quizContainer.classList.remove('active');
+        resetQuiz();
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Types of Chemical Reactions · Science 10</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #eef2f0;
+            font-family: "Inter", sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+        .paper {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            padding: 2.5rem 2.8rem;
+            border: 1px solid #e4e9e7;
+        }
+        @media (max-width: 640px) { .paper { padding: 1.5rem; } }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 2px solid #e8eeec;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a3a2e;
+        }
+        .header h1 i { color: #2d7d5a; margin-right: 10px; }
+        .badge {
+            background: #e6f0ec;
+            color: #1a5a44;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .subhead {
+            color: #4d6b5e;
+            font-size: 1rem;
+            margin-bottom: 1.8rem;
+            padding-left: 1rem;
+            border-left: 4px solid #3a9b77;
+        }
+        .memory-tip {
+            background: #f0f6f3;
+            border-radius: 16px;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem 0 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: #1a4a38;
+            font-size: 1.1rem;
+        }
+        .memory-tip i { color: #2d7d5a; margin: 0 0.3rem; }
+
+        /* Reaction Types Grid */
+        .reaction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+            gap: 0.8rem;
+            margin: 1rem 0 1.5rem;
+        }
+        .reaction-type {
+            background: #f5f9f7;
+            padding: 0.7rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1a4a38;
+            border: 1px solid #d6e4de;
+            text-align: center;
+        }
+        .reaction-type i { margin-right: 6px; color: #2d7d5a; }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0 1.5rem;
+        }
+        @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 500px) { .info-grid { grid-template-columns: 1fr; } }
+        .info-card {
+            background: #f7faf9;
+            border-radius: 16px;
+            padding: 0.9rem 1.2rem;
+            border-left: 4px solid #3a9b77;
+        }
+        .info-card h4 { color: #1a3a2e; font-size: 0.85rem; margin-bottom: 0.2rem; }
+        .info-card p { font-size: 0.85rem; color: #3d5a4e; }
+        .info-card .formula { font-family: 'Courier New', monospace; background: #e8eeec; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; }
+
+        /* Real World Examples */
+        .examples {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin: 1rem 0 1.5rem;
+            background: #f7faf9;
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+        }
+        @media (max-width: 600px) { .examples { grid-template-columns: 1fr; } }
+        .examples .example-item { font-size: 0.9rem; color: #1a3a2e; }
+        .examples .example-item i { color: #2d7d5a; width: 1.5rem; }
+
+        /* Quiz */
+        .quiz-container { margin-top: 2rem; border-top: 2px solid #e8eeec; padding-top: 1.5rem; }
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .quiz-header h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a3a2e;
+        }
+        .q-counter { font-weight: 500; color: #4d6b5e; }
+        #scoreDisplay {
+            background: #e6f0ec;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #1a5a44;
+        }
+
+        .q-text {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1rem 0 1.2rem;
+            color: #1a2f26;
+            line-height: 1.6;
+        }
+        .q-text .scenario {
+            display: block;
+            background: #f0f6f3;
+            padding: 0.8rem 1.4rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: #2d4a3e;
+            border-left: 4px solid #3a9b77;
+            font-size: 1rem;
+        }
+        .options { display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0; }
+        .option {
+            background: white;
+            padding: 0.8rem 1.4rem;
+            border-radius: 60px;
+            border: 2px solid #dce6e2;
+            cursor: pointer;
+            transition: 0.15s ease;
+            font-weight: 450;
+            color: #1a2f26;
+            font-size: 0.95rem;
+        }
+        .option:hover:not(.disabled-opt) { background: #f0f6f3; border-color: #aac2b8; }
+        .option.selected-correct { background: #d4edda; border-color: #2b7d4b; color: #1a4a2e; }
+        .option.selected-wrong { background: #f8dddd; border-color: #b55a5a; color: #7a3434; }
+        .option.show-correct { background: #d4edda; border-color: #2b7d4b; }
+        .option.disabled-opt { cursor: default; opacity: 0.7; }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .btn {
+            background: white;
+            border: 2px solid #dce6e2;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: #1a3a2e;
+            cursor: pointer;
+            transition: 0.1s ease;
+            font-size: 0.95rem;
+        }
+        .btn-primary { background: #2d7d5a; border-color: #2d7d5a; color: white; }
+        .btn-primary:hover:not(:disabled) { background: #236a4b; }
+        .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+        .btn-secondary { background: #e8eeec; border-color: #d0dbd6; }
+        .btn-secondary:hover:not(:disabled) { background: #d5e0db; }
+
+        #feedbackMsg {
+            font-weight: 500;
+            color: #2d7d5a;
+            padding: 0.4rem 0;
+        }
+        .footer-note {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: #6d8a7c;
+            border-top: 1px solid #e4e9e7;
+            padding-top: 1rem;
+        }
+
+        .start-screen {
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+        .start-screen h2 { font-size: 1.8rem; color: #1a3a2e; margin-bottom: 0.5rem; }
+        .start-screen p { color: #4d6b5e; max-width: 600px; margin: 0.5rem auto 1.5rem; line-height: 1.6; }
+        .btn-start {
+            background: #2d7d5a;
+            border: none;
+            color: white;
+            padding: 0.9rem 3.5rem;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+        .btn-start:hover { background: #236a4b; transform: translateY(-2px); }
+
+        .hidden { display: none; }
+
+        .reaction-icon { font-size: 1.2rem; margin-right: 4px; }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            <h1><i class="fas fa-flask"></i>Types of Chemical Reactions</h1>
+            <span class="badge"><i class="fas fa-graduation-cap"></i> Science 10 · First Term · Week 2</span>
+        </div>
+        <div>
+            <span class="badge"><i class="fas fa-leaf"></i> Enhanced K12</span>
+            <span class="badge" style="margin-left:0.5rem;"><i class="fas fa-book"></i> 5 Reaction Types</span>
+        </div>
+    </div>
+
+    <div class="subhead">
+        <i class="fas fa-chevron-right" style="color:#2d7d5a;"></i> Describe important types of chemical reactions & explain how they impact the natural and built environment
+    </div>
+
+    <!-- MEMORY TIP -->
+    <div class="memory-tip">
+        <i class="fas fa-music"></i> "CAN DOGS SING DURING CONCERTS" 
+        <span style="font-weight:400;color:#4d6b5e;">— Combination, Decomposition, Single Replacement, Double Replacement, Combustion</span>
+    </div>
+
+    <!-- REACTION TYPES -->
+    <div class="reaction-grid">
+        <span class="reaction-type"><i class="fas fa-plus-circle"></i> Combination (Synthesis)</span>
+        <span class="reaction-type"><i class="fas fa-minus-circle"></i> Decomposition</span>
+        <span class="reaction-type"><i class="fas fa-exchange-alt"></i> Single Replacement</span>
+        <span class="reaction-type"><i class="fas fa-random"></i> Double Replacement</span>
+        <span class="reaction-type"><i class="fas fa-fire"></i> Combustion</span>
+    </div>
+
+    <!-- DETAILED INFO -->
+    <div class="info-grid">
+        <div class="info-card"><h4><i class="fas fa-plus-circle" style="color:#2d7d5a;"></i> Combination</h4><p>A + B → AB</p><p class="formula">2H₂ + O₂ → 2H₂O</p><p style="font-size:0.8rem;color:#5a7a6a;">Two or more substances combine to form one product</p></div>
+        <div class="info-card"><h4><i class="fas fa-minus-circle" style="color:#2d7d5a;"></i> Decomposition</h4><p>AB → A + B</p><p class="formula">2H₂O₂ → 2H₂O + O₂</p><p style="font-size:0.8rem;color:#5a7a6a;">One compound breaks down into simpler substances</p></div>
+        <div class="info-card"><h4><i class="fas fa-exchange-alt" style="color:#2d7d5a;"></i> Single Replacement</h4><p>A + BC → AC + B</p><p class="formula">Zn + 2HCl → ZnCl₂ + H₂</p><p style="font-size:0.8rem;color:#5a7a6a;">One element replaces another in a compound</p></div>
+        <div class="info-card"><h4><i class="fas fa-random" style="color:#2d7d5a;"></i> Double Replacement</h4><p>AB + CD → AD + CB</p><p class="formula">AgNO₃ + NaCl → AgCl + NaNO₃</p><p style="font-size:0.8rem;color:#5a7a6a;">Two compounds exchange ions to form new compounds</p></div>
+        <div class="info-card"><h4><i class="fas fa-fire" style="color:#2d7d5a;"></i> Combustion</h4><p>Fuel + O₂ → CO₂ + H₂O + Energy</p><p class="formula">CH₄ + 2O₂ → CO₂ + 2H₂O</p><p style="font-size:0.8rem;color:#5a7a6a;">Substance reacts with oxygen, releasing heat and light</p></div>
+        <div class="info-card"><h4><i class="fas fa-sun" style="color:#2d7d5a;"></i> Photosynthesis</h4><p>6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</p><p style="font-size:0.8rem;color:#5a7a6a;">Plants convert sunlight, CO₂, and water into glucose and oxygen</p></div>
+    </div>
+
+    <!-- REAL WORLD EXAMPLES -->
+    <div class="examples">
+        <div class="example-item"><i class="fas fa-utensils"></i> <strong>Grilling:</strong> New compounds form (aroma)</div>
+        <div class="example-item"><i class="fas fa-wine-bottle"></i> <strong>Fermentation:</strong> CO₂ bubbles produced</div>
+        <div class="example-item"><i class="fas fa-candle"></i> <strong>Candle Burning:</strong> Wax vapor + O₂ → CO₂ + H₂O</div>
+        <div class="example-item"><i class="fas fa-apple-alt"></i> <strong>Digestion:</strong> Large molecules → smaller nutrients</div>
+        <div class="example-item"><i class="fas fa-seedling"></i> <strong>Photosynthesis:</strong> CO₂ + H₂O → Glucose + O₂</div>
+        <div class="example-item"><i class="fas fa-industry"></i> <strong>Haber Process:</strong> N₂ + 3H₂ → 2NH₃ (fertilizer)</div>
+        <div class="example-item"><i class="fas fa-car"></i> <strong>Combustion Engines:</strong> Fuel + O₂ → Energy + emissions</div>
+        <div class="example-item"><i class="fas fa-building"></i> <strong>Acid Rain:</strong> Acids react with carbonates → weathering</div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz-container" id="quizApp">
+        <div id="startScreen" class="start-screen">
+            <h2><i class="fas fa-question-circle" style="color:#2d7d5a;"></i> 50-Question Quiz</h2>
+            <p>Test your knowledge on <strong>Combination, Decomposition, Single Replacement, Double Replacement, and Combustion</strong> reactions. Each question includes real-world scenarios from photosynthesis, digestion, grilling, fermentation, and more!</p>
+            <button class="btn-start" id="startQuizBtn"><i class="fas fa-play"></i> Start Quiz</button>
+        </div>
+
+        <div id="quizContent" class="hidden">
+            <div class="quiz-header">
+                <div>
+                    <span class="q-counter" id="qCounter">Question 1 / 50</span>
+                </div>
+                <span id="scoreDisplay">0 correct</span>
+            </div>
+            <div class="q-text" id="qText"></div>
+            <div class="options" id="optionsContainer"></div>
+            <div class="quiz-nav">
+                <button class="btn btn-secondary" id="prevBtn"><i class="fas fa-chevron-left"></i> Prev</button>
+                <button class="btn btn-primary" id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; margin-top: 0.5rem;">
+                <span id="feedbackMsg"></span>
+                <button class="btn btn-secondary" id="resetBtn" style="font-size:0.85rem;"><i class="fas fa-redo-alt"></i> Reset Quiz</button>
+            </div>
+        </div>
+        <div class="footer-note" id="quizFooter">
+            <i class="fas fa-info-circle"></i> Select an answer, then click Next. Correct answer will be shown.
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- 50 QUESTIONS with SCENARIOS ----------
+        const questions = [
+            // Photosynthesis (Combination)
+            { q: "Which best describes the chemical reaction happening in plants during photosynthesis?", a: "Carbon dioxide + water → glucose + oxygen", b: "Glucose + oxygen → carbon dioxide + water", c: "Metal + acid → salt + hydrogen", d: "Salt + water → acid + base", correct: 0, scenario: "🌿 Plants on the balcony use sunlight to produce their own food." },
+            { q: "What type of reaction is photosynthesis?", a: "Combination (Synthesis)", b: "Decomposition", c: "Single Replacement", d: "Combustion", correct: 0, scenario: "Plants convert CO₂ and H₂O into glucose and O₂ using light energy." },
+            { q: "Why is photosynthesis important for the environment?", a: "It produces oxygen and supports the food chain", b: "It releases carbon dioxide", c: "It causes air pollution", d: "It depletes nutrients", correct: 0 },
+            
+            // Combination
+            { q: "What type of reaction combines two or more substances to form a single product?", a: "Combination", b: "Decomposition", c: "Single Replacement", d: "Double Replacement", correct: 0 },
+            { q: "What is the general formula for a combination reaction?", a: "A + B → AB", b: "AB → A + B", c: "A + BC → AC + B", d: "AB + CD → AD + CB", correct: 0 },
+            { q: "Which is an example of a combination reaction?", a: "2H₂ + O₂ → 2H₂O", b: "2H₂O₂ → 2H₂O + O₂", c: "Zn + 2HCl → ZnCl₂ + H₂", d: "AgNO₃ + NaCl → AgCl + NaNO₃", correct: 0 },
+            { q: "The Haber process combines Nitrogen and Hydrogen to create Ammonia (NH₃). What type of reaction is this?", a: "Combination", b: "Decomposition", c: "Single Replacement", d: "Combustion", correct: 0 },
+            { q: "What is the equation for the Haber process?", a: "N₂ + 3H₂ → 2NH₃", b: "N₂ + H₂ → NH₃", c: "2N₂ + 3H₂ → 2NH₃", d: "N₂ + 2H₂ → 2NH₃", correct: 0 },
+            { q: "Combination reactions are important in the fertilizer industry because:", a: "They help crops grow faster and increase food production", b: "They release harmful gases", c: "They deplete soil nutrients", d: "They cause acid rain", correct: 0 },
+            
+            // Decomposition
+            { q: "What type of reaction breaks down a single compound into simpler substances?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Double Replacement", correct: 0 },
+            { q: "What is the general formula for decomposition?", a: "AB → A + B", b: "A + B → AB", c: "A + BC → AC + B", d: "AB + CD → AD + CB", correct: 0 },
+            { q: "Hydrogen peroxide decomposes into water and oxygen. What type of reaction is this?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Combustion", correct: 0 },
+            { q: "Which best describes digestion as a chemical process?", a: "New substances are formed from food", b: "Food only changes shape", c: "Food is physically crushed only", d: "Food disappears completely", correct: 0, scenario: "🧬 Digestion involves many chemical reactions inside the body." },
+            { q: "During digestion, large food molecules are broken down into smaller nutrients. This is an example of:", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Double Replacement", correct: 0 },
+            { q: "Decomposition reactions help break down dead plants and animals. This process:", a: "Returns nutrients to the soil", b: "Causes soil erosion", c: "Releases toxic gases", d: "Decreases soil fertility", correct: 0 },
+            { q: "Rotting is a natural and slow process of which reaction type?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Double Replacement", correct: 0 },
+            { q: "What is often needed to break apart a compound in decomposition?", a: "Heat, light, or electricity", b: "Another compound", c: "A catalyst only", d: "Water only", correct: 0 },
+            { q: "Food scraps break down in a compost pit. What type of reaction is this?", a: "Decomposition", b: "Combination", c: "Single Replacement", d: "Combustion", correct: 0 },
+            
+            // Single Replacement
+            { q: "What type of reaction occurs when one element replaces another in a compound?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "What is the general formula for single replacement?", a: "A + BC → AC + B", b: "AB + CD → AD + CB", c: "A + B → AB", d: "AB → A + B", correct: 0 },
+            { q: "Zinc + hydrochloric acid → zinc chloride + hydrogen. What type of reaction is this?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "What is the equation for zinc reacting with hydrochloric acid?", a: "Zn + 2HCl → ZnCl₂ + H₂", b: "Zn + HCl → ZnCl + H", c: "Zn + 2HCl → ZnCl₂ + H₂O", d: "Zn + HCl → ZnO + H₂", correct: 0 },
+            { q: "In a single replacement reaction, a more reactive element takes the place of a less reactive one. This is based on:", a: "Activity series", b: "pH scale", c: "Periodic table", d: "Reactivity series", correct: 0 },
+            { q: "Copper + silver nitrate → copper nitrate + silver. What type of reaction is this?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0, scenario: "Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag" },
+            { q: "Aluminum foil placed in a copper chloride solution undergoes which type of reaction?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "Acid + Metal → Salt + Hydrogen gas. This is an example of:", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "Magnesium + Sulfuric acid → Magnesium sulfate + Hydrogen. This is:", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            
+            // Double Replacement
+            { q: "What type of reaction occurs when two compounds exchange parts to form two new compounds?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "What is the general formula for double replacement?", a: "AB + CD → AD + CB", b: "A + BC → AC + B", c: "A + B → AB", d: "AB → A + B", correct: 0 },
+            { q: "Silver nitrate + sodium chloride → silver chloride + sodium nitrate. What type of reaction is this?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "What is the equation for silver nitrate and sodium chloride?", a: "AgNO₃ + NaCl → AgCl + NaNO₃", b: "AgNO₃ + NaCl → AgNO₃ + NaCl", c: "AgNO₃ + NaCl → Ag₂Cl + NaNO₃", d: "AgNO₃ + NaCl → AgCl₂ + NaNO₃", correct: 0 },
+            { q: "Barium chloride + sodium sulfate → barium sulfate + sodium chloride. This is:", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "What indicates a double replacement reaction has occurred?", a: "Formation of a precipitate", b: "Release of gas", c: "Color change", d: "All of the above", correct: 3 },
+            { q: "Neutralization reaction between an acid and a base is an example of:", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "Acid + Base → Salt + Water is what type of reaction?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            
+            // Combustion
+            { q: "What type of reaction occurs when a substance reacts with oxygen and releases heat and light?", a: "Combustion", b: "Combination", c: "Decomposition", d: "Single Replacement", correct: 0 },
+            { q: "What is the general formula for combustion?", a: "Fuel + O₂ → CO₂ + H₂O + Energy", b: "Fuel + O₂ → CO₂ + Energy", c: "Fuel + O₂ → H₂O + Energy", d: "Fuel + O₂ → CO₂ + H₂O", correct: 0 },
+            { q: "A candle burns continuously while producing light and heat. Which substances are reacting?", a: "Wax vapor and oxygen", b: "Wax and water", c: "Wick and metal", d: "Air and water", correct: 0, scenario: "🕯️ A candle burns continuously while producing light and heat." },
+            { q: "Which is an example of a combustion reaction?", a: "CH₄ + 2O₂ → CO₂ + 2H₂O", b: "2H₂ + O₂ → 2H₂O", c: "Zn + 2HCl → ZnCl₂ + H₂", d: "AgNO₃ + NaCl → AgCl + NaNO₃", correct: 0 },
+            { q: "Burning propane (LPG) for cooking is what type of reaction?", a: "Combustion", b: "Combination", c: "Decomposition", d: "Single Replacement", correct: 0 },
+            { q: "What is released during combustion reactions?", a: "Heat and light", b: "Only heat", c: "Only light", d: "Sound and heat", correct: 0 },
+            { q: "Combustion reactions are essential for energy production but contribute to:", a: "Air pollution and climate change", b: "Water pollution", c: "Soil erosion", d: "Deforestation", correct: 0 },
+            { q: "Magnesium ribbon burns with a bright white flame. What type of reaction is this?", a: "Combustion", b: "Combination", c: "Decomposition", d: "Single Replacement", correct: 0 },
+            
+            // Real-world Applications
+            { q: "What gas is responsible for the bubbles produced during wine fermentation?", a: "Carbon dioxide", b: "Oxygen", c: "Hydrogen", d: "Nitrogen", correct: 0, scenario: "🍷 Fermentation produces bubbles during the early stage of wine making." },
+            { q: "What does the smell of food being grilled indicate?", a: "New compounds are being formed", b: "No change is happening", c: "Food is freezing", d: "Air is being removed", correct: 0, scenario: "🍖 Food releases aroma while being grilled." },
+            { q: "Acids reacting with carbonates lead to the weathering of rocks and deterioration of buildings. This is:", a: "Acid-carbonate reaction", b: "Combustion", c: "Photosynthesis", d: "Respiration", correct: 0 },
+            { q: "Respiration is essential for releasing energy. What type of reaction is respiration?", a: "Combustion (slow oxidation)", b: "Combination", c: "Decomposition", d: "Single Replacement", correct: 0 },
+            { q: "Which reaction is vital for maintaining life on Earth by producing oxygen?", a: "Photosynthesis", b: "Respiration", c: "Combustion", d: "Decomposition", correct: 0 },
+            { q: "When barium chloride is mixed with sodium sulfate, a white solid forms. What type of reaction?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "Decomposition reactions help break down dead organisms and return nutrients to the soil. This is:", a: "Useful for the environment", b: "Harmful to the environment", c: "Neither", d: "Both useful and harmful", correct: 0 },
+            { q: "Combustion reactions are used in cars, factories, and electricity generation. This is an example of:", a: "Useful application", b: "Harmful application", c: "Neither", d: "Both useful and harmful", correct: 0 },
+            { q: "Which reaction type is described as 'like mixing ingredients to make one final product'?", a: "Combination", b: "Decomposition", c: "Single Replacement", d: "Double Replacement", correct: 0 },
+            { q: "Which reaction type is described as 'One element kicks out another and takes its place'?", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "Which reaction type is described as 'Two substances swap partners, like changing dance partners'?", a: "Double Replacement", b: "Single Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "Acids on metals cause corrosion which damages structures. This is an example of:", a: "Single Replacement", b: "Double Replacement", c: "Combination", d: "Decomposition", correct: 0 },
+            { q: "The pH scale measures the concentration of which ions?", a: "Hydrogen ions (H⁺)", b: "Hydroxide ions (OH⁻)", c: "Both H⁺ and OH⁻", d: "Neither", correct: 0 },
+            { q: "A neutralization reaction produces:", a: "Salt and water", b: "Salt and hydrogen", c: "Water and oxygen", d: "Acid and base", correct: 0 }
+        ];
+
+        // ---------- STATE ----------
+        let currentIndex = 0;
+        let score = 0;
+        let answered = false;
+        let selectedIdx = -1;
+
+        const startScreen = document.getElementById('startScreen');
+        const quizContent = document.getElementById('quizContent');
+        const startBtn = document.getElementById('startQuizBtn');
+
+        const qCounter = document.getElementById('qCounter');
+        const qText = document.getElementById('qText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const feedback = document.getElementById('feedbackMsg');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+
+        function renderQuestion(index) {
+            const q = questions[index];
+            if (!q) return;
+            qCounter.textContent = `Question ${index+1} / ${questions.length}`;
+            scoreDisplay.textContent = `${score} correct`;
+
+            let html = '';
+            if (q.scenario) {
+                html += `<span class="scenario"><i class="fas fa-image" style="margin-right:8px;color:#2d7d5a;"></i> ${q.scenario}</span>`;
+            }
+            html += q.q;
+            qText.innerHTML = html;
+
+            optionsContainer.innerHTML = '';
+            const labels = ['A', 'B', 'C', 'D'];
+            const texts = [q.a, q.b, q.c, q.d];
+            texts.forEach((t, i) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                div.textContent = `${labels[i]}. ${t}`;
+                div.dataset.index = i;
+                div.addEventListener('click', () => onOptionClick(i));
+                optionsContainer.appendChild(div);
+            });
+
+            feedback.textContent = '';
+
+            if (answered) {
+                const opts = document.querySelectorAll('.option');
+                opts.forEach((opt, idx) => {
+                    opt.classList.add('disabled-opt');
+                    if (idx === selectedIdx) {
+                        if (idx === q.correct) opt.classList.add('selected-correct');
+                        else opt.classList.add('selected-wrong');
+                    }
+                    if (idx === q.correct) opt.classList.add('show-correct');
+                });
+                const correctText = [q.a, q.b, q.c, q.d][q.correct];
+                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+            } else {
+                document.querySelectorAll('.option').forEach(opt => opt.classList.remove('disabled-opt'));
+            }
+            prevBtn.disabled = (index === 0);
+            nextBtn.disabled = false;
+        }
+
+        function onOptionClick(index) {
+            if (answered) return;
+            const q = questions[currentIndex];
+            const opts = document.querySelectorAll('.option');
+            opts.forEach(o => o.classList.add('disabled-opt'));
+
+            selectedIdx = index;
+            const isCorrect = (index === q.correct);
+            if (isCorrect) {
+                opts[index].classList.add('selected-correct');
+                score++;
+            } else {
+                opts[index].classList.add('selected-wrong');
+                opts[q.correct].classList.add('show-correct');
+            }
+            opts[q.correct].classList.add('show-correct');
+
+            const labels = ['A', 'B', 'C', 'D'];
+            const correctText = [q.a, q.b, q.c, q.d][q.correct];
+            feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+
+            answered = true;
+            scoreDisplay.textContent = `${score} correct`;
+        }
+
+        function goTo(index) {
+            if (index < 0 || index >= questions.length) return;
+            currentIndex = index;
+            answered = false;
+            selectedIdx = -1;
+            renderQuestion(index);
+        }
+
+        function nextQuestion() {
+            if (!answered && currentIndex < questions.length) {
+                const q = questions[currentIndex];
+                const opts = document.querySelectorAll('.option');
+                opts.forEach(o => o.classList.add('disabled-opt'));
+                opts[q.correct].classList.add('show-correct');
+                const labels = ['A', 'B', 'C', 'D'];
+                const correctText = [q.a, q.b, q.c, q.d][q.correct];
+                feedback.innerHTML = `<span style="color:#2b7d4b;"><i class="fas fa-check-circle"></i> Correct answer: ${labels[q.correct]}. ${correctText}</span>`;
+                answered = true;
+                return;
+            }
+            if (currentIndex < questions.length - 1) {
+                goTo(currentIndex + 1);
+            } else {
+                feedback.innerHTML = `<span style="font-weight:600;color:#1a5a44;">🎉 Quiz completed! Score: ${score}/${questions.length}</span>`;
+                nextBtn.disabled = true;
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                goTo(currentIndex - 1);
+                answered = false;
+                selectedIdx = -1;
+                renderQuestion(currentIndex);
+            }
+        }
+
+        function resetQuiz() {
+            currentIndex = 0;
+            score = 0;
+            answered = false;
+            selectedIdx = -1;
+            nextBtn.disabled = false;
+            renderQuestion(0);
+            feedback.textContent = 'Quiz reset.';
+        }
+
+        function startQuiz() {
+            startScreen.classList.add('hidden');
+            quizContent.classList.remove('hidden');
+            resetQuiz();
+        }
+
+        startBtn.addEventListener('click', startQuiz);
+        prevBtn.addEventListener('click', prevQuestion);
+        nextBtn.addEventListener('click', nextQuestion);
+        resetBtn.addEventListener('click', resetQuiz);
+
+        startScreen.classList.remove('hidden');
+        quizContent.classList.add('hidden');
+    })();
+</script>
+</body>
+</html>
