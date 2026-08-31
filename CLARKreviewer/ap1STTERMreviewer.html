@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARALING PANLIPUNAN · Quiz 1–40</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f5efe8;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 820px;
+            width: 100%;
+            background: #fcf9f5;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(80,50,30,0.25);
+            padding: 2rem 2.2rem 2.5rem;
+            transition: 0.2s;
+            border: 1px solid #e6d9cc;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #5a3e2b;
+            border-left: 6px solid #b87333;
+            padding-left: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+        .subhead {
+            color: #7a5f4a;
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #dccfc2;
+            padding-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .reviewer-snapshot {
+            background: #f5ede4;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e2d3c4;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        .reviewer-snapshot span {
+            background: #e8d9ca;
+            padding: 0.15rem 0.9rem;
+            border-radius: 30px;
+            color: #4d3422;
+        }
+        .quiz-card {
+            background: #fcf8f3;
+            border-radius: 1.8rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e6d9cc;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #5a3e2b;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #8a6f5a;
+        }
+        .score-badge {
+            background: #b87333;
+            color: #fcf9f5;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .question-box {
+            margin: 0.5rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #3d2a1b;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.8rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f5ede4;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.1s;
+            font-weight: 450;
+            color: #3d2a1b;
+        }
+        .options-grid label:hover {
+            background: #ece0d4;
+            border-color: #c9b4a0;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #b87333;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #f0e8df;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #f5ede4;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.5rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #b8a390;
+            color: #3d2a1b;
+        }
+        .feedback-area.correct {
+            background: #e0f0e0;
+            border-left-color: #2d7d46;
+            color: #1a4a2a;
+        }
+        .feedback-area.wrong {
+            background: #f5e0e0;
+            border-left-color: #b34a4a;
+            color: #7a2a2a;
+        }
+        .feedback-area.show-answer {
+            background: #e8e0f0;
+            border-left-color: #7a5a8a;
+            color: #3d2a4a;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            background: #fcf9f5;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            border: 1.5px solid #8a6f5a;
+            color: #5a3e2b;
+        }
+        .btn-primary {
+            background: #b87333;
+            color: #fcf9f5;
+            border-color: #b87333;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #9a5f28;
+            border-color: #9a5f28;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #2d7d46;
+            border-color: #2d7d46;
+            color: #fcf9f5;
+        }
+        .btn-success:hover {
+            background: #1f6635;
+            border-color: #1f6635;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #8a6f5a;
+            color: #5a3e2b;
+        }
+        .btn-outline:hover {
+            background: #ece0d4;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #f5ede4;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #5a3e2b;
+        }
+        .result-summary strong {
+            color: #b87333;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #8a6f5a;
+            text-align: center;
+            border-top: 1px solid #dccfc2;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 550px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1.2rem; }
+            .q-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📚 ARALING PANLIPUNAN</h1>
+    <div class="subhead">
+        <span>📝 Step‑by‑step · 1–40</span>
+        <span style="background:#ece0d4; padding:0 1rem; border-radius:30px; color:#5a3e2b;">40 items</span>
+    </div>
+
+    <div class="reviewer-snapshot">
+        <span>🏺 Manunggul Jar</span>
+        <span>🕌 Islam & Arkan</span>
+        <span>👑 Sultanato</span>
+        <span>🌏 Ugnayan sa Asya</span>
+        <span>👩 Kababaihan</span>
+        <span>🎨 Sining & Arkitektura</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Tanong 1 <small>ng 40</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+
+        <div id="questionContainer">
+            <!-- dynamic -->
+        </div>
+
+        <div class="action-row" id="actionRow">
+            <button class="btn btn-primary" id="submitAnswerBtn">✅ Isumite ang sagot</button>
+            <button class="btn btn-success" id="nextQuestionBtn" disabled>➡️ Susunod na tanong</button>
+            <button class="btn btn-outline" id="resetQuizBtn">🔄 Muli (shuffle)</button>
+        </div>
+
+        <div id="resultContainer" style="display: none;" class="result-summary"></div>
+        <div class="footer-note">⬆️ Sagutin ang bawat tanong, tingnan ang feedback, pagkatapos ay lumipat sa susunod.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- MASTER QUESTION BANK (40) ----------
+        const MASTER_QUESTIONS = [
+            // Kalinangan (1-5)
+            { q: "Ano ang tawag sa kabuuan ng paraan ng pamumuhay ng isang pangkat ng tao?", opts: ["Ekonomiya", "Kalinangan", "Politika", "Heograpiya"], ans: 1 },
+            { q: "Alin ang kabilang sa kalinangan?", opts: ["Wika at tradisyon", "Klima lamang", "Laki ng lupain", "Dami ng populasyon lamang"], ans: 0 },
+            { q: "Ilang pangunahing uri ng kalinangan ang tinatalakay sa inyong reviewer?", opts: ["Isa", "Dalawa", "Tatlo", "Apat"], ans: 1 },
+            { q: "Alin ang halimbawa ng materyal na kalinangan?", opts: ["Paniniwala", "Wika", "Gusali", "Tradisyon"], ans: 2 },
+            { q: "Alin ang halimbawa ng di-materyal na kalinangan?", opts: ["Damit", "Bahay", "Palamuti", "Paniniwala"], ans: 3 },
+
+            // Manunggul Jar (6-10)
+            { q: "Ano ang Manunggul Jar?", opts: ["Isang uri ng sandata", "Isang sinaunang banga", "Isang uri ng bahay", "Isang sasakyang pandagat"], ans: 1 },
+            { q: "Saan natagpuan ang Manunggul Jar?", opts: ["Tabon Cave", "Banaue", "Intramuros", "Maynila"], ans: 0 },
+            { q: "Ano ang mahalagang ipinapakita ng Manunggul Jar?", opts: ["Sinaunang paniniwala tungkol sa kamatayan at kabilang-buhay", "Sinaunang sistema ng pagsasaka", "Sinaunang paraan ng pakikipagdigma", "Sinaunang paraan ng pagbubuwis"], ans: 0 },
+            { q: "Ang Manunggul Jar ay patunay ng mataas na antas ng ____ ng mga sinaunang Pilipino.", opts: ["teknolohiya at sining", "pagmimina lamang", "politika lamang", "kalakalan lamang"], ans: 0 },
+            { q: "Ang mga pigura sa takip ng Manunggul Jar ay may kaugnayan sa ____.", opts: ["paglalakbay sa kabilang-buhay", "pagsasaka", "pangingisda", "pangangaso"], ans: 0 },
+
+            // Pagdating at Paglaganap ng Islam (11-15)
+            { q: "Anong relihiyon ang dumating at lumaganap sa ilang bahagi ng Pilipinas bago dumating ang mga Espanyol?", opts: ["Hinduismo", "Budismo", "Islam", "Kristiyanismo"], ans: 2 },
+            { q: "Saang bahagi ng Pilipinas unang naging malakas ang impluwensiya ng Islam?", opts: ["Hilagang Luzon", "Mindanao at Sulu", "Cordillera", "Batanes"], ans: 1 },
+            { q: "Sino ang mga taong may malaking papel sa pagpapalaganap ng Islam sa Timog Pilipinas?", opts: ["Mga misyonerong Muslim at mangangalakal", "Mga conquistador", "Mga Amerikano", "Mga Kastila"], ans: 0 },
+            { q: "Ano ang isa sa mga dahilan kung bakit mabilis na lumaganap ang Islam sa ilang pamayanan?", opts: ["Kalakalan at pakikipag-ugnayan", "Sapilitang edukasyon ng mga Kastila", "Pagdating ng mga Amerikano", "Pagtatayo ng mga riles"], ans: 0 },
+            { q: "Ang Islam ay isang relihiyong nagmula sa ____.", opts: ["India", "Arabia", "China", "Japan"], ans: 1 },
+
+            // Arkan ng Islam (16-22)
+            { q: "Ilan ang Arkan ng Islam o Five Pillars of Islam?", opts: ["3", "4", "5", "6"], ans: 2 },
+            { q: "Ano ang tawag sa pagpapahayag ng pananampalataya sa Islam?", opts: ["Zakat", "Hajj", "Shahada", "Sawm"], ans: 2 },
+            { q: "Ano ang Zakat?", opts: ["Pag-aayuno", "Pagbibigay ng kawanggawa", "Paglalakbay", "Panalangin"], ans: 1 },
+            { q: "Ano ang Sawm?", opts: ["Pag-aayuno", "Paglalakbay sa Mecca", "Pagbibigay ng kawanggawa", "Pagpapahayag ng pananampalataya"], ans: 0 },
+            { q: "Ano ang Hajj?", opts: ["Pag-aayuno", "Paglalakbay sa Mecca", "Pagbibigay ng buwis", "Pangangalakal"], ans: 1 },
+            { q: "Ilang beses sa isang araw isinasagawa ang obligadong pagdarasal ng isang Muslim?", opts: ["2", "3", "5", "7"], ans: 2 },
+            { q: "Ano ang tawag sa obligadong pagdarasal sa Islam?", opts: ["Salah", "Zakat", "Hajj", "Sawm"], ans: 0 },
+
+            // Sultanato (23-27)
+            { q: "Ano ang Sultanato?", opts: ["Uri ng sinaunang pamahalaan na pinamumunuan ng Sultan", "Uri ng relihiyon", "Uri ng sasakyang pandagat", "Uri ng sining"], ans: 0 },
+            { q: "Sino ang namumuno sa isang Sultanato?", opts: ["Datu", "Rajah", "Sultan", "Gobernador"], ans: 2 },
+            { q: "Alin ang naging mahalagang sentro ng Sultanato sa Pilipinas?", opts: ["Sulu", "Baguio", "Ilocos", "Bicol"], ans: 0 },
+            { q: "Ano ang malaking papel ng Sultanato sa Timog Pilipinas?", opts: ["Pamamahala at pagpapaunlad ng kalakalan", "Pagtatayo ng mga tren", "Pagpapalaganap ng Kristiyanismo", "Pagbuo ng mga modernong lungsod"], ans: 0 },
+            { q: "Ang Sultanato ng Sulu ay naging mahalagang sentro ng ____.", opts: ["kalakalan", "pagmimina ng ginto lamang", "paggawa ng kotse", "industriya ng tela lamang"], ans: 0 },
+
+            // Ugnayan ng Pilipinas sa Ibang Bansa sa Asya (28-31)
+            { q: "Ano ang isang pangunahing dahilan ng pakikipag-ugnayan ng sinaunang Pilipinas sa ibang bansa sa Asya?", opts: ["Kalakalan", "Turismo", "Industriyalisasyon", "Kolonisasyon ng Amerika"], ans: 0 },
+            { q: "Alin sa mga sumusunod ang bansang may sinaunang ugnayan sa Pilipinas?", opts: ["China", "Canada", "Brazil", "Mexico"], ans: 0 },
+            { q: "Ano ang naidulot ng pakikipagkalakalan sa ibang bansa?", opts: ["Palitan ng produkto at kultura", "Pagkawala ng lahat ng tradisyon", "Pagkakaroon agad ng modernong teknolohiya", "Pagtigil ng mga pamayanan"], ans: 0 },
+            { q: "Ang palitan ng ideya, kaugalian, at paniniwala sa pagitan ng mga bansa ay tinatawag na ____.", opts: ["pagpapalitan ng kultura", "digmaan", "migrasyon lamang", "pagbubuwis"], ans: 0 },
+
+            // Kababaihan sa Sinaunang Pilipino (32-34)
+            { q: "Ano ang mahalagang papel ng kababaihan sa ilang sinaunang pamayanan sa Pilipinas?", opts: ["Wala silang anumang papel", "May mahalagang papel sa pamilya, ekonomiya, at lipunan", "Sila lamang ang maaaring mamuno", "Sila lamang ang nakikipagdigma"], ans: 1 },
+            { q: "Sino ang maaaring magkaroon ng mahalagang papel sa mga gawaing pangkalakalan at tahanan?", opts: ["Kababaihan", "Mga dayuhan lamang", "Mga sundalo lamang", "Mga pinuno lamang"], ans: 0 },
+            { q: "Ano ang ipinapakita ng pagkakaroon ng mahalagang papel ng kababaihan sa sinaunang lipunan?", opts: ["May ambag sila sa pag-unlad ng pamayanan", "Hindi sila bahagi ng lipunan", "Wala silang karapatan", "Hindi sila nagtatrabaho"], ans: 0 },
+
+            // Relihiyon, Sining, Pagpapalamuti at Arkitektura (35-40)
+            { q: "Ano ang maaaring makaapekto sa relihiyon at tradisyon ng isang sinaunang pamayanan?", opts: ["Pakikipag-ugnayan sa ibang kultura", "Laki ng notebook", "Uri ng modernong sasakyan", "Social media"], ans: 0 },
+            { q: "Alin ang halimbawa ng sinaunang sining?", opts: ["Pag-ukit", "Computer animation", "Digital photography", "Video editing"], ans: 0 },
+            { q: "Bakit gumagamit ng palamuti ang mga sinaunang Pilipino?", opts: ["Para sa kagandahan at pagpapakita ng kultura o katayuan", "Para lamang sa paglalaro", "Para gumawa ng sasakyan", "Para sa modernong teknolohiya"], ans: 0 },
+            { q: "Alin ang halimbawa ng arkitekturang sinaunang Pilipino?", opts: ["Bahay kubo", "Condominium", "Skyscraper", "Shopping mall"], ans: 0 },
+            { q: "Ang mga disenyo sa sinaunang sining at arkitektura ay maaaring magpakita ng ____.", opts: ["kultura at paniniwala", "presyo ng produkto", "modernong teknolohiya", "internet connection"], ans: 0 },
+            { q: "Bakit mahalagang pag-aralan ang kalinangan ng sinaunang Pilipino?", opts: ["Upang maunawaan at mapahalagahan ang ating kasaysayan at kultura", "Upang makalimutan ang nakaraan", "Upang palitan ang lahat ng tradisyon", "Upang malaman lamang ang pangalan ng mga lugar"], ans: 0 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        // DOM refs
+        const questionContainer = document.getElementById('questionContainer');
+        const submitBtn = document.getElementById('submitAnswerBtn');
+        const nextBtn = document.getElementById('nextQuestionBtn');
+        const resetBtn = document.getElementById('resetQuizBtn');
+        const questionCounter = document.getElementById('questionCounter');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // ----- helpers -----
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Hindi nasagot. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Tama! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Mali. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            questionContainer.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Tapos na & tingnan ang marka';
+            } else {
+                nextBtn.textContent = '➡️ Susunod na tanong';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            questionCounter.innerHTML = `Tanong ${currentIndex+1} <small>ng ${total}</small>`;
+            scoreDisplay.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) {
+                submitBtn.disabled = true;
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const isCorrect = (selectedOption === q.ans);
+            if (isCorrect) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = '';
+            if (percent >= 90) grade = '🌟 Napakahusay!';
+            else if (percent >= 70) grade = '👍 Magaling!';
+            else if (percent >= 50) grade = '📖 Mag-aral pa!';
+            else grade = '💪 Pag-aralan muli at subukan ulit.';
+            resultContainer.style.display = 'block';
+            resultContainer.innerHTML = `
+                <div>🎯 Nakasagot ka ng <strong>${score}</strong> sa <strong>${total}</strong> nang tama.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Pindutin ang "Muli" para i-shuffle at subukan ulit.</div>
+            `;
+            questionContainer.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreDisplay.textContent = `✅ ${score} / ${total}`;
+            questionCounter.innerHTML = `🎉 Tapos na!`;
+        }
+
+        function handleReset() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            resetQuiz();
+        }
+
+        // ----- init -----
+        function init() {
+            resetQuiz();
+            submitBtn.addEventListener('click', handleSubmit);
+            nextBtn.addEventListener('click', handleNext);
+            resetBtn.addEventListener('click', handleReset);
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>
