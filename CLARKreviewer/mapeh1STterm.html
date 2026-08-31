@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAPEH · Step-by-Step Quiz</title>
+    <title>MAPEH · Week 11 Quiz</title>
     <style>
         * {
             margin: 0;
@@ -238,18 +238,17 @@
 </head>
 <body>
 <div class="container">
-    <h1>🎵 MAPEH · 1st Term</h1>
+    <h1>📚 MAPEH · Week 11</h1>
     <div class="subhead">
-        <span>📚 step‑by‑step · show answer per question</span>
+        <span>📝 Step‑by‑step · show answer per question</span>
         <span style="background:#e2edf6; padding:0 1rem; border-radius:30px;">40 items</span>
     </div>
 
-    <!-- quick reviewer chip -->
     <div class="reviewer-snapshot">
-        <span>🎶 Music: notes, dynamics, tempo</span>
-        <span>🎨 Arts: color, balance, texture</span>
-        <span>⛹️ PE: FITT, fitness, warm-up</span>
-        <span>🧘 Health: nutrition, RICE, coping</span>
+        <span>🩺 Health: Puberty, Hygiene, Stress, Bullying</span>
+        <span>🏃 PE: Agility, Coordination, Balance, Speed</span>
+        <span>🎵 Music: Rhythm, Tempo, Pattern, Symbolism</span>
+        <span>🇵🇭 Arts: Bulul, Manunggul, Tapestry, Carving</span>
     </div>
 
     <div class="quiz-card" id="quizCard">
@@ -277,62 +276,62 @@
     (function() {
         // ---------- MASTER QUESTION BANK (40) ----------
         const MASTER_QUESTIONS = [
-            // Music (1-8)
-            { q: "Which note receives 4 beats in 4/4 time?", opts: ["Whole note", "Half note", "Quarter note", "Eighth note"], ans: 0 },
-            { q: "What is the time signature that means 4 beats per measure?", opts: ["2/4", "3/4", "4/4", "6/8"], ans: 2 },
-            { q: "Which dynamic marking means 'soft'?", opts: ["f", "p", "mf", "ff"], ans: 1 },
-            { q: "What is the tempo marking for a very fast speed?", opts: ["Largo", "Andante", "Allegro", "Presto"], ans: 3 },
-            { q: "How many eighth notes are in a quarter note?", opts: ["1", "2", "3", "4"], ans: 1 },
-            { q: "What is the key signature with one sharp (F#)?", opts: ["C major", "G major", "F major", "D major"], ans: 1 },
-            { q: "A melodic interval that moves from one line to the next space is called?", opts: ["Step", "Skip", "Leap", "Repeat"], ans: 0 },
-            { q: "Which element is NOT a dynamic marking?", opts: ["crescendo", "decrescendo", "staccato", "pianissimo"], ans: 2 },
-            // Arts (9-15)
-            { q: "Which is a primary color?", opts: ["Green", "Orange", "Red", "Purple"], ans: 2 },
-            { q: "What color harmony uses opposite colors on the color wheel?", opts: ["Analogous", "Complementary", "Monochromatic", "Triadic"], ans: 1 },
-            { q: "Which principle of art refers to the distribution of visual weight?", opts: ["Balance", "Emphasis", "Rhythm", "Unity"], ans: 0 },
-            { q: "Texture that you can actually feel is called:", opts: ["Implied texture", "Actual texture", "Visual texture", "Tactile texture"], ans: 1 },
-            { q: "Which element refers to the lightness or darkness of a color?", opts: ["Value", "Hue", "Saturation", "Tint"], ans: 0 },
-            { q: "What is the area around, between, and within objects called?", opts: ["Shape", "Form", "Space", "Line"], ans: 2 },
-            { q: "A color mixed with white is called a:", opts: ["Shade", "Tint", "Tone", "Hue"], ans: 1 },
-            // PE (16-22)
-            { q: "Which is a health-related fitness component?", opts: ["Agility", "Power", "Cardiovascular endurance", "Reaction time"], ans: 2 },
-            { q: "What does the 'F' in FITT stand for?", opts: ["Frequency", "Flexibility", "Force", "Fitness"], ans: 0 },
-            { q: "Which type of stretching is performed before exercise?", opts: ["Static", "Dynamic", "Ballistic", "Passive"], ans: 1 },
-            { q: "What is the recommended daily moderate exercise for youth?", opts: ["20 min", "40 min", "60 min", "90 min"], ans: 2 },
-            { q: "Which skill-related component is the ability to change direction quickly?", opts: ["Agility", "Coordination", "Balance", "Power"], ans: 0 },
-            { q: "A cool-down after exercise helps:", opts: ["Prevent injury", "Increase heart rate", "Build muscle", "Decrease flexibility"], ans: 0 },
-            { q: "Which is an example of muscular endurance activity?", opts: ["Heavy weightlifting", "Sprinting", "Planks", "High jump"], ans: 2 },
-            // Health (23-32)
-            { q: "Which macronutrient is the body's primary energy source?", opts: ["Protein", "Fat", "Carbohydrates", "Vitamins"], ans: 2 },
-            { q: "Which food group is rich in calcium?", opts: ["Fruits", "Grains", "Dairy", "Protein"], ans: 2 },
-            { q: "What is the recommended daily water intake for teens (approx.)?", opts: ["4 cups", "6 cups", "8 cups", "12 cups"], ans: 2 },
-            { q: "Which mental health strategy involves deep breathing?", opts: ["Meditation", "Exercise", "Socializing", "Sleep"], ans: 0 },
-            { q: "What does 'RICE' stand for in first aid?", opts: ["Rest, Ice, Compression, Elevation", "Run, Ice, Care, Exercise", "Relax, Immobilize, Cool, Elevate", "Rehab, Ice, Core, Endurance"], ans: 0 },
-            { q: "Which substance is a depressant that slows down the brain?", opts: ["Caffeine", "Nicotine", "Alcohol", "Sugar"], ans: 2 },
-            { q: "A disease that can be prevented through vaccination is:", opts: ["Diabetes", "Measles", "Asthma", "Cancer"], ans: 1 },
-            { q: "What is the main function of the immune system?", opts: ["Digest food", "Fight infection", "Transport oxygen", "Filter blood"], ans: 1 },
-            { q: "How much sleep is generally recommended for teens?", opts: ["6–7 hours", "8–10 hours", "11–12 hours", "4–5 hours"], ans: 1 },
-            // Extra mixed (33-40)
-            { q: "Which instrument is a woodwind?", opts: ["Trumpet", "Flute", "Violin", "Trombone"], ans: 1 },
-            { q: "What is the symbol for a half rest?", opts: ["Solid rectangle above line", "Solid rectangle below line", "Hollow rectangle", "X mark"], ans: 0 },
-            { q: "Which color scheme uses variations of a single hue?", opts: ["Complementary", "Analogous", "Monochromatic", "Triadic"], ans: 2 },
-            { q: "What is the principle of art that creates a focal point?", opts: ["Emphasis", "Balance", "Proportion", "Movement"], ans: 0 },
-            { q: "Which is NOT a skill-related fitness component?", opts: ["Speed", "Agility", "Muscular strength", "Coordination"], ans: 2 },
-            { q: "What is a healthy BMI range for teens?", opts: ["Under 18", "18.5–24.9", "25–29.9", "Over 30"], ans: 1 },
-            { q: "Which vitamin helps with vision?", opts: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"], ans: 0 },
-            { q: "What is an example of a healthy coping strategy?", opts: ["Avoiding problems", "Talking to a trusted friend", "Overeating", "Screaming"], ans: 1 }
+            // HEALTH (1-12)
+            { q: "What stage happens when a child starts experiencing physical and emotional changes?", opts: ["Infancy", "Puberty", "Adulthood", "Old age"], ans: 1 },
+            { q: "Adolescence is the stage between childhood and ___.", opts: ["infancy", "adulthood", "birth", "sleep"], ans: 1 },
+            { q: "Which is an example of proper hygiene?", opts: ["Not taking a bath", "Brushing your teeth", "Wearing dirty clothes", "Never washing your hands"], ans: 1 },
+            { q: "Why is proper hygiene important?", opts: ["To stay clean and healthy", "To become tired", "To get sick", "To become dirty"], ans: 0 },
+            { q: "Which may happen during puberty?", opts: ["Changes in the body", "Becoming a baby again", "Stopping growth forever", "Never changing"], ans: 0 },
+            { q: "What is stress?", opts: ["A feeling of pressure or worry", "A type of food", "A sport", "A musical instrument"], ans: 0 },
+            { q: "Which can help manage stress?", opts: ["Resting and talking to a trusted adult", "Ignoring all problems forever", "Being mean to others", "Skipping hygiene"], ans: 0 },
+            { q: "What is bullying?", opts: ["Repeatedly hurting or mistreating someone", "Helping a classmate", "Playing fairly", "Sharing food"], ans: 0 },
+            { q: "Kicking someone is an example of ___.", opts: ["physical bullying", "kindness", "cooperation", "hygiene"], ans: 0 },
+            { q: "Insulting someone is an example of ___.", opts: ["verbal bullying", "balance", "pottery", "coordination"], ans: 0 },
+            { q: "Excluding someone on purpose can be a form of ___.", opts: ["bullying", "exercise", "hygiene", "music"], ans: 0 },
+            { q: "If you experience bullying, what is a good thing to do?", opts: ["Tell a trusted adult", "Keep hurting others", "Bully another person", "Ignore danger"], ans: 0 },
+
+            // PHYSICAL EDUCATION (13-22)
+            { q: "The ability to move quickly and change direction is called ___.", opts: ["agility", "tempo", "pottery", "symbolism"], ans: 0 },
+            { q: "The ability to control different body movements together is ___.", opts: ["coordination", "bullying", "carving", "puberty"], ans: 0 },
+            { q: "The ability to stay steady without falling is called ___.", opts: ["balance", "stress", "rhythm", "exclusion"], ans: 0 },
+            { q: "The ability to move quickly is called ___.", opts: ["speed", "tapestry", "medium", "carving"], ans: 0 },
+            { q: "Which activity requires balance?", opts: ["Standing on one foot", "Sleeping", "Reading only", "Listening to music"], ans: 0 },
+            { q: "Which skill helps a player quickly avoid an opponent?", opts: ["Agility", "Pottery", "Hygiene", "Symbolism"], ans: 0 },
+            { q: "Catching a ball requires good ___.", opts: ["coordination", "tempo", "stress", "puberty"], ans: 0 },
+            { q: "Running fast from one place to another mainly uses ___.", opts: ["speed", "tapestry", "carving", "rhythm"], ans: 0 },
+            { q: "Striking and fielding are commonly used in games involving a ___.", opts: ["ball", "pillow", "book", "spoon"], ans: 0 },
+            { q: "Which is most important for standing steadily on a narrow surface?", opts: ["Balance", "Bullying", "Stress", "Tempo"], ans: 0 },
+
+            // MUSIC AND ARTS (23-30)
+            { q: "A repeated design in art is called a ___.", opts: ["pattern", "puberty", "speed", "stress"], ans: 0 },
+            { q: "When an object represents an idea, it is called ___.", opts: ["symbolism", "hygiene", "agility", "exclusion"], ans: 0 },
+            { q: "The regular movement or beat in music is called ___.", opts: ["rhythm", "balance", "pottery", "carving"], ans: 0 },
+            { q: "The speed of music is called ___.", opts: ["tempo", "pattern", "medium", "puberty"], ans: 0 },
+            { q: "What does 'medium' mean in art?", opts: ["The material used to create artwork", "The speed of music", "A type of bullying", "A physical skill"], ans: 0 },
+            { q: "Which is an example of an art medium?", opts: ["Paint", "Speed", "Agility", "Stress"], ans: 0 },
+            { q: "Which term describes the fast or slow speed of a song?", opts: ["Tempo", "Pattern", "Symbolism", "Balance"], ans: 0 },
+            { q: "Which term describes repeated sounds or beats in music?", opts: ["Rhythm", "Bullying", "Puberty", "Hygiene"], ans: 0 },
+
+            // PHILIPPINE ARTS AND CULTURE (31-40)
+            { q: "A Bulul statue is traditionally associated with the ___.", opts: ["Ifugao", "Spanish", "American", "Egyptian"], ans: 0 },
+            { q: "The Manunggul Jar is an important example of ancient Philippine ___.", opts: ["pottery", "basketball", "music only", "modern technology"], ans: 0 },
+            { q: "Art made by weaving threads or fibers together can be called ___.", opts: ["tapestry", "sculpture", "bullying", "puberty"], ans: 0 },
+            { q: "Creating objects from clay is called ___.", opts: ["pottery", "speed", "rhythm", "agility"], ans: 0 },
+            { q: "Making art by cutting or shaping wood or other materials is called ___.", opts: ["carving", "balance", "hygiene", "tempo"], ans: 0 },
+            { q: "A three-dimensional work of art is called a ___.", opts: ["sculpture", "pattern", "rhythm", "stress"], ans: 0 },
+            { q: "Making cloth by interlacing threads is called ___.", opts: ["textile weaving", "bullying", "striking", "puberty"], ans: 0 },
+            { q: "Traditional tattooing can be considered a form of ___.", opts: ["cultural art", "physical activity", "hygiene", "bullying"], ans: 0 },
+            { q: "Which is an example of traditional Philippine visual art?", opts: ["Manunggul Jar", "Running", "Brushing teeth", "Sleeping"], ans: 0 },
+            { q: "Which group contains art-related terms?", opts: ["Pattern, symbolism, rhythm, medium", "Kicking, insulting, exclusion, bullying", "Agility, speed, stress, puberty", "Hygiene, balance, pottery, adolescence"], ans: 0 }
         ];
-        // ensure exactly 40
-        while (MASTER_QUESTIONS.length < 40) MASTER_QUESTIONS.push({ q: "sample", opts: ["A","B","C","D"], ans: 0 });
-        if (MASTER_QUESTIONS.length > 40) MASTER_QUESTIONS.length = 40;
 
         // ----- state -----
-        let currentQuestions = [];          // shuffled copy
-        let currentIndex = 0;              // 0-based
+        let currentQuestions = [];
+        let currentIndex = 0;
         let score = 0;
-        let answeredCount = 0;             // number of questions already answered (for score)
-        let selectedOption = null;         // index of selected option for current question
-        let isAnswered = false;            // if current question already submitted
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
 
         // DOM refs
         const questionContainer = document.getElementById('questionContainer');
@@ -352,9 +351,7 @@
             return arr;
         }
 
-        // reset / restart (shuffle)
         function resetQuiz() {
-            // shuffle a copy of MASTER_QUESTIONS
             currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
             currentIndex = 0;
             score = 0;
@@ -365,15 +362,15 @@
             resultContainer.innerHTML = '';
             submitBtn.disabled = false;
             nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
             renderQuestion();
             updateScoreAndCounter();
         }
 
-        // render current question
         function renderQuestion() {
             if (!currentQuestions.length) return;
             if (currentIndex >= currentQuestions.length) {
-                // quiz finished
                 showFinalResult();
                 return;
             }
@@ -395,7 +392,6 @@
             });
             html += `</div>`;
 
-            // feedback area if answered
             if (isAnswered) {
                 const correct = q.ans;
                 const isCorrect = (selectedOption === correct);
@@ -417,21 +413,17 @@
             html += `</div>`;
             questionContainer.innerHTML = html;
 
-            // attach change listener to radio buttons (only if not answered)
             if (!isAnswered) {
                 document.querySelectorAll('input[name="question"]').forEach(radio => {
                     radio.addEventListener('change', function(e) {
                         selectedOption = parseInt(this.value);
-                        // enable submit if any option selected
                         submitBtn.disabled = false;
                     });
                 });
             }
 
-            // update buttons
             submitBtn.disabled = isAnswered || (selectedOption === null);
             nextBtn.disabled = !isAnswered;
-            // if last question, change next button text
             if (currentIndex === currentQuestions.length - 1 && isAnswered) {
                 nextBtn.textContent = '🏁 Finish & see score';
             } else {
@@ -446,7 +438,6 @@
             scoreDisplay.textContent = `✅ ${score} / ${answeredCount}`;
         }
 
-        // submit current answer
         function handleSubmit() {
             if (isAnswered) return;
             if (selectedOption === null) {
@@ -460,16 +451,13 @@
             isAnswered = true;
             submitBtn.disabled = true;
             nextBtn.disabled = false;
-            // re-render to show feedback
             renderQuestion();
             updateScoreAndCounter();
         }
 
-        // go to next question or finish
         function handleNext() {
             if (!isAnswered) return;
             if (currentIndex === currentQuestions.length - 1) {
-                // finish quiz
                 showFinalResult();
                 return;
             }
@@ -496,33 +484,24 @@
                 <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
                 <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Press "Restart" to shuffle and try again.</div>
             `;
-            // hide question and buttons
             questionContainer.innerHTML = '';
             submitBtn.style.display = 'none';
             nextBtn.style.display = 'none';
-            // show reset only
-            resetBtn.style.display = 'inline-block';
-            // update score display
             scoreDisplay.textContent = `✅ ${score} / ${total}`;
             questionCounter.innerHTML = `🎉 Complete!`;
         }
 
-        // reset with shuffle
         function handleReset() {
-            // reset display
             submitBtn.style.display = 'inline-block';
             nextBtn.style.display = 'inline-block';
-            resetBtn.style.display = 'inline-block';
             resultContainer.style.display = 'none';
             resultContainer.innerHTML = '';
-            // re-init
             resetQuiz();
         }
 
         // ----- init -----
         function init() {
             resetQuiz();
-            // event listeners
             submitBtn.addEventListener('click', handleSubmit);
             nextBtn.addEventListener('click', handleNext);
             resetBtn.addEventListener('click', handleReset);

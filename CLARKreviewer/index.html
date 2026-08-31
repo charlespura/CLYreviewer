@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📚 CLARK Reviewer · Landing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f0f4fa;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+        .wrapper {
+            max-width: 1100px;
+            width: 100%;
+        }
+        /* HEADER */
+        .landing-header {
+            text-align: center;
+            margin-bottom: 2.8rem;
+        }
+        .landing-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0b2b3b;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.8rem;
+        }
+        .landing-header h1 span {
+            background: #1a5a6b;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 0.1rem 1.6rem;
+            border-radius: 60px;
+            letter-spacing: 0.3px;
+        }
+        .landing-header p {
+            font-size: 1.1rem;
+            color: #3f6073;
+            margin-top: 0.4rem;
+            border-top: 2px dashed #c8d8e5;
+            padding-top: 0.8rem;
+            display: inline-block;
+        }
+        /* GRID */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem 1.8rem;
+            margin-top: 0.5rem;
+        }
+        .quiz-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 12px 28px -8px rgba(0, 20, 30, 0.12);
+            transition: 0.2s ease;
+            border: 1px solid #e2ebf3;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        .quiz-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(0, 30, 50, 0.2);
+            border-color: #b8cedf;
+        }
+        .card-icon {
+            font-size: 3.2rem;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+        .card-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b3b;
+            margin: 0.2rem 0 0.1rem;
+        }
+        .card-sub {
+            font-size: 0.9rem;
+            color: #4b6f84;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.2px;
+        }
+        .card-desc {
+            font-size: 0.95rem;
+            color: #3f5f72;
+            line-height: 1.5;
+            flex: 1;
+            margin: 0.3rem 0 0.8rem;
+        }
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.6rem;
+            margin-top: 0.4rem;
+        }
+        .card-tags span {
+            background: #eaf1f7;
+            padding: 0.1rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1d4a5e;
+        }
+        .card-badge {
+            align-self: flex-start;
+            margin-top: 0.8rem;
+            background: #1a5a6b;
+            color: white;
+            padding: 0.2rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .card-badge.science {
+            background: #1f7a6b;
+        }
+        .card-badge.filipino {
+            background: #a67a4a;
+        }
+        .card-badge.mapeh {
+            background: #b13b4b;
+        }
+
+        /* FOOTER */
+        .footer-note {
+            margin-top: 3.5rem;
+            text-align: center;
+            color: #4f6f82;
+            font-size: 0.9rem;
+            border-top: 1px solid #d5e0e9;
+            padding-top: 1.8rem;
+            width: 100%;
+        }
+        .footer-note a {
+            color: #1a5a6b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .landing-header h1 { font-size: 2.2rem; }
+            .card-grid { gap: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <header class="landing-header">
+        <h1>
+            📚 CLARK Reviewer
+            <span>1st Term</span>
+        </h1>
+        <p>⬅️ Pumili ng subject upang mag‑quiz · step‑by‑step na may instant feedback</p>
+    </header>
+
+    <div class="card-grid">
+
+        <!-- SCIENCE CARD -->
+        <a href="science1STTERMreviewer.html" class="quiz-card">
+            <div class="card-icon">🔬</div>
+            <div class="card-title">Science</div>
+            <div class="card-sub">Living Things · Plants · Mass</div>
+            <div class="card-desc">
+                40‑item quiz. Mammals, birds, reptiles, fish, amphibians, insects, fungi, bacteria, plant structures, mangroves, dry areas, mass.
+            </div>
+            <div class="card-tags">
+                <span>🐕 Mammals</span>
+                <span>🌱 Thorns</span>
+                <span>🌊 Mangroves</span>
+                <span>⚖️ Mass</span>
+            </div>
+            <div class="card-badge science">40 questions</div>
+        </a>
+
+        <!-- FILIPINO CARD -->
+        <a href="filipino1STTERMreviewer.html" class="quiz-card">
+            <div class="card-icon">📖</div>
+            <div class="card-title">Filipino V</div>
+            <div class="card-sub">Teksto · Multimedia · Liham</div>
+            <div class="card-desc">
+                40‑item quiz. Naratibo, impormatibo, prosidyural, argumentatibo; multimedia elements; liham pangkaibigan (mga bahagi).
+            </div>
+            <div class="card-tags">
+                <span>📝 Naratibo</span>
+                <span>🖥️ Multimedia</span>
+                <span>✉️ Liham</span>
+                <span>📄 Impormatibo</span>
+            </div>
+            <div class="card-badge filipino">40 questions</div>
+        </a>
+
+        <!-- MAPEH CARD -->
+        <a href="mapeh1STterm.html" class="quiz-card">
+            <div class="card-icon">🎵</div>
+            <div class="card-title">MAPEH</div>
+            <div class="card-sub">Music · Arts · PE · Health</div>
+            <div class="card-desc">
+                40‑item quiz. Notes, dynamics, color theory, fitness components, FITT, nutrition, mental health, first aid, and more.
+            </div>
+            <div class="card-tags">
+                <span>🎶 Notes</span>
+                <span>🎨 Color</span>
+                <span>⛹️ Fitness</span>
+                <span>🧘 Health</span>
+            </div>
+            <div class="card-badge mapeh">40 questions</div>
+        </a>
+
+        <!-- extra placeholder (you can add more later) -->
+        <!-- 
+        <a href="#" class="quiz-card" style="opacity:0.6; pointer-events:none;">
+            <div class="card-icon">➕</div>
+            <div class="card-title">More coming</div>
+            <div class="card-sub">soon</div>
+            <div class="card-desc">Additional reviewers will appear here.</div>
+            <div class="card-tags"><span>📌</span></div>
+            <div class="card-badge" style="background:#7a8f9e;">—</div>
+        </a>
+        -->
+    </div>
+
+    <div class="footer-note">
+        🧠 CLARK Reviewer · 1st Term · 
+        <a href="science1STTERMreviewer.html">Science</a> · 
+        <a href="filipino1STTERMreviewer.html">Filipino</a> · 
+        <a href="mapeh1STterm.html">MAPEH</a>
+        <br style="display:block; margin-top:0.3rem;">
+        <span style="opacity:0.7;">Bawat quiz ay may 40 tanong · step‑by‑step · may sagot at paliwanag pagkatapos sumagot</span>
+    </div>
+</div>
+</body>
+</html>

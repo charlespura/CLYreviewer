@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filipino V · Step‑by‑Step Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #f5efe6 0%, #e6dccc 100%);
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.2rem;
+        }
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(255, 251, 245, 0.88);
+            backdrop-filter: blur(4px);
+            border-radius: 3rem;
+            box-shadow: 0 30px 50px -20px rgba(60, 40, 20, 0.35);
+            padding: 2rem 2.2rem 2.5rem;
+            border: 1px solid rgba(255, 235, 210, 0.6);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 3px solid #b48b5a;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+        .header h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #4f351a;
+            letter-spacing: -0.5px;
+        }
+        .header h1 span {
+            background: #a67a4a;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.1rem 1.2rem;
+            border-radius: 40px;
+            margin-left: 0.8rem;
+        }
+        .reviewer-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.9rem;
+            background: #f1e8db;
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            margin-bottom: 1.8rem;
+            font-size: 0.85rem;
+            color: #5a3e24;
+            border: 1px solid #dcccb6;
+        }
+        .reviewer-tags span {
+            background: white;
+            padding: 0.05rem 0.9rem;
+            border-radius: 30px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+        .quiz-card {
+            background: #fcf8f1d9;
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #dcccb6;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #4f351a;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #7a5f3f;
+        }
+        .score-badge {
+            background: #a67a4a;
+            color: white;
+            padding: 0.2rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(90, 60, 30, 0.15);
+        }
+        .question-box {
+            margin: 0.5rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #3f2b17;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.8rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f5efe6;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.12s;
+            font-weight: 450;
+            color: #4a341e;
+        }
+        .options-grid label:hover {
+            background: #ede3d4;
+            border-color: #c7b096;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #a67a4a;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #f0e8dc;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #f0e8dc;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.5rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 6px solid #b19272;
+        }
+        .feedback-area.correct {
+            background: #dde8d8;
+            border-left-color: #4f7a4a;
+            color: #1f4a1a;
+        }
+        .feedback-area.wrong {
+            background: #fce4e8;
+            border-left-color: #b13b4b;
+            color: #852b39;
+        }
+        .feedback-area.show-answer {
+            background: #e3e2d8;
+            border-left-color: #7a6a52;
+            color: #4a3a2a;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            font-weight: 600;
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            background: white;
+            border: 1.5px solid #a67a4a;
+            color: #a67a4a;
+        }
+        .btn-primary {
+            background: #a67a4a;
+            color: white;
+            border-color: #a67a4a;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #8b663b;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #7a9b6b;
+            border-color: #7a9b6b;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #628354;
+        }
+        .btn-outline:hover {
+            background: #ede3d4;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #ede3d4;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #4a341e;
+        }
+        .result-summary strong {
+            color: #4f7a4a;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #6b553b;
+            text-align: center;
+            border-top: 1px solid #dcccb6;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1rem; }
+            .q-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📖 Filipino V <span>40 items</span></h1>
+        <span style="background:#ede3d4; padding:0.2rem 1.2rem; border-radius:40px; font-weight:500; color:#5a3e24;">teksto · multimedia · liham</span>
+    </div>
+
+    <div class="reviewer-tags">
+        <span>📝 Naratibo</span> <span>📄 Impormatibo</span> <span>📋 Prosidyural</span> <span>⚖️ Argumentatibo</span>
+        <span>🖥️ Teksto · Grapika · Audio · Animasyon · Interaktibo · Subtitle</span>
+        <span>✉️ Liham: Pamuhatan · Bating Panimula · Katawan · Bating Pangwakas · Lagda</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Question 1 <small>of 40</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+        <div id="questionContainer"></div>
+        <div class="action-row">
+            <button class="btn btn-primary" id="submitBtn">✅ Isumite ang sagot</button>
+            <button class="btn btn-success" id="nextBtn" disabled>➡️ Susunod</button>
+            <button class="btn btn-outline" id="resetBtn">🔄 I-shuffle & ulitin</button>
+        </div>
+        <div id="resultContainer" class="result-summary" style="display:none;"></div>
+        <div class="footer-note">⬆️ Sagutin ang bawat tanong, tingnan ang feedback, pagkatapos ay lumipat sa susunod.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ----- FILIPINO QUESTIONS (exact from reviewer) -----
+        const MASTER_QUESTIONS = [
+            { q: "Anong uri ng teksto ang nagsasalaysay ng isang pangyayari o kuwento?", opts: ["Impormatibo", "Naratibo", "Prosidyural", "Argumentatibo"], ans: 1 },
+            { q: "Anong uri ng teksto ang pangunahing layunin ay magbigay ng impormasyon?", opts: ["Naratibo", "Argumentatibo", "Impormatibo", "Prosidyural"], ans: 2 },
+            { q: "Anong uri ng teksto ang naglalahad ng mga hakbang o panuto?", opts: ["Prosidyural", "Naratibo", "Impormatibo", "Argumentatibo"], ans: 0 },
+            { q: "Anong uri ng teksto ang naglalahad ng paninindigan o argumento?", opts: ["Naratibo", "Impormatibo", "Prosidyural", "Argumentatibo"], ans: 3 },
+            { q: "Ang isang kuwento tungkol sa isang batang naglakbay ay anong uri ng teksto?", opts: ["Naratibo", "Impormatibo", "Prosidyural", "Argumentatibo"], ans: 0 },
+            { q: "Ang artikulong nagpapaliwanag tungkol sa mga planeta ay tekstong _____.", opts: ["Naratibo", "Impormatibo", "Prosidyural", "Argumentatibo"], ans: 1 },
+            { q: "Ang recipe ng pagluluto ay halimbawa ng tekstong _____.", opts: ["Naratibo", "Argumentatibo", "Prosidyural", "Impormatibo"], ans: 2 },
+            { q: "Ang sanaysay na nagbibigay ng opinyon at dahilan ay tekstong _____.", opts: ["Argumentatibo", "Naratibo", "Prosidyural", "Impormatibo"], ans: 0 },
+            { q: "Alin ang pangunahing layunin ng tekstong naratibo?", opts: ["Magbigay ng hakbang", "Magsalaysay ng kuwento", "Magbigay ng utos", "Magbigay ng larawan"], ans: 1 },
+            { q: "Alin ang pangunahing layunin ng tekstong impormatibo?", opts: ["Magbigay ng impormasyon", "Magsalaysay ng kuwento", "Magbigay ng pagbati", "Magbigay ng panuto lamang"], ans: 0 },
+            { q: "Alin ang pinakamainam na halimbawa ng tekstong prosidyural?", opts: ["Kuwento tungkol sa aso", "Balita tungkol sa panahon", "Mga hakbang sa paggawa ng proyekto", "Opinyon tungkol sa paaralan"], ans: 2 },
+            { q: "Alin ang pinakamainam na halimbawa ng tekstong argumentatibo?", opts: ["Mga hakbang sa pagluluto", "Kuwento ng isang bata", "Pagbibigay ng paninindigan tungkol sa isang isyu", "Listahan ng mga hayop"], ans: 2 },
+            { q: "Ano ang multimedia?", opts: ["Paggamit ng iba't ibang media upang maghatid ng mensahe", "Isang uri lamang ng larawan", "Isang liham", "Isang kuwento lamang"], ans: 0 },
+            { q: "Anong elemento ng multimedia ang binubuo ng mga salita o pahayag?", opts: ["Audio", "Teksto", "Animasyon", "Grapika"], ans: 1 },
+            { q: "Alin ang halimbawa ng grapika?", opts: ["Musika", "Larawan", "Pangalan", "Boses lamang"], ans: 1 },
+            { q: "Ano ang audio?", opts: ["Mga tunog o musika", "Mga larawan", "Mga salita", "Mga sulat-kamay"], ans: 0 },
+            { q: "Ano ang animasyon?", opts: ["Mga tunog lamang", "Mga larawang o video clip na gumagalaw", "Mga nakasulat na salita", "Isang liham"], ans: 1 },
+            { q: "Ano ang gamit ng grapika?", opts: ["Tumutulong magpaliwanag ng impormasyon", "Nagbibigay lamang ng tunog", "Sumusulat ng liham", "Nagbibigay ng lagda"], ans: 0 },
+            { q: "Ano ang maaaring idagdag ng audio sa isang mensahe?", opts: ["Emosyon o konteksto", "Lagda", "Pamuhatan", "Petsa lamang"], ans: 0 },
+            { q: "Alin ang halimbawa ng interaktibong elemento?", opts: ["Clickable button", "Papel", "Lapis", "Kuwaderno"], ans: 0 },
+            { q: "Ano ang ginagawa ng interaktibong elemento?", opts: ["Nagbibigay ng pagkakataong makisali o makipag-interaksiyon", "Nagbibigay lamang ng tunog", "Nagbibigay lamang ng larawan", "Nagbibigay ng petsa"], ans: 0 },
+            { q: "Ano ang isang halimbawa ng interaktibong elemento?", opts: ["Form", "Kuwento", "Tula", "Lagda"], ans: 0 },
+            { q: "Ano ang pangunahing gamit ng subtitle?", opts: ["Magpalakas ng musika", "Tumulong upang maging malinaw ang impormasyon", "Gumawa ng larawan", "Magbigay ng lagda"], ans: 1 },
+            { q: "Bakit mahalaga ang multimedia?", opts: ["Dahil mas madaling maunawaan ang impormasyon", "Dahil nagpapahaba lamang ito ng teksto", "Dahil hindi ito nagbibigay ng mensahe", "Dahil para lamang ito sa laro"], ans: 0 },
+            { q: "Alin ang HINDI elemento ng multimedia?", opts: ["Teksto", "Audio", "Grapika", "Lagda"], ans: 3 },
+            { q: "Alin ang elemento na gumagamit ng mga larawan, icon, at guhit?", opts: ["Audio", "Grapika", "Subtitle", "Lagda"], ans: 1 },
+            { q: "Ano ang pangunahing layunin ng liham pangkaibigan?", opts: ["Mangumusta o makipag-ugnayan sa kaibigan", "Magbigay ng recipe", "Magbigay ng utos", "Magbenta ng produkto"], ans: 0 },
+            { q: "Ano ang tawag sa bahagi ng liham na may lokasyon at petsa?", opts: ["Lagda", "Katawan", "Pamuhatan", "Bating Pangwakas"], ans: 2 },
+            { q: "Ano ang tawag sa pagbati sa sinusulatan?", opts: ["Pamuhatan", "Bating Panimula", "Katawan ng Liham", "Lagda"], ans: 1 },
+            { q: "Ano ang pangunahing mensahe ng sumulat?", opts: ["Katawan ng Liham", "Pamuhatan", "Lagda", "Bating Panimula"], ans: 0 },
+            { q: "Ano ang tawag sa magalang na pagtatapos ng liham?", opts: ["Pamuhatan", "Bating Pangwakas", "Katawan", "Petsa"], ans: 1 },
+            { q: "Ano ang tawag sa pangalan o pirma ng sumulat?", opts: ["Lagda", "Pamuhatan", "Bating Panimula", "Katawan"], ans: 0 },
+            { q: "Alin ang halimbawa ng bating panimula?", opts: ["Nagmamahal,", "Mahal kong Kaibigan,", "Quezon City, Agosto 31, 2026", "Juan Dela Cruz"], ans: 1 },
+            { q: "Alin ang halimbawa ng bating pangwakas?", opts: ["Mahal kong Kaibigan,", "Magandang araw", "Nagmamahal,", "Quezon City"], ans: 2 },
+            { q: "Saan makikita ang pangalan ng sumulat?", opts: ["Pamuhatan", "Katawan", "Lagda", "Bating Panimula"], ans: 2 },
+            { q: "Aling bahagi ng liham ang nagsasaad kung saan at kailan ito isinulat?", opts: ["Pamuhatan", "Lagda", "Katawan", "Bating Pangwakas"], ans: 0 },
+            { q: "Alin ang tamang pagkakasunod-sunod ng mga bahagi ng liham?", opts: ["Lagda, Katawan, Pamuhatan", "Pamuhatan, Bating Panimula, Katawan, Bating Pangwakas, Lagda", "Katawan, Lagda, Pamuhatan", "Bating Pangwakas, Pamuhatan, Katawan"], ans: 1 },
+            { q: "Aling bahagi ng liham ang maaaring maglaman ng 'Kumusta ka na?'", opts: ["Katawan ng Liham", "Pamuhatan", "Lagda", "Petsa"], ans: 0 },
+            { q: "Alin ang HINDI bahagi ng liham pangkaibigan?", opts: ["Pamuhatan", "Lagda", "Bating Panimula", "Graph"], ans: 3 },
+            { q: "Bakit mahalaga ang liham pangkaibigan?", opts: ["Nagbibigay ito ng paraan upang makipag-ugnayan at mangumusta", "Ginagamit lamang ito sa pagluluto", "Ginagamit lamang ito sa pagsukat", "Wala itong mensahe"], ans: 0 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        const container = document.getElementById('questionContainer');
+        const counterEl = document.getElementById('questionCounter');
+        const scoreEl = document.getElementById('scoreDisplay');
+        const submitBtn = document.getElementById('submitBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const resultEl = document.getElementById('resultContainer');
+
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultEl.style.display = 'none';
+            resultEl.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Hindi nasagot. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Tama! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Mali. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            container.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Tapos na & tingnan ang marka';
+            } else {
+                nextBtn.textContent = '➡️ Susunod';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            counterEl.innerHTML = `Tanong ${currentIndex+1} <small>ng ${total}</small>`;
+            scoreEl.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) { submitBtn.disabled = true; return; }
+            const q = currentQuestions[currentIndex];
+            if (selectedOption === q.ans) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = percent >= 90 ? '🌟 Napakahusay!' : percent >= 70 ? '👍 Magaling!' : percent >= 50 ? '📖 Balikan ang aralin.' : '💪 Mag-aral pa at subukan muli.';
+            resultEl.style.display = 'block';
+            resultEl.innerHTML = `
+                <div>🎯 Nasagot mo nang tama ang <strong>${score}</strong> sa <strong>${total}</strong> na tanong.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Pindutin ang "I-shuffle & ulitin" para subukan muli.</div>
+            `;
+            container.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreEl.textContent = `✅ ${score} / ${total}`;
+            counterEl.innerHTML = `🎉 Tapos na!`;
+        }
+
+        resetBtn.addEventListener('click', function() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultEl.style.display = 'none';
+            resultEl.innerHTML = '';
+            resetQuiz();
+        });
+
+        submitBtn.addEventListener('click', handleSubmit);
+        nextBtn.addEventListener('click', handleNext);
+
+        resetQuiz();
+    })();
+</script>
+</body>
+</html>

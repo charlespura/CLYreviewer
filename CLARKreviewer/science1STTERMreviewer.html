@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Science · Step‑by‑Step Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #eaf3f0 0%, #d4e4e0 100%);
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.2rem;
+        }
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: 3rem;
+            box-shadow: 0 30px 50px -20px rgba(10, 40, 35, 0.4);
+            padding: 2rem 2.2rem 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 3px solid #2b7d6b;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+        .header h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #074235;
+            letter-spacing: -0.5px;
+        }
+        .header h1 span {
+            background: #1f6b5c;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.1rem 1.2rem;
+            border-radius: 40px;
+            margin-left: 0.8rem;
+        }
+        .reviewer-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.9rem;
+            background: #e7f3ef;
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            margin-bottom: 1.8rem;
+            font-size: 0.85rem;
+            color: #14594b;
+            border: 1px solid #c7ddd4;
+        }
+        .reviewer-tags span {
+            background: white;
+            padding: 0.05rem 0.9rem;
+            border-radius: 30px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+        .quiz-card {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #cde0d8;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #1a4d3e;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #3f7061;
+        }
+        .score-badge {
+            background: #1f6b5c;
+            color: white;
+            padding: 0.2rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(26, 80, 65, 0.15);
+        }
+        .question-box {
+            margin: 0.5rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #08382e;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.8rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f3faf7;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.12s;
+            font-weight: 450;
+            color: #1b4c3f;
+        }
+        .options-grid label:hover {
+            background: #e4f3ec;
+            border-color: #99c2b3;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #1f7a6b;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #edf5f1;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #eef6f2;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.5rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 6px solid #6d9b8b;
+        }
+        .feedback-area.correct {
+            background: #ddf0e6;
+            border-left-color: #0f7546;
+            color: #0a4a2e;
+        }
+        .feedback-area.wrong {
+            background: #fce4e8;
+            border-left-color: #b13b4b;
+            color: #852b39;
+        }
+        .feedback-area.show-answer {
+            background: #e3eef0;
+            border-left-color: #2d6f87;
+            color: #124a5e;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            font-weight: 600;
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            background: white;
+            border: 1.5px solid #1e6b5a;
+            color: #1e6b5a;
+        }
+        .btn-primary {
+            background: #1e6b5a;
+            color: white;
+            border-color: #1e6b5a;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #145548;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #1f7a6b;
+            border-color: #1f7a6b;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #156055;
+        }
+        .btn-outline:hover {
+            background: #e0f0e9;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #e2f0ea;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #124a3e;
+        }
+        .result-summary strong {
+            color: #0d573f;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #3d6e5f;
+            text-align: center;
+            border-top: 1px solid #caddd4;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1rem; }
+            .q-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🔬 Science <span>40 items</span></h1>
+        <span style="background:#e2f0ea; padding:0.2rem 1.2rem; border-radius:40px; font-weight:500; color:#1a5a4a;">living things · plants · mass</span>
+    </div>
+
+    <div class="reviewer-tags">
+        <span>🐕 Mammals</span> <span>🐦 Birds</span> <span>🦎 Reptiles</span>
+        <span>🐟 Fish</span> <span>🐸 Amphibians</span> <span>🐜 Insects</span>
+        <span>🍄 Fungi</span> <span>🦠 Bacteria</span>
+        <span>🌱 Thorns · Tubers · Bulbs · Rhizomes · Aerial/Deep</span>
+        <span>🌊 Mangroves · ⚖️ Mass</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Question 1 <small>of 40</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+        <div id="questionContainer"></div>
+        <div class="action-row">
+            <button class="btn btn-primary" id="submitBtn">✅ Submit answer</button>
+            <button class="btn btn-success" id="nextBtn" disabled>➡️ Next question</button>
+            <button class="btn btn-outline" id="resetBtn">🔄 Restart (shuffle)</button>
+        </div>
+        <div id="resultContainer" class="result-summary" style="display:none;"></div>
+        <div class="footer-note">⬆️ Answer each question, see feedback, then move next. Restart shuffles all.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ----- SCIENCE QUESTIONS (exact from reviewer) -----
+        const MASTER_QUESTIONS = [
+            { q: "Which animal has hair or fur?", opts: ["Fish", "Mammal", "Bird", "Reptile"], ans: 1 },
+            { q: "Which animal group usually gives birth to live young?", opts: ["Mammals", "Fish", "Birds", "Reptiles"], ans: 0 },
+            { q: "Which animal group has feathers?", opts: ["Mammals", "Birds", "Fish", "Amphibians"], ans: 1 },
+            { q: "Which animal group has scaly skin?", opts: ["Reptiles", "Birds", "Mammals", "Insects"], ans: 0 },
+            { q: "Which animal breathes using gills?", opts: ["Cat", "Fish", "Bird", "Lizard"], ans: 1 },
+            { q: "Which animals can live both on land and in water?", opts: ["Birds", "Fish", "Amphibians", "Insects"], ans: 2 },
+            { q: "How many legs does an insect usually have?", opts: ["4", "6", "8", "10"], ans: 1 },
+            { q: "Which is an example of a mammal?", opts: ["Frog", "Eagle", "Dog", "Snake"], ans: 2 },
+            { q: "Which is an example of a bird?", opts: ["Chicken", "Lizard", "Fish", "Frog"], ans: 0 },
+            { q: "Which is an example of a reptile?", opts: ["Cat", "Snake", "Butterfly", "Whale"], ans: 1 },
+            { q: "Which is an example of an amphibian?", opts: ["Frog", "Eagle", "Dog", "Ant"], ans: 0 },
+            { q: "Which is an example of an insect?", opts: ["Snake", "Butterfly", "Fish", "Whale"], ans: 1 },
+            { q: "Which microorganism includes mushrooms and yeast?", opts: ["Bacteria", "Fungi", "Mammals", "Reptiles"], ans: 1 },
+            { q: "What do fungi do to dead organisms?", opts: ["Fly", "Decompose them", "Lay eggs", "Make feathers"], ans: 1 },
+            { q: "What do decomposers return to the soil?", opts: ["Plastic", "Nutrients", "Metal", "Smoke"], ans: 1 },
+            { q: "Which microorganisms can sometimes cause diseases?", opts: ["Bacteria", "Birds", "Fish", "Plants"], ans: 0 },
+            { q: "Are all bacteria harmful?", opts: ["Yes", "No", "Always", "Only at night"], ans: 1 },
+            { q: "Which plant structure protects a plant from herbivores?", opts: ["Tubers", "Thorns", "Deep roots", "Bulbs"], ans: 1 },
+            { q: "Which plant may have thorns?", opts: ["Rose", "Potato", "Onion", "Garlic"], ans: 0 },
+            { q: "Which plant structure stores food underground?", opts: ["Aerial roots", "Thorns", "Tubers", "Leaves"], ans: 2 },
+            { q: "Which is an example of a tuber?", opts: ["Potato", "Rose", "Orchid", "Mangrove"], ans: 0 },
+            { q: "Which plant structure stores nutrients and helps regrowth?", opts: ["Bulbs", "Thorns", "Aerial roots", "Deep roots"], ans: 0 },
+            { q: "Which plant is an example of a bulb?", opts: ["Onion", "Rose", "Cactus", "Mango"], ans: 0 },
+            { q: "Which plant is also an example of a bulb?", opts: ["Garlic", "Potato", "Mangrove", "Lotus"], ans: 0 },
+            { q: "What structure grows horizontally underground and can produce new shoots?", opts: ["Rhizome", "Thorn", "Feather", "Gill"], ans: 0 },
+            { q: "What kind of roots help a plant obtain oxygen from the air?", opts: ["Deep roots", "Aerial roots", "Tubers", "Bulbs"], ans: 1 },
+            { q: "Which plants commonly have aerial roots?", opts: ["Mangroves", "Potatoes", "Onions", "Roses"], ans: 0 },
+            { q: "Which is another example of a plant with aerial roots?", opts: ["Orchid", "Garlic", "Potato", "Cactus"], ans: 0 },
+            { q: "What kind of roots help plants reach underground water?", opts: ["Aerial roots", "Deep roots", "Thorns", "Bulbs"], ans: 1 },
+            { q: "Deep roots are especially useful for plants living in ________.", opts: ["dry areas", "the sky", "refrigerators", "oceans"], ans: 0 },
+            { q: "Mangroves commonly grow in ________.", opts: ["flooded areas", "deserts", "mountains only", "dry rooms"], ans: 0 },
+            { q: "Why do mangroves have aerial roots?", opts: ["To obtain oxygen from the air", "To make feathers", "To catch fish", "To produce plastic"], ans: 0 },
+            { q: "Which plant can grow well in flooded areas?", opts: ["Lotus", "Rose", "Cactus", "Pine tree"], ans: 0 },
+            { q: "What does mass tell us?", opts: ["How colorful an object is", "How much matter an object contains", "How fast an object moves", "How loud an object is"], ans: 1 },
+            { q: "What instrument is used to measure mass?", opts: ["Thermometer", "Ruler", "Balance", "Clock"], ans: 2 },
+            { q: "Which animal is cold-blooded and can live on land and in water?", opts: ["Frog", "Dog", "Eagle", "Cat"], ans: 0 },
+            { q: "Which animal group has six legs and three main body parts?", opts: ["Mammals", "Insects", "Birds", "Fish"], ans: 1 },
+            { q: "Which specialized plant structure would best help a plant survive a lack of rain?", opts: ["Deep roots", "Feathers", "Gills", "Fur"], ans: 0 },
+            { q: "Which specialized structure helps protect a cactus from animals that may eat it?", opts: ["Tubers", "Thorns", "Bulbs", "Aerial roots"], ans: 1 },
+            { q: "Which statement is TRUE?", opts: ["Fish breathe using feathers.", "Birds have gills.", "Fungi help break down dead organisms.", "Mammals have six legs."], ans: 2 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        const container = document.getElementById('questionContainer');
+        const counterEl = document.getElementById('questionCounter');
+        const scoreEl = document.getElementById('scoreDisplay');
+        const submitBtn = document.getElementById('submitBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const resultEl = document.getElementById('resultContainer');
+
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultEl.style.display = 'none';
+            resultEl.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Not answered. Correct: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Correct! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Wrong. Correct: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            container.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Finish & see score';
+            } else {
+                nextBtn.textContent = '➡️ Next question';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            counterEl.innerHTML = `Question ${currentIndex+1} <small>of ${total}</small>`;
+            scoreEl.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) { submitBtn.disabled = true; return; }
+            const q = currentQuestions[currentIndex];
+            if (selectedOption === q.ans) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = percent >= 90 ? '🌟 Excellent!' : percent >= 70 ? '👍 Good job!' : percent >= 50 ? '📖 Keep reviewing!' : '💪 Study more.';
+            resultEl.style.display = 'block';
+            resultEl.innerHTML = `
+                <div>🎯 You answered <strong>${score}</strong> out of <strong>${total}</strong> correctly.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Press "Restart" to shuffle and try again.</div>
+            `;
+            container.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreEl.textContent = `✅ ${score} / ${total}`;
+            counterEl.innerHTML = `🎉 Complete!`;
+        }
+
+        resetBtn.addEventListener('click', function() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultEl.style.display = 'none';
+            resultEl.innerHTML = '';
+            resetQuiz();
+        });
+
+        submitBtn.addEventListener('click', handleSubmit);
+        nextBtn.addEventListener('click', handleNext);
+
+        resetQuiz();
+    })();
+</script>
+</body>
+</html>
