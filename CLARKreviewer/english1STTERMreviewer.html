@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGLISH · Term 1 Exam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #e8f0f8;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 820px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(20,50,80,0.25);
+            padding: 2rem 2.2rem 2.5rem;
+            transition: 0.2s;
+            border: 1px solid #d4e2f0;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a3a5c;
+            border-left: 6px solid #4a8bc2;
+            padding-left: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+        .subhead {
+            color: #4a6a8a;
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #c5d8e8;
+            padding-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .reviewer-snapshot {
+            background: #f0f6fc;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 2rem;
+            border: 1px solid #d4e2f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        .reviewer-snapshot span {
+            background: #dce8f4;
+            padding: 0.15rem 0.9rem;
+            border-radius: 30px;
+            color: #1a3a5c;
+            font-weight: 500;
+        }
+        .quiz-card {
+            background: #f8faff;
+            border-radius: 1.8rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #d4e2f0;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #1a3a5c;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #5a7a9a;
+        }
+        .score-badge {
+            background: #4a8bc2;
+            color: white;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .question-box {
+            margin: 0.5rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #0d2a44;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.8rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f0f6fc;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.1s;
+            font-weight: 450;
+            color: #1a3a5c;
+        }
+        .options-grid label:hover {
+            background: #e4eefa;
+            border-color: #a8c4dc;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #4a8bc2;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #eef3f8;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #f0f6fc;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.5rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #8aaccc;
+            color: #1a3a5c;
+        }
+        .feedback-area.correct {
+            background: #ddf0e6;
+            border-left-color: #2a8a5a;
+            color: #0a4a2e;
+        }
+        .feedback-area.wrong {
+            background: #fce4e8;
+            border-left-color: #c04a5a;
+            color: #7a2a3a;
+        }
+        .feedback-area.show-answer {
+            background: #e8eef8;
+            border-left-color: #5a7aaa;
+            color: #1a3a5a;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            background: white;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            border: 1.5px solid #4a7aaa;
+            color: #1a3a5c;
+        }
+        .btn-primary {
+            background: #4a8bc2;
+            color: white;
+            border-color: #4a8bc2;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #3a70a0;
+            border-color: #3a70a0;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #2a8a5a;
+            border-color: #2a8a5a;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #1e7048;
+            border-color: #1e7048;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #6a8aaa;
+            color: #1a3a5c;
+        }
+        .btn-outline:hover {
+            background: #e4eefa;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #f0f6fc;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1a3a5c;
+        }
+        .result-summary strong {
+            color: #4a8bc2;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #5a7a9a;
+            text-align: center;
+            border-top: 1px solid #c5d8e8;
+            padding-top: 1.2rem;
+        }
+        .topic-tag {
+            display: inline-block;
+            background: #dce8f4;
+            padding: 0.1rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #1a3a5c;
+            margin-left: 0.5rem;
+            font-weight: 400;
+        }
+        @media (max-width: 550px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1.2rem; }
+            .q-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📚 ENGLISH · Term 1</h1>
+    <div class="subhead">
+        <span>📝 Step‑by‑step · Weeks 7–11</span>
+        <span style="background:#dce8f4; padding:0 1rem; border-radius:30px; color:#1a3a5c;">40 items</span>
+    </div>
+
+    <div class="reviewer-snapshot">
+        <span>📖 Fact & Opinion</span>
+        <span>📝 Summarizing</span>
+        <span>🎨 Color Meanings</span>
+        <span>📋 Personal Data Forms</span>
+        <span>🔤 Nouns & Pronouns</span>
+        <span>⚡ Verbs</span>
+        <span>📐 Adjectives & Adverbs</span>
+        <span>📰 News Reports</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Question 1 <small>of 40</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+
+        <div id="questionContainer">
+            <!-- dynamic -->
+        </div>
+
+        <div class="action-row" id="actionRow">
+            <button class="btn btn-primary" id="submitAnswerBtn">✅ Submit answer</button>
+            <button class="btn btn-success" id="nextQuestionBtn" disabled>➡️ Next question</button>
+            <button class="btn btn-outline" id="resetQuizBtn">🔄 Restart (shuffle)</button>
+        </div>
+
+        <div id="resultContainer" style="display: none;" class="result-summary"></div>
+        <div class="footer-note">⬆️ Answer each question, see feedback, then move to the next.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- MASTER QUESTION BANK (40) ----------
+        const MASTER_QUESTIONS = [
+            // WEEK 7: Statements of Fact and Opinion (1-3)
+            { q: "Which sentence is a statement of FACT?", opts: ["Chocolate is the best flavor.", "The Earth revolves around the sun.", "Math is difficult.", "Blue is a beautiful color."], ans: 1 },
+            { q: "Which sentence is a statement of OPINION?", opts: ["The Philippines has over 7,000 islands.", "Water freezes at 0°C.", "Filipino food is delicious.", "Jose Rizal is the national hero."], ans: 2 },
+            { q: "\"I believe that online learning is effective.\" This is a statement of ____.", opts: ["Fact", "Opinion", "Both", "Neither"], ans: 1 },
+
+            // WEEK 7: Summarizing (4-5)
+            { q: "What is summarizing?", opts: ["Writing every detail from the text", "Rewriting the text word for word", "Stating the main ideas briefly in your own words", "Copying the first paragraph"], ans: 2 },
+            { q: "What is the first step in summarizing?", opts: ["Write the conclusion", "Read and understand the text", "Copy all sentences", "Count the number of words"], ans: 1 },
+
+            // WEEK 7: Color Meanings and Communication (6-8)
+            { q: "What color is commonly associated with peace and calm?", opts: ["Red", "Blue", "Yellow", "Black"], ans: 1 },
+            { q: "What color symbolizes danger or warning?", opts: ["Green", "White", "Red", "Purple"], ans: 2 },
+            { q: "Which color is often used to represent happiness and energy?", opts: ["Yellow", "Gray", "Brown", "Navy"], ans: 0 },
+
+            // WEEK 7: Fill Out Personal Data Forms (9-10)
+            { q: "What personal information is typically asked on a form?", opts: ["Favorite movie", "Full name and address", "Pet's name", "Dream job"], ans: 1 },
+            { q: "When filling out a form, you should write ____.", opts: ["In capital letters only", "Clearly and accurately", "With colorful pens", "In cursive only"], ans: 1 },
+
+            // WEEK 8: Nouns (11-13)
+            { q: "Which word is a noun?", opts: ["Run", "Beautiful", "Happiness", "Quickly"], ans: 2 },
+            { q: "Which is a proper noun?", opts: ["City", "Book", "Manila", "River"], ans: 2 },
+            { q: "A noun that names a specific person, place, or thing is called a ____.", opts: ["Common noun", "Proper noun", "Abstract noun", "Collective noun"], ans: 1 },
+
+            // WEEK 8: Pronouns (14-16)
+            { q: "Which word is a pronoun?", opts: ["She", "Fast", "Red", "House"], ans: 0 },
+            { q: "What pronoun replaces the noun 'Maria'?", opts: ["He", "She", "It", "They"], ans: 1 },
+            { q: "Which sentence uses a pronoun correctly?", opts: ["Him went to school.", "Me likes pizza.", "She is my best friend.", "Us are happy."], ans: 2 },
+
+            // WEEK 8: Verb Charades & Verb Sentences (17-19)
+            { q: "What is a verb?", opts: ["A person, place, or thing", "An action or state of being", "A word that describes a noun", "A word that connects sentences"], ans: 1 },
+            { q: "Which word is a verb?", opts: ["Beautiful", "Quickly", "Dance", "Student"], ans: 2 },
+            { q: "Which is a correct verb sentence?", opts: ["She run fast.", "They plays soccer.", "He sings beautifully.", "We is happy."], ans: 2 },
+
+            // WEEK 9: Using Adjectives: Series (20-22)
+            { q: "Which word is an adjective?", opts: ["Sweet", "Quickly", "Sings", "Happily"], ans: 0 },
+            { q: "What is the correct order of adjectives?", opts: ["Opinion, size, age, shape, color, origin, material, purpose", "Size, color, opinion, age, shape", "Color, origin, material, purpose", "Age, shape, color, opinion"], ans: 0 },
+            { q: "Which has adjectives in correct order?", opts: ["A beautiful old big house", "A big beautiful old house", "A beautiful big old house", "An old big beautiful house"], ans: 2 },
+
+            // WEEK 9: Using Adverbs of Manner (23-25)
+            { q: "What does an adverb of manner describe?", opts: ["Where an action happens", "When an action happens", "How an action is done", "How often an action happens"], ans: 2 },
+            { q: "Which word is an adverb of manner?", opts: ["Quickly", "Yesterday", "Here", "Often"], ans: 0 },
+            { q: "Which sentence uses an adverb of manner correctly?", opts: ["She danced beautiful.", "She danced beautifully.", "She danced beauty.", "She danced beautify."], ans: 1 },
+
+            // WEEK 9: Composing Compound-Complex Sentences (26-28)
+            { q: "What is an independent clause?", opts: ["A clause that cannot stand alone", "A clause that expresses a complete thought", "A clause with no verb", "A clause with no subject"], ans: 1 },
+            { q: "How many independent clauses are in a compound sentence?", opts: ["One", "Two or more", "Zero", "Three or more"], ans: 1 },
+            { q: "Which sentence is a compound sentence?", opts: ["She ran.", "She ran and she jumped.", "Although she ran, she fell.", "Before she ran, she stretched."], ans: 1 },
+
+            // WEEK 9: Tone and Mood in Writing (29-31)
+            { q: "What is tone in writing?", opts: ["The feeling the reader gets", "The author's attitude toward the subject", "The length of the text", "The font used"], ans: 1 },
+            { q: "What is mood in writing?", opts: ["The emotion the reader experiences", "The author's opinion", "The grammar used", "The title of the text"], ans: 0 },
+            { q: "What is the tone of: 'You have done a remarkable job today.'", opts: ["Sad", "Angry", "Praising", "Fearful"], ans: 2 },
+
+            // WEEK 10: Nonverbal Cues (32-33)
+            { q: "Which is an example of a nonverbal cue?", opts: ["Speaking loudly", "Smiling", "Writing a letter", "Typing on a keyboard"], ans: 1 },
+            { q: "What does maintaining eye contact suggest?", opts: ["Disinterest", "Confidence and attention", "Boredom", "Fear"], ans: 1 },
+
+            // WEEK 10: Visual Elements Using Layouts (34-35)
+            { q: "What is a layout in visual media?", opts: ["The arrangement of text and images on a page", "The color scheme only", "The font style only", "The number of pages"], ans: 0 },
+            { q: "What does a good layout help with?", opts: ["Making the text longer", "Organizing information clearly", "Adding more colors", "Removing all images"], ans: 1 },
+
+            // WEEK 10: Audio Elements in Multimedia (36-37)
+            { q: "Which is an audio element?", opts: ["Text", "Image", "Sound effect", "Animation"], ans: 2 },
+            { q: "What is the purpose of background music in multimedia?", opts: ["To distract the viewer", "To set the mood or tone", "To make the video longer", "To replace dialogue"], ans: 1 },
+
+            // WEEK 11: News Report & Writing a News Report (38-39)
+            { q: "What is the most important part of a news report?", opts: ["The headline and lead", "The conclusion", "The last paragraph", "The author's name"], ans: 0 },
+            { q: "What does the 'lead' in a news report contain?", opts: ["The opinions of the writer", "The most important information: who, what, when, where, why", "A summary of the entire article", "The ending of the story"], ans: 1 },
+
+            // WEEK 11: Using a Dictionary (40)
+            { q: "How are words arranged in a dictionary?", opts: ["By category", "By length", "Alphabetically", "By difficulty"], ans: 2 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        // DOM refs
+        const questionContainer = document.getElementById('questionContainer');
+        const submitBtn = document.getElementById('submitAnswerBtn');
+        const nextBtn = document.getElementById('nextQuestionBtn');
+        const resetBtn = document.getElementById('resetQuizBtn');
+        const questionCounter = document.getElementById('questionCounter');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // ----- helpers -----
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Not answered. Correct: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Correct! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Wrong. Correct: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            questionContainer.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Finish & see score';
+            } else {
+                nextBtn.textContent = '➡️ Next question';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            questionCounter.innerHTML = `Question ${currentIndex+1} <small>of ${total}</small>`;
+            scoreDisplay.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) {
+                submitBtn.disabled = true;
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const isCorrect = (selectedOption === q.ans);
+            if (isCorrect) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = '';
+            if (percent >= 90) grade = '🌟 Excellent!';
+            else if (percent >= 70) grade = '👍 Good job!';
+            else if (percent >= 50) grade = '📖 Keep reviewing!';
+            else grade = '💪 Study more and try again.';
+            resultContainer.style.display = 'block';
+            resultContainer.innerHTML = `
+                <div>🎯 You answered <strong>${score}</strong> out of <strong>${total}</strong> correctly.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Press "Restart" to shuffle and try again.</div>
+            `;
+            questionContainer.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreDisplay.textContent = `✅ ${score} / ${total}`;
+            questionCounter.innerHTML = `🎉 Complete!`;
+        }
+
+        function handleReset() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            resetQuiz();
+        }
+
+        // ----- init -----
+        function init() {
+            resetQuiz();
+            submitBtn.addEventListener('click', handleSubmit);
+            nextBtn.addEventListener('click', handleNext);
+            resetBtn.addEventListener('click', handleReset);
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>
