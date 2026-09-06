@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filipino · 1st Term · 50 items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f5f0ea;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.8rem;
+            box-shadow: 0 20px 45px -10px rgba(60, 40, 20, 0.12);
+            padding: 2rem 2.2rem 2.8rem;
+            border: 1px solid #e0d6c8;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #3a2a1a;
+            border-left: 6px solid #8b5a2b;
+            padding-left: 1.2rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6a5a4a;
+            margin-left: 0.5rem;
+        }
+        .subhead {
+            color: #4a3a2a;
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #dccfc2;
+            padding-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+        .reviewer-snapshot {
+            background: #f5ede4;
+            border-radius: 1.4rem;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 2rem;
+            border: 1px solid #dccfc2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+        }
+        .reviewer-snapshot span {
+            background: #e8d9ca;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            color: #3a2a1a;
+            font-weight: 500;
+        }
+        .quiz-card {
+            background: #fcf9f5;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e6ddd0;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #3a2a1a;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #6a5a4a;
+        }
+        .score-badge {
+            background: #8b5a2b;
+            color: white;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .question-box {
+            margin: 0.3rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #3a2a1a;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.6rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f5ede4;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.1s;
+            font-weight: 500;
+            color: #3a2a1a;
+        }
+        .options-grid label:hover {
+            background: #ece0d4;
+            border-color: #c9b4a0;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #8b5a2b;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #f0e8df;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #f5ede4;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.3rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #b8a390;
+            color: #3a2a1a;
+        }
+        .feedback-area.correct {
+            background: #e0f0e0;
+            border-left-color: #2d7d46;
+            color: #1a4a2a;
+        }
+        .feedback-area.wrong {
+            background: #f5e0e0;
+            border-left-color: #b34a4a;
+            color: #7a2a2a;
+        }
+        .feedback-area.show-answer {
+            background: #e8e0f0;
+            border-left-color: #7a5a8a;
+            color: #3d2a4a;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            background: white;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            border: 1.5px solid #8a7a6a;
+            color: #3a2a1a;
+        }
+        .btn-primary {
+            background: #8b5a2b;
+            color: white;
+            border-color: #8b5a2b;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #6f4620;
+            border-color: #6f4620;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #2d7d46;
+            border-color: #2d7d46;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #1f6635;
+            border-color: #1f6635;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #8a7a6a;
+            color: #3a2a1a;
+        }
+        .btn-outline:hover {
+            background: #ece0d4;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #f5ede4;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3a2a1a;
+        }
+        .result-summary strong {
+            color: #8b5a2b;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #6a5a4a;
+            text-align: center;
+            border-top: 1px solid #dccfc2;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 550px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1.2rem; }
+            .q-text { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📖 Filipino <small>Grade 10 · 1st Term</small></h1>
+    <div class="subhead">
+        <span>📘 El Filibusterismo · Kabanata 1–15</span>
+        <span style="background:#dccfc2; padding:0 1rem; border-radius:30px; color:#3a2a1a;">50 items</span>
+    </div>
+
+    <div class="reviewer-snapshot">
+        <span>📜 Kasaysayan</span>
+        <span>👤 Tauhan</span>
+        <span>📖 Kabanata 1-15</span>
+        <span>🕊️ GOMBURZA</span>
+        <span>🎭 Simbolismo</span>
+        <span>🏷️ Talasalitaan</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Tanong 1 <small>ng 50</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+
+        <div id="questionContainer">
+            <!-- dynamic -->
+        </div>
+
+        <div class="action-row" id="actionRow">
+            <button class="btn btn-primary" id="submitAnswerBtn">✅ Isumite ang sagot</button>
+            <button class="btn btn-success" id="nextQuestionBtn" disabled>➡️ Susunod na tanong</button>
+            <button class="btn btn-outline" id="resetQuizBtn">🔄 I-shuffle at subukan muli</button>
+        </div>
+
+        <div id="resultContainer" style="display: none;" class="result-summary"></div>
+        <div class="footer-note">⬆️ Sagutin ang bawat tanong, tingnan ang feedback, pagkatapos ay lumipat sa susunod.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- 50 MASTER QUESTIONS : FILIPINO (El Filibusterismo) ----------
+        const MASTER_QUESTIONS = [
+            // Historical Context & GOMBURZA (1-6)
+            { q: "Sino ang may-akda ng El Filibusterismo?", opts: ["Andres Bonifacio", "Jose Rizal", "Marcelo H. del Pilar", "Graciano Lopez Jaena"], ans: 1 },
+            { q: "Kailan nailathala ang El Filibusterismo?", opts: ["1887", "1891", "1896", "1872"], ans: 1 },
+            { q: "Saan nailimbag ang El Filibusterismo?", opts: ["Madrid, Spain", "Ghent, Belgium", "Paris, France", "Berlin, Germany"], ans: 1 },
+            { q: "Sino ang inialayan ni Rizal ng El Filibusterismo?", opts: ["Mga mag-aaral", "GOMBURZA", "Mga prayle", "Kapitan Heneral"], ans: 1 },
+            { q: "Ano ang pangyayaring nagbigay-inspirasyon kay Rizal na isulat ang El Filibusterismo?", opts: ["Pag-aalsa sa Cavite (1872)", "Pagbitay kay Rizal", "Digmaang Pilipino-Amerikano", "Pagdating ng mga Amerikano"], ans: 0 },
+            { q: "Kailan ginilitan ang GOMBURZA?", opts: ["Pebrero 17, 1872", "Enero 1, 1872", "Disyembre 30, 1896", "Hunyo 12, 1898"], ans: 0 },
+
+            // Characters – Government & Priests (7-14)
+            { q: "Sino ang mayamang mag-aalahas at tagapayo ng Kapitan Heneral?", opts: ["Simoun", "Basilio", "Isagani", "Kapitan Tiyago"], ans: 0 },
+            { q: "Sino ang pinakamataas na opisyal sa Pilipinas na kumakatawan sa hari ng Espanya?", opts: ["Kapitan Heneral", "Alkalde Mayor", "Gobernador Heneral", "Teniente"], ans: 0 },
+            { q: "Sino ang prayleng guro na may mataas na antas ng pangangatwiran at nagmamalasakit sa mga Pilipino?", opts: ["Padre Sibyla", "Padre Fernandez", "Padre Camorra", "Padre Salvi"], ans: 1 },
+            { q: "Sino ang nagpanggap na matalino at natatanging nag-iisip para sa kapakanan ng lahat?", opts: ["Ben Zayb", "Don Custodio", "Padre Irene", "Kapitan Heneral"], ans: 1 },
+            { q: "Sinong pari ang nagsamantala kay Huli?", opts: ["Padre Camorra", "Padre Florentino", "Padre Salvi", "Padre Sibyla"], ans: 0 },
+            { q: "Sino ang amain ni Isagani na napilitang magpari para sa kagustuhan ng kanyang ina?", opts: ["Padre Florentino", "Padre Fernandez", "Padre Irene", "Padre Salvi"], ans: 0 },
+            { q: "Sino ang dating kompesor ni Maria Clara at naging obispo ng Maynila?", opts: ["Padre Salvi", "Padre Sibyla", "Padre Irene", "Padre Camorra"], ans: 0 },
+            { q: "Sino ang abogadong sanggunian ng mga prayle?", opts: ["Ben Zayb", "Don Custodio", "Padre Irene", "Kapitan Heneral"], ans: 0 },
+
+            // Students (15-20)
+            { q: "Sino ang anak ni Sisa at katipan ni Huli?", opts: ["Basilio", "Isagani", "Placido Penitente", "Macaraig"], ans: 0 },
+            { q: "Sino ang kasintahan ni Paulita Gomez na may mataas na pangarap para sa bayan?", opts: ["Isagani", "Basilio", "Placido", "Sandoval"], ans: 0 },
+            { q: "Sino ang pinakamatalino sa kanyang klase sa Batangas ngunit nawalan ng gana sa pag-aaral?", opts: ["Placido Penitente", "Macaraig", "Pecson", "Tadeo"], ans: 0 },
+            { q: "Sino ang mayaman at pinakamasigasig sa pagpapatayo ng akademya?", opts: ["Macaraig", "Basilio", "Isagani", "Sandoval"], ans: 0 },
+            { q: "Sino ang Kastilang salungat sa kanyang mga kababayan at may pagmamalasakit sa mga Pilipino?", opts: ["Sandoval", "Juanito Pelaez", "Ben Zayb", "Don Custodio"], ans: 0 },
+            { q: "Sino ang tamad at natutuwa kapag walang pasok?", opts: ["Tadeo", "Pecson", "Placido", "Juanito"], ans: 0 },
+
+            // Family of Kabesang Tales (21-25)
+            { q: "Sino si Tandang Selo?", opts: ["Ama ni Kabesang Tales", "Ama ni Huli", "Kapatid ni Tales", "Lolo ni Basilio"], ans: 0 },
+            { q: "Ano ang tunay na pangalan ni Kabesang Tales?", opts: ["Telesforo de Dios", "Tandang Selo", "Tano", "Juan de Dios"], ans: 0 },
+            { q: "Sino ang kasintahan ni Basilio na nagpaalila upang matubos ang ama?", opts: ["Huli", "Paulita Gomez", "Maria Clara", "Pepay"], ans: 0 },
+            { q: "Sino ang kapatid ni Huli na naging guwardiya sibil?", opts: ["Tano", "Basilio", "Isagani", "Tandang Selo"], ans: 0 },
+            { q: "Sino ang panginoon ni Huli nang magpaalila ito?", opts: ["Hermana Penchang", "Donya Victorina", "Kapitan Tiyago", "Kabesang Andang"], ans: 0 },
+
+            // Other Characters (26-30)
+            { q: "Sino ang kutsero ni Simoun na pinarusahan dahil walang cedula?", opts: ["Sinong", "Basilio", "Kapitan Basilio", "Tandang Selo"], ans: 0 },
+            { q: "Sino ang negosyanteng Tsino na gustong magkaroon ng embassy ng kanyang bayan?", opts: ["Quiroga", "Mr. Leeds", "Camaroncocido", "Kapitan ng Barko"], ans: 0 },
+            { q: "Sino ang mayamang dayuhan at mahikero?", opts: ["Mr. Leeds", "Quiroga", "Simoun", "Ben Zayb"], ans: 0 },
+            { q: "Sino ang tinawag na 'halabos na hipon'?", opts: ["Camaroncocido", "Juanito Pelaez", "Don Custodio", "Ben Zayb"], ans: 0 },
+            { q: "Sino ang mananayaw na ginamit ng mga mag-aaral na panunuhol?", opts: ["Pepay", "Huli", "Paulita Gomez", "Hermana Penchang"], ans: 0 },
+
+            // Kabanata 1-5 (31-36)
+            { q: "Saan naglalayag ang Bapor Tabo sa Kabanata 1?", opts: ["Ilog Pasig", "Lawa ng Laguna", "Look ng Maynila", "Ilog Pampanga"], ans: 0 },
+            { q: "Ano ang panukala ni Simoun para mapabilis ang paglalakbay sa ilog?", opts: ["Gumawa ng tuwid na kanal", "Mag-alaga ng pato", "Maghukay ng lagusan", "Gumamit ng mas malaking bapor"], ans: 0 },
+            { q: "Ano ang iminungkahi ni Don Custodio bilang alternatibo?", opts: ["Mag-alaga ng pato", "Gumawa ng kanal", "Gumamit ng tren", "Magtayo ng tulay"], ans: 0 },
+            { q: "Sino ang mga mag-aaral na nag-usap sa ilalim ng kubyerta?", opts: ["Basilio at Isagani", "Placido at Juanito", "Macaraig at Sandoval", "Pecson at Tadeo"], ans: 0 },
+            { q: "Ano ang panukala ng mga mag-aaral sa Kabanata 2?", opts: ["Akademya ng Wikang Kastila", "Pagsasara ng mga paaralan", "Pagpapalit ng kurikulum", "Pagtatayo ng bagong unibersidad"], ans: 0 },
+            { q: "Ano ang ikinahihiya ng mga prayle tungkol kay Padre Florentino?", opts: ["Nasa ilalim siya ng kubyerta kasama ang mga karaniwang tao", "Siya ay Pilipino", "Siya ay mayaman", "Siya ay masyadong relihiyoso"], ans: 0 },
+
+            // Kabanata 6-10 (37-42)
+            { q: "Saan pumunta si Basilio sa Kabanata 6?", opts: ["Sementeryo ng San Diego", "Bahay ni Kapitan Tiyago", "Unibersidad", "Tahanan ni Sisa"], ans: 0 },
+            { q: "Sino ang nakilala ni Basilio sa gubat na naghuhukay?", opts: ["Simoun", "Kabesang Tales", "Tandang Selo", "Kapitan Basilio"], ans: 0 },
+            { q: "Ano ang tunay na pagkakakilanlan ni Simoun?", opts: ["Crisostomo Ibarra", "Kapitan Tiyago", "Padre Salvi", "Don Custodio"], ans: 0 },
+            { q: "Ano ang nangyari kay Tandang Selo sa Kabanata 8?", opts: ["Naging pipi", "Namatay", "Nakulong", "Nawala"], ans: 0 },
+            { q: "Ano ang ipinagpalit ni Kabesang Tales sa baril ni Simoun?", opts: ["Locket ni Maria Clara", "Kanyang lupa", "Kanyang bahay", "Kanyang alahas"], ans: 0 },
+            { q: "Sino ang napatay sa Kabanata 10?", opts: ["Bagong may-ari ng lupa, asawa, at prayleng administrador", "Kabesang Tales", "Tandang Selo", "Huli"], ans: 0 },
+
+            // Kabanata 11-15 (43-48)
+            { q: "Saan nangyari ang Kabanata 11?", opts: ["Los Baños", "San Diego", "Maynila", "Tiyani"], ans: 0 },
+            { q: "Ano ang pinag-usapan sa Kabanata 11 bukod sa larong tresillo?", opts: ["Akademya ng Wikang Kastila", "Pagpapalalim ng ilog", "Pag-aalsa", "Kasalan ni Paulita"], ans: 0 },
+            { q: "Sino ang pinakamatalino sa kanyang bayan ngunit nawalan ng gana sa pag-aaral?", opts: ["Placido Penitente", "Basilio", "Isagani", "Macaraig"], ans: 0 },
+            { q: "Ano ang ginawa ni Placido nang siya ay ipahiya ni Padre Millon?", opts: ["Walk-out sa klase", "Natahimik", "Umiyak", "Nag-sorry"], ans: 0 },
+            { q: "Sino ang abogadong kinausap ni Isagani para sa kanilang panukala?", opts: ["Ginoong Pasta", "Don Custodio", "Padre Irene", "Kapitan Heneral"], ans: 0 },
+            { q: "Ano ang payo ni Ginoong Pasta kay Isagani?", opts: ["Mag-aral at mamuhay nang tahimik", "Maging rebolusyonaryo", "Lumabas ng bansa", "Huwag mag-aral"], ans: 0 },
+
+            // Simbolismo at Imahe (49-50)
+            { q: "Ano ang sinisimbolo ng Bapor Tabo?", opts: ["Lipunang Pilipino at pamahalaang kolonyal", "Kalakalan", "Relihiyon", "Edukasyon"], ans: 0 },
+            { q: "Ano ang sinisimbolo ng mga alahas ni Simoun?", opts: ["Pambubulag sa lipunan sa pamamagitan ng karangyaan", "Kahirapan", "Katarungan", "Pag-asa"], ans: 0 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        // DOM refs
+        const questionContainer = document.getElementById('questionContainer');
+        const submitBtn = document.getElementById('submitAnswerBtn');
+        const nextBtn = document.getElementById('nextQuestionBtn');
+        const resetBtn = document.getElementById('resetQuizBtn');
+        const questionCounter = document.getElementById('questionCounter');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // ----- helpers -----
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Hindi nasagot. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Tama! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Mali. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            questionContainer.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Tapos na & tingnan ang marka';
+            } else {
+                nextBtn.textContent = '➡️ Susunod na tanong';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            questionCounter.innerHTML = `Tanong ${currentIndex+1} <small>ng ${total}</small>`;
+            scoreDisplay.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) {
+                submitBtn.disabled = true;
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const isCorrect = (selectedOption === q.ans);
+            if (isCorrect) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = '';
+            if (percent >= 90) grade = '🌟 Napakahusay!';
+            else if (percent >= 70) grade = '👍 Magaling!';
+            else if (percent >= 50) grade = '📖 Mag-aral pa!';
+            else grade = '💪 Pag-aralan muli at subukan ulit.';
+            resultContainer.style.display = 'block';
+            resultContainer.innerHTML = `
+                <div>🎯 Nakasagot ka ng <strong>${score}</strong> sa <strong>${total}</strong> nang tama.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Pindutin ang "I-shuffle at subukan muli" para ulitin.</div>
+            `;
+            questionContainer.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreDisplay.textContent = `✅ ${score} / ${total}`;
+            questionCounter.innerHTML = `🎉 Tapos na!`;
+        }
+
+        function handleReset() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            resetQuiz();
+        }
+
+        // ----- init -----
+        function init() {
+            resetQuiz();
+            submitBtn.addEventListener('click', handleSubmit);
+            nextBtn.addEventListener('click', handleNext);
+            resetBtn.addEventListener('click', handleReset);
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>

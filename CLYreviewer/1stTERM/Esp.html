@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP · 1st Term · 50 items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8f4ef;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.8rem;
+            box-shadow: 0 20px 45px -10px rgba(60, 40, 20, 0.12);
+            padding: 2rem 2.2rem 2.8rem;
+            border: 1px solid #e6ddd0;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #3a2a1a;
+            border-left: 6px solid #b87333;
+            padding-left: 1.2rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6a5a4a;
+            margin-left: 0.5rem;
+        }
+        .subhead {
+            color: #4a3a2a;
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #dccfc2;
+            padding-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+        .reviewer-snapshot {
+            background: #f5ede4;
+            border-radius: 1.4rem;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 2rem;
+            border: 1px solid #dccfc2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+        }
+        .reviewer-snapshot span {
+            background: #e8d9ca;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            color: #3a2a1a;
+            font-weight: 500;
+        }
+        .quiz-card {
+            background: #fcf9f5;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e6ddd0;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #3a2a1a;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #6a5a4a;
+        }
+        .score-badge {
+            background: #b87333;
+            color: white;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .question-box {
+            margin: 0.3rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #3a2a1a;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.6rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f5ede4;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.1s;
+            font-weight: 500;
+            color: #3a2a1a;
+        }
+        .options-grid label:hover {
+            background: #ece0d4;
+            border-color: #c9b4a0;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #b87333;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #f0e8df;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #f5ede4;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.3rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #b8a390;
+            color: #3a2a1a;
+        }
+        .feedback-area.correct {
+            background: #e0f0e0;
+            border-left-color: #2d7d46;
+            color: #1a4a2a;
+        }
+        .feedback-area.wrong {
+            background: #f5e0e0;
+            border-left-color: #b34a4a;
+            color: #7a2a2a;
+        }
+        .feedback-area.show-answer {
+            background: #e8e0f0;
+            border-left-color: #7a5a8a;
+            color: #3d2a4a;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            background: white;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            border: 1.5px solid #8a7a6a;
+            color: #3a2a1a;
+        }
+        .btn-primary {
+            background: #b87333;
+            color: white;
+            border-color: #b87333;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #9a5f28;
+            border-color: #9a5f28;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #2d7d46;
+            border-color: #2d7d46;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #1f6635;
+            border-color: #1f6635;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #8a7a6a;
+            color: #3a2a1a;
+        }
+        .btn-outline:hover {
+            background: #ece0d4;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #f5ede4;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3a2a1a;
+        }
+        .result-summary strong {
+            color: #b87333;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #6a5a4a;
+            text-align: center;
+            border-top: 1px solid #dccfc2;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 550px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1.2rem; }
+            .q-text { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🧘 ESP <small>Grade 10 · 1st Term</small></h1>
+    <div class="subhead">
+        <span>📘 Dignidad · LGBTQIA+ · Panlipunan · Pananampalataya</span>
+        <span style="background:#dccfc2; padding:0 1rem; border-radius:30px; color:#3a2a1a;">50 items</span>
+    </div>
+
+    <div class="reviewer-snapshot">
+        <span>🕊️ Karapatan</span>
+        <span>🏳️‍🌈 LGBTQIA+</span>
+        <span>💰 Financial Literacy</span>
+        <span>📱 Social Media</span>
+        <span>🌿 Kalikasan</span>
+        <span>🙏 Pananampalataya</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Tanong 1 <small>ng 50</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+
+        <div id="questionContainer">
+            <!-- dynamic -->
+        </div>
+
+        <div class="action-row" id="actionRow">
+            <button class="btn btn-primary" id="submitAnswerBtn">✅ Isumite ang sagot</button>
+            <button class="btn btn-success" id="nextQuestionBtn" disabled>➡️ Susunod na tanong</button>
+            <button class="btn btn-outline" id="resetQuizBtn">🔄 I-shuffle at subukan muli</button>
+        </div>
+
+        <div id="resultContainer" style="display: none;" class="result-summary"></div>
+        <div class="footer-note">⬆️ Sagutin ang bawat tanong, tingnan ang feedback, pagkatapos ay lumipat sa susunod.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- 50 MASTER QUESTIONS : ESP ----------
+        const MASTER_QUESTIONS = [
+            // Karapatan / Dignidad (1-6)
+            { q: "Ayon sa UDHR (1948), lahat ng tao ay ipinanganak na malaya at pantay sa:", opts: ["Dignidad at karapatan", "Yaman at kapangyarihan", "Kultura at tradisyon", "Relihiyon at lahi"], ans: 0 },
+            { q: "Alin ang hindi kabilang sa mga karapatang pantao ayon sa UDHR?", opts: ["Karapatang mabuhay", "Karapatang magtrabaho", "Karapatang pumatay", "Karapatan sa edukasyon"], ans: 2 },
+            { q: "Ano ang pundasyon ng dignidad ng tao ayon sa aralin?", opts: ["Kayamanan", "Likas na halaga at karapatan", "Antas sa lipunan", "Kapangyarihan"], ans: 1 },
+            { q: "Ayon kay Pope Francis sa Fratelli Tutti, walang sinuman ang dapat maliitin dahil sa:", opts: ["Relihiyon, kasarian, lahi, o kakayahan", "Edad lamang", "Kasarian lamang", "Lahi lamang"], ans: 0 },
+            { q: "Ilang karapatan ang binanggit sa UDHR sa aralin?", opts: ["5", "6", "7", "8"], ans: 2 },
+            { q: "Ang karapatang magkaroon ng sapat na pamumuhay ay kinabibilangan ng:", opts: ["Pagkain, tubig, tirahan, at pangangalaga sa kalusugan", "Libreng kotse", "Maraming gadget", "Pagiging sikat"], ans: 0 },
+
+            // LGBTQIA+ at Inclusivity (7-10)
+            { q: "Ano ang tinutukoy ng LGBTQIA+?", opts: ["Iba't ibang sekswal na oryentasyon at pagkakakilanlan", "Isang relihiyon", "Isang partidong politikal", "Isang paaralan"], ans: 0 },
+            { q: "Aling batas ang nagbibigay ng proteksyon laban sa diskriminasyon at bullying sa mga LGBTQIA+?", opts: ["Child Protection Policy at Anti-Bullying Law", "Magna Carta for PWDs", "RA 11904", "UDHR lamang"], ans: 0 },
+            { q: "Ano ang dapat nating itaguyod upang labanan ang diskriminasyon sa LGBTQIA+?", opts: ["Pagkakapantay-pantay", "Diskriminasyon", "Pagtanggi", "Pananahimik"], ans: 0 },
+            { q: "Ayon sa aralin, ang bawat tao ay may karapatang tanggapin anuman ang kanilang:", opts: ["Kasarian at oryentasyon", "Trabaho", "Edad", "Tirahan"], ans: 0 },
+
+            // Isyung Panlipunan: Kahirapan, IPs, PWDs (11-16)
+            { q: "Ano ang isang epekto ng kahirapan sa Pilipinas?", opts: ["Kakulangan sa pagkain at edukasyon", "Pagdami ng trabaho", "Pagtaas ng sahod", "Pag-unlad ng bansa"], ans: 0 },
+            { q: "Sino ang mga Indigenous Peoples (IPs)?", opts: ["Mga katutubong pangkat na may sariling kultura at lupang ninuno", "Mga dayuhan", "Mga pulitiko", "Mga negosyante"], ans: 0 },
+            { q: "Ano ang pangunahing problema ng mga IPs ayon sa aralin?", opts: ["Diskriminasyon at pagkawala ng lupang ninuno", "Kakulangan sa gadgets", "Labis na kayamanan", "Proteksyon ng pamahalaan"], ans: 0 },
+            { q: "Aling deklarasyon ang nagpoprotekta sa karapatan ng mga IPs?", opts: ["UN Declaration on the Rights of Indigenous Peoples (2007)", "UDHR lamang", "Magna Carta for IPs", "RA 11904"], ans: 0 },
+            { q: "Ano ang ibig sabihin ng PWD?", opts: ["Person with Disability", "Person with Degree", "People with Dreams", "People with Dignity"], ans: 0 },
+            { q: "Aling batas ang nagpoprotekta sa karapatan ng mga PWDs?", opts: ["Magna Carta for Persons with Disability (RA 7277)", "Anti-Bullying Law", "Child Protection Policy", "RA 11904"], ans: 0 },
+
+            // Financial Literacy (17-22)
+            { q: "Ano ang financial literacy?", opts: ["Kakayahang umunawa at gumamit ng wasto ng pera", "Pagkakaroon ng maraming pera", "Paggastos ng lahat ng pera", "Pangungutang ng malaki"], ans: 0 },
+            { q: "Alin ang hindi kabilang sa mga bahagi ng financial literacy?", opts: ["Kumita ng pera", "Gumastos", "Mag-ipon", "Mag-aksaya"], ans: 3 },
+            { q: "Ano ang dapat unahin sa paggastos?", opts: ["Pangangailangan", "Kagustuhan", "Libangan", "Bagong gadget"], ans: 0 },
+            { q: "Bakit mahalaga ang pag-iipon?", opts: ["Para sa mga layunin sa hinaharap", "Para makabili agad ng luho", "Para ipakita sa iba", "Para walang gawin"], ans: 0 },
+            { q: "Ano ang emergency fund?", opts: ["Perang nakalaan para sa hindi inaasahang pangyayari", "Pera para sa bakasyon", "Pera para sa bagong damit", "Pera para sa gadget"], ans: 0 },
+            { q: "Alin ang tamang kasanayan sa financial literacy?", opts: ["Pangunahing pagbabadyet", "Walang planong paggastos", "Pangungutang nang walang bayad", "Pagtapon ng pera"], ans: 0 },
+
+            // Social Media, Misinformation, Fake News (23-30)
+            { q: "Ano ang social media?", opts: ["Mga online platform para sa pakikipag-ugnayan at pagbabahagi ng nilalaman", "Isang uri ng libro", "Isang uri ng telebisyon", "Isang laro"], ans: 0 },
+            { q: "Ano ang pagkakaiba ng misinformation at disinformation?", opts: ["Ang disinformation ay sadyang panlilinlang; ang misinformation ay hindi sinasadya", "Pareho lang sila", "Ang misinformation ay mas malala", "Walang pagkakaiba"], ans: 0 },
+            { q: "Ayon sa APA, ang disinformation ay:", opts: ["Hindi totoo at sadyang layuning maglihis", "Hindi sinasadyang maling impormasyon", "Opinyon lamang", "Personal na pananaw"], ans: 0 },
+            { q: "Ano ang infodemic?", opts: ["Labis na pagkalat ng maling impormasyon lalo na sa kalusugan", "Isang uri ng sakit", "Isang bakuna", "Isang programa sa kalusugan"], ans: 0 },
+            { q: "Alin ang epekto ng fake news?", opts: ["Nagpapalakas ng takot at pagkakabaha-bahagi", "Nagpapabuti ng lipunan", "Nagpapataas ng tiwala", "Nagpapalakas ng demokrasya"], ans: 0 },
+            { q: "Ano ang identity theft?", opts: ["Pagnanakaw ng pagkakilanlan sa social media", "Pagnanakaw ng pera", "Pagnanakaw ng gamit", "Pagnanakaw ng pagkain"], ans: 0 },
+            { q: "Alin ang hindi gabay sa wastong paggamit ng social media?", opts: ["Maging magalang", "Suriin ang impormasyon", "Magbahagi ng kahit anong impormasyon", "Protektahan ang privacy"], ans: 2 },
+            { q: "Bakit mahalaga ang mapanuring pag-iisip sa social media?", opts: ["Upang makilala ang totoo sa hindi totoong impormasyon", "Upang makipag-away", "Upang mag-post ng marami", "Upang maging sikat"], ans: 0 },
+
+            // Pananampalataya at Espirituwalidad (31-38)
+            { q: "Ayon sa aralin, ang pag-ibig ng Diyos ay:", opts: ["Walang kondisyon", "Nakabatay sa ating ginagawa", "Nakabatay sa ating kayamanan", "Nakabatay sa ating katayuan"], ans: 0 },
+            { q: "Ano ang pinakadakilang utos sa paniniwalang Kristiyano?", opts: ["Ibigin ang Diyos at ang kapuwa", "Maging mayaman", "Maging sikat", "Mag-ipon ng maraming pera"], ans: 0 },
+            { q: "Ayon kay Mikah 6:8, ang tunay na tao ay:", opts: ["Kumilos nang makatarungan, umibig nang may kabaitan, at lumakad nang may kababaang-loob", "Maging mayaman", "Maging makapangyarihan", "Maging sikat"], ans: 0 },
+            { q: "Bakit mahalaga ang pagkakaroon ng matalik na kaugnayan sa Diyos?", opts: ["Upang maunawaan ang Kanyang pag-ibig at magmahal ng kapwa", "Upang makakuha ng yaman", "Upang maging sikat", "Upang makaiwas sa problema"], ans: 0 },
+            { q: "Ano ang maaari mong gawin upang palalimin ang iyong pagmamahal sa Diyos?", opts: ["Magnilay at suriin ang iyong mga desisyon", "Mag-ipon ng pera", "Mag-post sa social media", "Manood ng TV"], ans: 0 },
+            { q: "Sino si Efren Peñaflorida?", opts: ["Nagtatag ng Kariton Klasrum, 2009 CNN Hero", "Isang pulitiko", "Isang artista", "Isang negosyante"], ans: 0 },
+            { q: "Sino si Cris 'Kesz' Valdez?", opts: ["Nagwagi ng International Children's Peace Prize noong 2012", "Isang modelo", "Isang guro", "Isang doktor"], ans: 0 },
+            { q: "Ano ang aral mula sa buhay nina Efren Peñaflorida at Kesz Valdez?", opts: ["Ang pagtulong sa kapwa ay mahalaga at may malaking epekto", "Ang yaman ang tanging mahalaga", "Ang kasikatan ang sukatan ng tagumpay", "Ang edukasyon ay hindi kailangan"], ans: 0 },
+
+            // Bokasyon at Responsibilidad (39-44)
+            { q: "Ano ang bokasyon ayon sa aralin?", opts: ["Tawag sa buhay at serbisyo — misyon na higit pa sa trabaho", "Isang uri ng trabaho lamang", "Isang hobby", "Isang libangan"], ans: 0 },
+            { q: "Bilang indibidwal, ano ang isa sa iyong mga responsibilidad?", opts: ["Paunlarin ang talento at kakayahan", "Maging tamad", "Pabayaan ang kalusugan", "Hindi mag-aral"], ans: 0 },
+            { q: "Bilang miyembro ng pamayanan, ano ang dapat mong gawin?", opts: ["Makilahok sa mga gawaing pangkomunidad", "Manatili sa bahay", "Hindi makisali", "Pabayaan ang komunidad"], ans: 0 },
+            { q: "Bilang tagapangasiwa ng kapaligiran, ano ang iyong tungkulin?", opts: ["Pangalagaan ang kalikasan", "Magtapon ng basura kung saan-saan", "Pabayaan ang polusyon", "Gumamit ng single-use plastic"], ans: 0 },
+            { q: "Bilang mananampalataya, paano mo maipapakita ang pagmamahal sa Diyos?", opts: ["Sa pamamagitan ng pagtulong sa kapwa at mabubuting gawa", "Sa pamamagitan ng pagiging mayaman", "Sa pamamagitan ng pagiging sikat", "Sa pamamagitan ng pag-iipon"], ans: 0 },
+            { q: "Bilang tagakonsumo, alin ang dapat mong isabuhay?", opts: ["Reuse, Repair, at Recycle", "Bumili ng maraming bagay", "Itapon lahat", "Suportahan ang mga imported na produkto lamang"], ans: 0 },
+
+            // Ilegal na Pagmimina at Extinction (45-48)
+            { q: "Ano ang epekto ng ilegal na pagmimina?", opts: ["Nasisira ang kagubatan, ilog, at tirahan ng mga katutubo", "Nagpapabuti ng kalikasan", "Nagdaragdag ng biodiversity", "Walang epekto"], ans: 0 },
+            { q: "Ano ang extinction?", opts: ["Pagkawala ng mga species", "Pagdami ng mga species", "Paglipat ng mga species", "Pagbabago ng klima"], ans: 0 },
+            { q: "Ano ang epekto ng pagkawala ng biodiversity?", opts: ["Nagagambala ang ekosistema", "Nagpapabuti ng kalikasan", "Walang epekto", "Nagdudulot ng kasaganahan"], ans: 0 },
+            { q: "Ano ang responsibilidad natin sa kalikasan ayon sa aralin?", opts: ["Pangangalaga at proteksyon", "Pagsira", "Pabayaan", "Pagsasamantala"], ans: 0 },
+
+            // Aralin 4: Pagtibayin ang Ugnayan sa Diyos (49-50)
+            { q: "Ayon sa aralin, ang pagpapakita ng pagmamahal sa ibang tao at nilikha ay:", opts: ["Isang paraan upang masuklian ang pag-ibig ng Diyos", "Hindi kailangan", "Para lamang sa sarili", "Hindi mahalaga"], ans: 0 },
+            { q: "Bakit mahalaga ang pagsasabuhay ng pananampalataya?", opts: ["Upang magkaroon ng makabuluhang buhay at makatulong sa kapwa", "Upang maging mayaman", "Upang maging sikat", "Upang makaiwas sa responsibilidad"], ans: 0 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        // DOM refs
+        const questionContainer = document.getElementById('questionContainer');
+        const submitBtn = document.getElementById('submitAnswerBtn');
+        const nextBtn = document.getElementById('nextQuestionBtn');
+        const resetBtn = document.getElementById('resetQuizBtn');
+        const questionCounter = document.getElementById('questionCounter');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // ----- helpers -----
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Hindi nasagot. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Tama! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Mali. Tamang sagot: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            questionContainer.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Tapos na & tingnan ang marka';
+            } else {
+                nextBtn.textContent = '➡️ Susunod na tanong';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            questionCounter.innerHTML = `Tanong ${currentIndex+1} <small>ng ${total}</small>`;
+            scoreDisplay.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) {
+                submitBtn.disabled = true;
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const isCorrect = (selectedOption === q.ans);
+            if (isCorrect) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = '';
+            if (percent >= 90) grade = '🌟 Napakahusay!';
+            else if (percent >= 70) grade = '👍 Magaling!';
+            else if (percent >= 50) grade = '📖 Mag-aral pa!';
+            else grade = '💪 Pag-aralan muli at subukan ulit.';
+            resultContainer.style.display = 'block';
+            resultContainer.innerHTML = `
+                <div>🎯 Nakasagot ka ng <strong>${score}</strong> sa <strong>${total}</strong> nang tama.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Pindutin ang "I-shuffle at subukan muli" para ulitin.</div>
+            `;
+            questionContainer.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreDisplay.textContent = `✅ ${score} / ${total}`;
+            questionCounter.innerHTML = `🎉 Tapos na!`;
+        }
+
+        function handleReset() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            resetQuiz();
+        }
+
+        // ----- init -----
+        function init() {
+            resetQuiz();
+            submitBtn.addEventListener('click', handleSubmit);
+            nextBtn.addEventListener('click', handleNext);
+            resetBtn.addEventListener('click', handleReset);
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>

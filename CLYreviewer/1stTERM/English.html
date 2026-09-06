@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English · 1st Term · 50 items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f7fc;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.8rem;
+            box-shadow: 0 20px 45px -10px rgba(0, 30, 60, 0.12);
+            padding: 2rem 2.2rem 2.8rem;
+            border: 1px solid #dde6ef;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b2a4a;
+            border-left: 6px solid #2563eb;
+            padding-left: 1.2rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #4a6a8a;
+            margin-left: 0.5rem;
+        }
+        .subhead {
+            color: #2a4a6a;
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #cbd8e8;
+            padding-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+        .reviewer-snapshot {
+            background: #eef4fa;
+            border-radius: 1.4rem;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 2rem;
+            border: 1px solid #d0ddee;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+        }
+        .reviewer-snapshot span {
+            background: #d6e4f5;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            color: #0b2a4a;
+            font-weight: 500;
+        }
+        .quiz-card {
+            background: #f9fcff;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #dce5ef;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0b2a4a;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #4a6a8a;
+        }
+        .score-badge {
+            background: #1e4b8a;
+            color: white;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .question-box {
+            margin: 0.3rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0b2a4a;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.6rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f2f7fd;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.1s;
+            font-weight: 500;
+            color: #0b2a4a;
+        }
+        .options-grid label:hover {
+            background: #e3edf8;
+            border-color: #a0bada;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #2563eb;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #eef4fa;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #eef4fa;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.3rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #7a9aba;
+            color: #0b2a4a;
+        }
+        .feedback-area.correct {
+            background: #dff0e6;
+            border-left-color: #1d7a4a;
+            color: #144a2a;
+        }
+        .feedback-area.wrong {
+            background: #f5e4e4;
+            border-left-color: #b34a4a;
+            color: #6a2a2a;
+        }
+        .feedback-area.show-answer {
+            background: #e4eaf5;
+            border-left-color: #4a6a9a;
+            color: #1a2a4a;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            background: white;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            border: 1.5px solid #2a4a7a;
+            color: #0b2a4a;
+        }
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #1a4fc7;
+            border-color: #1a4fc7;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #1d7a4a;
+            border-color: #1d7a4a;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #14633a;
+            border-color: #14633a;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #4a6a8a;
+            color: #0b2a4a;
+        }
+        .btn-outline:hover {
+            background: #e3edf8;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #eef4fa;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0b2a4a;
+        }
+        .result-summary strong {
+            color: #2563eb;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #4a6a8a;
+            text-align: center;
+            border-top: 1px solid #cbd8e8;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 550px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1.2rem; }
+            .q-text { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📖 English <small>Grade 10 · 1st Term</small></h1>
+    <div class="subhead">
+        <span>📚 Story Elements · Literary Theories · Visual Storytelling</span>
+        <span style="background:#dce5ef; padding:0 1rem; border-radius:30px; color:#0b2a4a;">50 items</span>
+    </div>
+
+    <div class="reviewer-snapshot">
+        <span>📌 Elements of Story</span>
+        <span>🧑‍🎤 Characterization</span>
+        <span>📈 Plot Structures</span>
+        <span>🎬 Film & Adaptation</span>
+        <span>🌍 Literary Context</span>
+        <span>📖 Maxims & Theories</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Question 1 <small>of 50</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+
+        <div id="questionContainer">
+            <!-- dynamic -->
+        </div>
+
+        <div class="action-row" id="actionRow">
+            <button class="btn btn-primary" id="submitAnswerBtn">✅ Submit Answer</button>
+            <button class="btn btn-success" id="nextQuestionBtn" disabled>➡️ Next Question</button>
+            <button class="btn btn-outline" id="resetQuizBtn">🔄 Shuffle &amp; Retry</button>
+        </div>
+
+        <div id="resultContainer" style="display: none;" class="result-summary"></div>
+        <div class="footer-note">⬆️ Answer each question, view feedback, then proceed.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- 50 MASTER QUESTIONS : ENGLISH ----------
+        const MASTER_QUESTIONS = [
+            // Elements of Story (1-8)
+            { q: "Which element refers to the time and place where the story happens?", opts: ["Characters", "Setting", "Plot", "Conflict"], ans: 1 },
+            { q: "What is the logical sequence of events that make up the narrative?", opts: ["Theme", "Plot", "Setting", "POV"], ans: 1 },
+            { q: "Which point of view uses 'I' and the narrator is inside the story?", opts: ["First-person", "Second-person", "Third-person limited", "Third-person omniscient"], ans: 0 },
+            { q: "In third-person omniscient, the narrator knows:", opts: ["Only one character's thoughts", "All characters' thoughts", "No one's thoughts", "Only actions"], ans: 1 },
+            { q: "What is the central message or universal lesson of a story?", opts: ["Plot", "Conflict", "Theme", "Setting"], ans: 2 },
+            { q: "Which type of conflict involves a character struggling against social norms?", opts: ["Character vs Character", "Character vs Self", "Character vs Society", "Character vs Nature"], ans: 2 },
+            { q: "In The Iliad, Achilles fighting Hector is an example of:", opts: ["Character vs Self", "Character vs Society", "Character vs Character", "Character vs Nature"], ans: 2 },
+            { q: "Odysseus battling storms and Poseidon's anger is:", opts: ["Character vs Self", "Character vs Character", "Character vs Nature", "Character vs Society"], ans: 2 },
+
+            // Characterization & Types (9-14)
+            { q: "A complex character who shows various emotions and traits is:", opts: ["Flat", "Round", "Static", "Stock"], ans: 1 },
+            { q: "A character who remains the same from beginning to end is:", opts: ["Dynamic", "Round", "Static", "Protagonist"], ans: 2 },
+            { q: "What is direct characterization?", opts: ["Narrator explicitly describes traits", "Traits revealed through actions", "Traits shown through dialogue", "Traits inferred from thoughts"], ans: 0 },
+            { q: "Indirect characterization reveals traits through:", opts: ["Actions, speech, thoughts, appearance, and reactions", "Direct description only", "The narrator's opinion", "The title"], ans: 0 },
+            { q: "A deuteragonist is:", opts: ["The main character", "The villain", "A secondary character who supports the main", "A flat character"], ans: 2 },
+            { q: "A foil character is used to:", opts: ["Highlight another character's traits through contrast", "Provide comic relief", "Be the antagonist", "Be the protagonist"], ans: 0 },
+
+            // Plot Structures (15-20)
+            { q: "What is the exposition in a plot?", opts: ["The turning point", "Introduction of setting, characters, and background", "The final resolution", "The most intense moment"], ans: 1 },
+            { q: "Which part of the plot builds tension through conflicts?", opts: ["Exposition", "Rising Action", "Climax", "Falling Action"], ans: 1 },
+            { q: "What is in medias res?", opts: ["Beginning in the middle of the action", "Chronological order", "Ending with a twist", "Linear progression"], ans: 0 },
+            { q: "A circular plot ends by:", opts: ["Returning to the beginning with new understanding", "Reaching a climax", "Introducing new characters", "Resolving all conflicts"], ans: 0 },
+            { q: "Which plot structure uses loosely connected incidents?", opts: ["Linear", "Parallel", "Episodic", "In medias res"], ans: 2 },
+            { q: "The Odyssey alternates between Odysseus's journey and Penelope's life. This is:", opts: ["Parallel", "Circular", "Episodic", "Linear"], ans: 0 },
+
+            // Visual Storytelling, Film, Adaptation (21-26)
+            { q: "What is an adaptation?", opts: ["Transforming a literary work into another form", "A direct copy of a story", "A summary of a plot", "A sequel"], ans: 0 },
+            { q: "In film, showing is preferred over telling because:", opts: ["It allows the audience to observe and interpret", "It is cheaper", "It is easier", "It uses fewer actors"], ans: 0 },
+            { q: "Which is an example of showing?", opts: ["John was angry", "John slammed the door and clenched his fists", "John felt sad", "John was happy"], ans: 1 },
+            { q: "A film script uses which tense?", opts: ["Past tense", "Present tense", "Future tense", "Perfect tense"], ans: 1 },
+            { q: "Which is NOT part of the theatrical trinity?", opts: ["Spectacle", "Dialogue", "Music", "Narration"], ans: 3 },
+            { q: "In film, mise-en-scène refers to:", opts: ["Everything placed within the frame", "Camera movement", "Sound design", "Editing"], ans: 0 },
+
+            // Literary Context & Theories (27-34)
+            { q: "Historical context refers to:", opts: ["The time period when the work was written", "The author's life experiences", "The language used", "The reader's background"], ans: 0 },
+            { q: "Biographical context is about:", opts: ["How the author's life influenced the work", "The social structures of the time", "The historical setting", "The translation"], ans: 0 },
+            { q: "Which context examines social structures, customs, and beliefs?", opts: ["Historical", "Biographical", "Sociocultural", "Linguistic"], ans: 2 },
+            { q: "Linguistic context deals with:", opts: ["How language shapes meaning and translation issues", "The author's psychology", "The reader's emotions", "The plot structure"], ans: 0 },
+            { q: "Postcolonial literature aims to:", opts: ["Preserve cultural traditions and challenge colonial viewpoints", "Promote colonial rule", "Ignore cultural identity", "Focus only on Western values"], ans: 0 },
+            { q: "Damrosch's World Literature Theory is also known as:", opts: ["The Traveling Story Approach", "The Colonial History Approach", "The Reader's Experience Approach", "The Comparing Culture Approach"], ans: 0 },
+            { q: "Reader-Response Theory focuses on:", opts: ["How the reader's background affects understanding", "The author's intent", "The historical context", "The linguistic features"], ans: 0 },
+            { q: "Which theory examines the experiences of colonized people?", opts: ["Reader-Response", "Postcolonial Theory", "Comparative Framework", "Damrosch's Theory"], ans: 1 },
+
+            // Maxims & Philosophical Perspectives (35-40)
+            { q: "A maxim is a:", opts: ["Short, clear statement of general truth or rule", "Long narrative", "Type of poem", "Film technique"], ans: 0 },
+            { q: "'Know thyself' is an example of which philosophical perspective?", opts: ["Eastern Philosophy", "Western Philosophy", "African Philosophy", "Indigenous Philosophy"], ans: 1 },
+            { q: "'A journey of a thousand miles begins with a single step' reflects:", opts: ["Western Philosophy", "Eastern Philosophy", "African Philosophy", "Indigenous Philosophy"], ans: 1 },
+            { q: "'I am because we are' (Ubuntu) is from:", opts: ["Western Philosophy", "Eastern Philosophy", "African Philosophy", "Indigenous Philosophy"], ans: 2 },
+            { q: "Which philosophical perspective emphasizes connection to the land?", opts: ["Western", "Eastern", "African", "Indigenous"], ans: 3 },
+            { q: "What does Ubuntu emphasize?", opts: ["Community and humanity toward others", "Individualism", "Material wealth", "Competition"], ans: 0 },
+
+            // Dialogue, Sound Devices, Poetry (41-46)
+            { q: "Dialogue in a story can reveal all EXCEPT:", opts: ["Character personality", "Plot advancement", "The author's personal life", "Cultural context"], ans: 2 },
+            { q: "Alliteration is the repetition of:", opts: ["Initial consonant sounds", "Vowel sounds", "End sounds", "Whole words"], ans: 0 },
+            { q: "Assonance is the repetition of:", opts: ["Consonant sounds", "Vowel sounds", "Initial sounds", "Rhyming words"], ans: 1 },
+            { q: "Onomatopoeia is exemplified by words like:", opts: ["Buzz, hiss, bang", "Peter, Piper", "Rain, Spain", "Blank, think"], ans: 0 },
+            { q: "In iambic pentameter, each line has:", opts: ["Five pairs of unstressed and stressed syllables", "Four pairs", "Six pairs", "Seven pairs"], ans: 0 },
+            { q: "Japanese Tanka poetry relies mainly on:", opts: ["Syllable count", "Rhyme", "Meter", "Alliteration"], ans: 0 },
+
+            // Film Techniques & Modes (47-50)
+            { q: "Which is NOT a mode in the multimodal nature of film?", opts: ["Visual Mode", "Audio Mode", "Textual Mode", "Narrative Mode"], ans: 3 },
+            { q: "Montage is a cinematic technique that:", opts: ["Puts different images together to create new meaning", "Uses long takes", "Focuses on dialogue", "Uses a single shot"], ans: 0 },
+            { q: "What does sound design in film include?", opts: ["Music, sound effects, and ambient sound", "Dialogue only", "Camera movements", "Lighting"], ans: 0 },
+            { q: "Which film tradition is known for vibrant colors and musical sequences?", opts: ["Italian Neorealism", "French New Wave", "Bollywood", "Japanese Cinema"], ans: 2 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        // DOM refs
+        const questionContainer = document.getElementById('questionContainer');
+        const submitBtn = document.getElementById('submitAnswerBtn');
+        const nextBtn = document.getElementById('nextQuestionBtn');
+        const resetBtn = document.getElementById('resetQuizBtn');
+        const questionCounter = document.getElementById('questionCounter');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // ----- helpers -----
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Not answered. Correct answer: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Correct! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Incorrect. Correct answer: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            questionContainer.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Finish & Show Result';
+            } else {
+                nextBtn.textContent = '➡️ Next Question';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            questionCounter.innerHTML = `Question ${currentIndex+1} <small>of ${total}</small>`;
+            scoreDisplay.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) {
+                submitBtn.disabled = true;
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const isCorrect = (selectedOption === q.ans);
+            if (isCorrect) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = '';
+            if (percent >= 90) grade = '🌟 Outstanding!';
+            else if (percent >= 70) grade = '👍 Great job!';
+            else if (percent >= 50) grade = '📖 Keep practicing!';
+            else grade = '💪 Review the topics and try again.';
+            resultContainer.style.display = 'block';
+            resultContainer.innerHTML = `
+                <div>🎯 You answered <strong>${score}</strong> out of <strong>${total}</strong> correctly.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Click "Shuffle & Retry" to try again.</div>
+            `;
+            questionContainer.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreDisplay.textContent = `✅ ${score} / ${total}`;
+            questionCounter.innerHTML = `🎉 Finished!`;
+        }
+
+        function handleReset() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            resetQuiz();
+        }
+
+        // ----- init -----
+        function init() {
+            resetQuiz();
+            submitBtn.addEventListener('click', handleSubmit);
+            nextBtn.addEventListener('click', handleNext);
+            resetBtn.addEventListener('click', handleReset);
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>
