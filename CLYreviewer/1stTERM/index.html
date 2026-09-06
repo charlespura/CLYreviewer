@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clyReviewer · Grade 10 · 1st Term</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f1f5f9;
+            font-family: "Inter", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1.2rem;
+        }
+        .landing {
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.02);
+            padding: 3.2rem 3.2rem 3.8rem;
+            border: 1px solid #e9edf2;
+            position: relative;
+            overflow: hidden;
+        }
+        .landing::before {
+            content: '';
+            position: absolute;
+            top: -180px;
+            right: -180px;
+            width: 460px;
+            height: 460px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .landing::after {
+            content: '';
+            position: absolute;
+            bottom: -140px;
+            left: -140px;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        @media (max-width: 640px) { .landing { padding: 2rem 1.2rem 2.2rem; } }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem 1.5rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(145deg, #1e4b8a, #1a3f73);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 18px rgba(26, 63, 115, 0.25);
+        }
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #0b223a;
+            letter-spacing: -0.02em;
+        }
+        .logo h1 span {
+            color: #2563eb;
+        }
+        .logo .sub {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4b6a8b;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            background: #eef4fa;
+            padding: 0.15rem 0.8rem;
+            border-radius: 40px;
+            display: inline-block;
+        }
+
+        .badge-exam {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+        .badge-exam i { margin-right: 6px; color: #facc15; }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: #334e68;
+            max-width: 600px;
+            line-height: 1.6;
+            margin: 0.2rem 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .tagline strong {
+            color: #0b223a;
+            font-weight: 700;
+        }
+        .tagline i {
+            color: #2563eb;
+            margin: 0 0.2rem;
+        }
+
+        /* subject grid – 4 columns on large, 3 on mid, 2 on small */
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+            margin: 1.8rem 0 2.2rem;
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 1024px) { .subjects { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { .subjects { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .subjects { grid-template-columns: 1fr; } }
+
+        .subject-card {
+            background: #f9fbfd;
+            border-radius: 28px;
+            padding: 1.8rem 1.5rem 2rem;
+            border: 1px solid #e3e9f0;
+            transition: 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .subject-card:hover {
+            transform: translateY(-6px);
+            border-color: #b8ccdd;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.04);
+            background: #ffffff;
+        }
+        .subject-card .icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 0.9rem;
+        }
+        /* subject color variants */
+        .icon-wrap.math { background: #dbeafe; color: #2563eb; }
+        .icon-wrap.eng { background: #fce7f3; color: #db2777; }
+        .icon-wrap.esp { background: #fef3c7; color: #d97706; }
+        .icon-wrap.tle { background: #d1fae5; color: #059669; }
+        .icon-wrap.sci { background: #e0e7ff; color: #4f46e5; }
+        .icon-wrap.ap { background: #fde68a; color: #b45309; }
+        .icon-wrap.mapeh { background: #fecaca; color: #b91c1c; }
+        .icon-wrap.fil { background: #c7d2fe; color: #4338ca; }
+
+        .subject-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0b223a;
+            margin-bottom: 0.25rem;
+        }
+        .subject-card p {
+            font-size: 0.88rem;
+            color: #4b6a8b;
+            line-height: 1.5;
+            margin-bottom: 0.7rem;
+        }
+        .subject-card .meta {
+            font-size: 0.75rem;
+            color: #4b6a8b;
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .subject-card .meta span {
+            background: #eaf0f6;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .subject-card .meta i {
+            font-size: 0.7rem;
+            color: #5b7b9a;
+        }
+        .subject-card .arrow {
+            position: absolute;
+            bottom: 1.2rem;
+            right: 1.5rem;
+            font-size: 1rem;
+            color: #2563eb;
+            opacity: 0.4;
+            transition: 0.2s;
+        }
+        .subject-card:hover .arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        .features {
+            display: flex;
+            gap: 2.2rem;
+            flex-wrap: wrap;
+            margin-top: 1.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e3e9f0;
+            position: relative;
+            z-index: 1;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: #334e68;
+        }
+        .feature i {
+            color: #2563eb;
+            font-size: 1rem;
+        }
+
+        .footer {
+            margin-top: 2.2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6f8aa5;
+            position: relative;
+            z-index: 1;
+        }
+        .footer i { color: #2563eb; }
+
+        @media (max-width: 480px) {
+            .logo h1 { font-size: 1.5rem; }
+            .logo-icon { width: 44px; height: 44px; font-size: 1.3rem; }
+            .subject-card { padding: 1.4rem; }
+            .header { flex-direction: column; align-items: start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1>cly<span>Reviewer</span></h1>
+                    <div class="sub"><i class="fas fa-chevron-right"></i> Grade 10 · 1st Term</div>
+                </div>
+            </div>
+            <div class="badge-exam">
+                <i class="fas fa-pencil-alt"></i> Exam 1–50
+            </div>
+        </div>
+
+        <!-- TAGLINE -->
+        <div class="tagline">
+            <i class="fas fa-arrow-right"></i> <strong>Master 8 subjects</strong> · interactive quizzes &amp; review materials for your first term exam. <i class="fas fa-star" style="color:#facc15;"></i>
+        </div>
+
+        <!-- SUBJECT CARDS · 8 subjects -->
+        <div class="subjects">
+            <!-- MATH -->
+            <a href="Mathematics.html" class="subject-card" id="mathCard">
+                <div class="icon-wrap math"><i class="fas fa-square-root-variable"></i></div>
+                <h3>Mathematics</h3>
+                <p>Polynomials · Sequences · Circles &amp; Probability</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-calculator"></i> Algebra</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- ENGLISH -->
+            <a href="#" class="subject-card" id="engCard">
+                <div class="icon-wrap eng"><i class="fas fa-book-open"></i></div>
+                <h3>English</h3>
+                <p>Literature · Grammar · Essay writing &amp; text analysis</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-pen-fancy"></i> Writing</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- ESP -->
+            <a href="#" class="subject-card" id="espCard">
+                <div class="icon-wrap esp"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>Edukasyon sa Pagpapakatao</h3>
+                <p>Values · Moral decision · Self-awareness &amp; community</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-users"></i> Values</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- TLE -->
+            <a href="#" class="subject-card" id="tleCard">
+                <div class="icon-wrap tle"><i class="fas fa-laptop-code"></i></div>
+                <h3>TLE</h3>
+                <p>ICT · Entrepreneurship · Technical drafting &amp; livelihood</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-tools"></i> Skills</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- SCIENCE -->
+            <a href="#" class="subject-card" id="sciCard">
+                <div class="icon-wrap sci"><i class="fas fa-flask"></i></div>
+                <h3>Science</h3>
+                <p>Physics · Chemistry · Earth &amp; Life Science</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-atom"></i> Lab</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- AP (Araling Panlipunan) -->
+            <a href="#" class="subject-card" id="apCard">
+                <div class="icon-wrap ap"><i class="fas fa-landmark"></i></div>
+                <h3>Araling Panlipunan</h3>
+                <p>History · Government · Economics &amp; Philippine society</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-flag"></i> Kasaysayan</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- MAPEH -->
+            <a href="#" class="subject-card" id="mapehCard">
+                <div class="icon-wrap mapeh"><i class="fas fa-music"></i></div>
+                <h3>MAPEH</h3>
+                <p>Music · Arts · PE · Health – integrated learning</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-palette"></i> Arts</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- FILIPINO -->
+            <a href="#" class="subject-card" id="filCard">
+                <div class="icon-wrap fil"><i class="fas fa-font"></i></div>
+                <h3>Filipino</h3>
+                <p>Panitikan · Wika · Pagbasa &amp; pagsulat</p>
+                <div class="meta">
+                    <span><i class="fas fa-question-circle"></i> 50 Q</span>
+                    <span><i class="fas fa-book"></i> Akda</span>
+                </div>
+                <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features">
+            <div class="feature"><i class="fas fa-check-circle"></i><span>50-item practice tests</span></div>
+            <div class="feature"><i class="fas fa-chart-simple"></i><span>Score &amp; progress tracker</span></div>
+            <div class="feature"><i class="fas fa-mobile-screen"></i><span>Mobile-friendly</span></div>
+            <div class="feature"><i class="fas fa-lightbulb"></i><span>Concept summaries</span></div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <i class="fas fa-heart" style="color:#db2777;"></i> clyReviewer · Grade 10 1st Term Exam Prep
+        </div>
+    </div>
+
+    <script>
+        // smooth click feedback and placeholder for future quiz pages
+        document.querySelectorAll('.subject-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // if href is "#", we show a gentle alert (since quiz pages not built yet)
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    const subject = this.querySelector('h3')?.innerText || 'Subject';
+                    // subtle animation
+                    this.style.transition = 'transform 0.12s';
+                    this.style.transform = 'scale(0.96)';
+                    setTimeout(() => { this.style.transform = ''; }, 150);
+                    // informative toast-like message
+                    const msg = `📚 ${subject} · 50-item quiz coming soon!`;
+                    // show a small floating message
+                    const toast = document.createElement('div');
+                    toast.style.position = 'fixed';
+                    toast.style.bottom = '2rem';
+                    toast.style.left = '50%';
+                    toast.style.transform = 'translateX(-50%)';
+                    toast.style.background = '#1e293b';
+                    toast.style.color = '#f1f5f9';
+                    toast.style.padding = '0.8rem 1.8rem';
+                    toast.style.borderRadius = '60px';
+                    toast.style.fontSize = '0.95rem';
+                    toast.style.fontWeight = '500';
+                    toast.style.boxShadow = '0 12px 30px rgba(0,0,0,0.2)';
+                    toast.style.zIndex = '999';
+                    toast.style.border = '1px solid #334e68';
+                    toast.innerText = msg;
+                    document.body.appendChild(toast);
+                    setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity 0.3s'; setTimeout(() => toast.remove(), 400); }, 2000);
+                } else {
+                    // if real links, let browser handle
+                }
+            });
+        });
+
+        console.log('📚 clyReviewer · Grade 10 · 8 subjects ready');
+    </script>
+</body>
+</html>

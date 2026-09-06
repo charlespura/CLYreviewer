@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics · 1st Term · 50 items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f0f6fc;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.8rem;
+            box-shadow: 0 20px 45px -10px rgba(0,20,50,0.15);
+            padding: 2rem 2.2rem 2.8rem;
+            border: 1px solid #dce5ef;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b2a4a;
+            border-left: 6px solid #2563eb;
+            padding-left: 1.2rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #4a6a8a;
+            margin-left: 0.5rem;
+        }
+        .subhead {
+            color: #2a4a6a;
+            margin-left: 1.8rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #cbd8e8;
+            padding-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+        .reviewer-snapshot {
+            background: #eef4fa;
+            border-radius: 1.4rem;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 2rem;
+            border: 1px solid #d0ddee;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+        }
+        .reviewer-snapshot span {
+            background: #d6e4f5;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            color: #0b2a4a;
+            font-weight: 500;
+        }
+        .quiz-card {
+            background: #f9fcff;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #dce5ef;
+        }
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .q-counter {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0b2a4a;
+        }
+        .q-counter small {
+            font-weight: 400;
+            color: #4a6a8a;
+        }
+        .score-badge {
+            background: #1e4b8a;
+            color: white;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .question-box {
+            margin: 0.3rem 0 1.2rem;
+        }
+        .q-text {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0b2a4a;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.6rem;
+        }
+        .options-grid label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f2f7fd;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            transition: 0.1s;
+            font-weight: 500;
+            color: #0b2a4a;
+        }
+        .options-grid label:hover {
+            background: #e3edf8;
+            border-color: #a0bada;
+        }
+        .options-grid input[type="radio"] {
+            accent-color: #2563eb;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+        .options-grid label.disabled {
+            opacity: 0.7;
+            cursor: default;
+            background: #eef4fa;
+        }
+        .options-grid label.disabled:hover {
+            border-color: transparent;
+        }
+        .feedback-area {
+            background: #eef4fa;
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            margin: 0.3rem 0 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #7a9aba;
+            color: #0b2a4a;
+        }
+        .feedback-area.correct {
+            background: #dff0e6;
+            border-left-color: #1d7a4a;
+            color: #144a2a;
+        }
+        .feedback-area.wrong {
+            background: #f5e4e4;
+            border-left-color: #b34a4a;
+            color: #6a2a2a;
+        }
+        .feedback-area.show-answer {
+            background: #e4eaf5;
+            border-left-color: #4a6a9a;
+            color: #1a2a4a;
+        }
+        .action-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+        .btn {
+            border: none;
+            background: white;
+            font-weight: 600;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            border: 1.5px solid #2a4a7a;
+            color: #0b2a4a;
+        }
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #1a4fc7;
+            border-color: #1a4fc7;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background: #1d7a4a;
+            border-color: #1d7a4a;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #14633a;
+            border-color: #14633a;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #4a6a8a;
+            color: #0b2a4a;
+        }
+        .btn-outline:hover {
+            background: #e3edf8;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .result-summary {
+            background: #eef4fa;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0b2a4a;
+        }
+        .result-summary strong {
+            color: #2563eb;
+            font-size: 1.6rem;
+        }
+        .footer-note {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #4a6a8a;
+            text-align: center;
+            border-top: 1px solid #cbd8e8;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 550px) {
+            .container { padding: 1.2rem; }
+            .quiz-card { padding: 1.2rem; }
+            .q-text { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📐 Mathematics <small>Grade 10 · 1st Term</small></h1>
+    <div class="subhead">
+        <span>📝 Oblique Triangles · Quadratic Inequalities</span>
+        <span style="background:#dce5ef; padding:0 1rem; border-radius:30px; color:#0b2a4a;">50 items</span>
+    </div>
+
+    <div class="reviewer-snapshot">
+        <span>📐 Law of Sines</span>
+        <span>📏 Law of Cosines</span>
+        <span>⚠️ Ambiguous Case (SSA)</span>
+        <span>📊 Quadratic Inequalities</span>
+        <span>📈 2 variables</span>
+        <span>🧮 Area & real-world</span>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+        <div class="progress-row">
+            <span class="q-counter" id="questionCounter">Question 1 <small>of 50</small></span>
+            <span class="score-badge" id="scoreDisplay">✅ 0 / 0</span>
+        </div>
+
+        <div id="questionContainer">
+            <!-- dynamic -->
+        </div>
+
+        <div class="action-row" id="actionRow">
+            <button class="btn btn-primary" id="submitAnswerBtn">✅ Submit Answer</button>
+            <button class="btn btn-success" id="nextQuestionBtn" disabled>➡️ Next Question</button>
+            <button class="btn btn-outline" id="resetQuizBtn">🔄 Shuffle &amp; Retry</button>
+        </div>
+
+        <div id="resultContainer" style="display: none;" class="result-summary"></div>
+        <div class="footer-note">⬆️ Answer each question, view feedback, then proceed.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- 50 MASTER QUESTIONS : MATH (LoS, LoC, QI, real-world) ----------
+        const MASTER_QUESTIONS = [
+            // Law of Sines & Cosines (1–16)
+            { q: "The Law of Sines is used to solve oblique triangles when given:", opts: ["SSS only", "SAS only", "AAS or ASA", "SSS and SAS"], ans: 2 },
+            { q: "Which formula represents the Law of Sines?", opts: ["a² = b² + c² – 2bc cos A", "a/sin A = b/sin B = c/sin C", "sin A / a = sin B / b = sin C / c", "Both b and c"], ans: 3 },
+            { q: "The Law of Cosines is used when given:", opts: ["SSS only", "SAS only", "Both SSS and SAS", "AAS only"], ans: 2 },
+            { q: "What is the formula for side a using Law of Cosines?", opts: ["a² = b² + c² – 2bc cos A", "a² = b² + c² + 2bc cos A", "a = b + c – 2bc cos A", "a² = b² – c² + 2bc cos A"], ans: 0 },
+            { q: "Which case is known as the ambiguous case in oblique triangles?", opts: ["AAS", "SSA", "SAS", "ASA"], ans: 1 },
+            { q: "In the ambiguous case (SSA), if angle A is acute and a < h, how many triangles are formed?", opts: ["0", "1", "2", "infinite"], ans: 0 },
+            { q: "In SSA with acute angle A, if a = h, what type of triangle is formed?", opts: ["No triangle", "One right triangle", "Two triangles", "One obtuse triangle"], ans: 1 },
+            { q: "In the ambiguous case with acute angle A, if h < a < b, how many triangles are formed?", opts: ["0", "1", "2", "3"], ans: 2 },
+            { q: "For an obtuse angle in SSA, if a ≤ b, how many triangles?", opts: ["0", "1", "2", "depends"], ans: 0 },
+            { q: "What is the height formula h in the ambiguous case?", opts: ["h = a sin B", "h = b sin A", "h = c sin A", "h = a sin C"], ans: 1 },
+            { q: "What is the area formula for an oblique triangle with sides b, c and included angle A?", opts: ["½ bc sin A", "½ ac sin B", "½ ab sin C", "All of the above"], ans: 3 },
+            { q: "Given b = 8 in, c = 12 in, A = 35°. What is the area? (Use sin 35° ≈ 0.5736)", opts: ["27.5 in²", "32.4 in²", "41.2 in²", "18.6 in²"], ans: 0 },
+            { q: "Given a = 14 in, c = 10.5 in, B = 60°. Area = ½ ac sin B. What is the area? (sin 60° ≈ 0.8660)", opts: ["63.7 in²", "72.3 in²", "54.2 in²", "48.9 in²"], ans: 0 },
+            { q: "Which theorem states that the sum of angles in a triangle is 180°?", opts: ["Angle Sum Theorem", "Pythagorean Theorem", "Law of Sines", "Law of Cosines"], ans: 0 },
+            { q: "In a triangle, if A = 35°, B = 85°, what is C?", opts: ["60°", "70°", "50°", "80°"], ans: 0 },
+            { q: "In Law of Cosines, to find an angle, which formula is derived?", opts: ["cos A = (b² + c² – a²) / (2bc)", "cos A = (a² + b² – c²) / (2ab)", "cos A = (a² + c² – b²) / (2ac)", "cos A = (b² – c²) / (2bc)"], ans: 0 },
+
+            // Real-world problems (17–24)
+            { q: "Ariane measures a tree: angle from ground to top = 35°, tree inclination with ground = 85°, distance from base = 100 ft. What is the tree height? (sin 35°≈0.574, sin 60°≈0.866)", opts: ["57.4 ft", "66.2 ft", "72.8 ft", "83.5 ft"], ans: 1 },
+            { q: "Two aircraft from point X: distances 50 km and 72 km, angle between them 49°. What is the distance between aircraft? (cos 49°≈0.656)", opts: ["48.2 km", "54.4 km", "62.1 km", "45.6 km"], ans: 1 },
+            { q: "Two roads intersect at B, angle 45.3°. Building A is 3 km from B, building C is 6 km from B. Find AC. (cos 45.3°≈0.703)", opts: ["3.8 km", "4.4 km", "5.2 km", "6.1 km"], ans: 1 },
+            { q: "A triangle has sides a=6, b=8, c=10. Which law is best to find angle A?", opts: ["Law of Sines", "Law of Cosines", "Pythagorean", "Angle Sum"], ans: 1 },
+            { q: "A triangle has A=40°, B=60°, side a=10. Which law is used to find side b?", opts: ["Law of Cosines", "Law of Sines", "Pythagorean", "Area formula"], ans: 1 },
+            { q: "In real-world problems, what unit must be included in the final answer?", opts: ["Only degree sign", "Proper unit of measurement", "No units", "Only number"], ans: 1 },
+            { q: "What is the height (h) formula when using Law of Sines with side b and angle A?", opts: ["h = b sin A", "h = a sin B", "h = c sin C", "h = b cos A"], ans: 0 },
+            { q: "A triangle has sides a=7, b=9, C=50°. Find the area using ½ ab sin C. (sin 50°≈0.766)", opts: ["24.1", "30.2", "26.8", "21.5"], ans: 0 },
+
+            // Quadratic Inequalities in One Variable (25–38)
+            { q: "A quadratic inequality is a second-degree inequality that can be written as:", opts: ["ax² + bx + c = 0", "ax² + bx + c > 0", "ax + b > 0", "ax² + b = 0"], ans: 1 },
+            { q: "Which is a quadratic inequality?", opts: ["2x + 3 > 0", "x² – 4x + 3 < 0", "x² – 4 = 0", "3x – 5 = 0"], ans: 1 },
+            { q: "What is the standard form for solving quadratic inequalities?", opts: ["ax² + bx + c = 0", "ax² + bx + c ≥ 0", "ax² + bx + c = 0 for roots", "ax² + bx + c ≠ 0"], ans: 2 },
+            { q: "What are the critical values used to divide the number line?", opts: ["Zeros or roots", "Intercepts only", "Vertex only", "Y-intercept"], ans: 0 },
+            { q: "When solving a quadratic inequality, what do you do after finding the roots?", opts: ["Plot and test intervals", "Immediately write the solution", "Find the vertex", "Graph only"], ans: 0 },
+            { q: "In interval notation, what does (−∞, −3) ∪ (6, ∞) represent?", opts: ["x < -3 or x > 6", "-3 < x < 6", "x ≥ -3", "x ≤ 6"], ans: 0 },
+            { q: "Solve: x² – 5x + 6 > 0. Which intervals satisfy?", opts: ["(-∞,2) ∪ (3,∞)", "(2,3)", "(-∞,3) ∪ (2,∞)", "(-∞,2) ∩ (3,∞)"], ans: 0 },
+            { q: "For the inequality x² – 4x + 3 ≤ 0, the solution in interval notation is:", opts: ["[1,3]", "(-∞,1] ∪ [3,∞)", "(1,3)", "[-3,-1]"], ans: 0 },
+            { q: "What is the solution set of x² – 9 > 0?", opts: ["(-∞,-3) ∪ (3,∞)", "(-3,3)", "[-3,3]", "(-∞,3)"], ans: 0 },
+            { q: "In set-builder notation: {x | x < -2 or x > 5} is the same as:", opts: ["(-∞,-2) ∪ (5,∞)", "[-2,5]", "(-∞,-2] ∪ [5,∞)", "(-2,5)"], ans: 0 },
+            { q: "Which symbol is used for a closed circle on the number line?", opts: ["< or >", "≤ or ≥", "=", "≠"], ans: 1 },
+            { q: "When testing intervals, you substitute a test point into the inequality. What is the goal?", opts: ["To find which intervals satisfy the inequality", "To find the roots", "To find the vertex", "To graph the parabola"], ans: 0 },
+            { q: "Solve: 6x² – 7x > 20. The roots are x = -4/3 and x = 5/2. Which interval is part of the solution?", opts: ["(-∞, -4/3) ∪ (5/2, ∞)", "(-4/3, 5/2)", "(-∞, -4/3)", "(5/2, ∞)"], ans: 0 },
+            { q: "What is the first step in solving a quadratic inequality?", opts: ["Graph the parabola", "Write in standard form", "Find the vertex", "Test a point"], ans: 1 },
+
+            // Quadratic Inequalities in Two Variables (39–50)
+            { q: "A quadratic inequality in two variables has a boundary that is a:", opts: ["Line", "Circle", "Parabola", "Ellipse"], ans: 2 },
+            { q: "The general form of a quadratic inequality in two variables is:", opts: ["Ax + By + C > 0", "Ax² + Bxy + Cy² + Dx + Ey + F > 0", "Ax² + By² + C = 0", "Ax² + Bx + C > 0"], ans: 1 },
+            { q: "What is the first step in solving a quadratic inequality in two variables?", opts: ["Find the vertex", "Write the inequality as an equation y = ax² + bx + c", "Test a point", "Shade the region"], ans: 1 },
+            { q: "What does the inequality sign determine in graphing quadratic inequalities?", opts: ["Whether the parabola opens up or down", "Whether the shaded region is inside or outside the parabola", "The x-intercepts", "The vertex"], ans: 1 },
+            { q: "In graphing, how do you find the vertex (h, k)?", opts: ["h = -b/2a, k = c – b²/4a", "h = b/2a, k = c – b²/4a", "h = -b/a, k = c", "h = b/a, k = c/a"], ans: 0 },
+            { q: "What is the boundary of a quadratic inequality in two variables?", opts: ["The line y = mx + b", "The parabola from the associated equation", "The x-axis", "The y-axis"], ans: 1 },
+            { q: "When graphing y < x² – 4, what type of line is used for the boundary?", opts: ["Solid line", "Dashed line", "Dotted line only", "No line"], ans: 1 },
+            { q: "When graphing y ≥ x² – 4, the boundary is a:", opts: ["Solid line", "Dashed line", "Dotted line", "No boundary"], ans: 0 },
+            { q: "After graphing the parabola, what is the next step?", opts: ["Choose a test point not on the boundary", "Shade the boundary", "Find the vertex", "Write the solution set"], ans: 0 },
+            { q: "If the test point satisfies the inequality, the solution region is:", opts: ["The side containing the test point", "The opposite side", "Both sides", "Only the boundary"], ans: 0 },
+            { q: "What is the solution region for a quadratic inequality in two variables?", opts: ["A set of points in the coordinate plane", "A single point", "A line", "No solution"], ans: 0 },
+            { q: "In solving two-variable inequalities, what is a key difference from one-variable?", opts: ["The solution is a region, not just intervals on a line", "Only numbers are used", "There is no test point", "Graphs are not used"], ans: 0 }
+        ];
+
+        // ----- state -----
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+
+        // DOM refs
+        const questionContainer = document.getElementById('questionContainer');
+        const submitBtn = document.getElementById('submitAnswerBtn');
+        const nextBtn = document.getElementById('nextQuestionBtn');
+        const resetBtn = document.getElementById('resetQuizBtn');
+        const questionCounter = document.getElementById('questionCounter');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // ----- helpers -----
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function resetQuiz() {
+            currentQuestions = shuffleArray([...MASTER_QUESTIONS]);
+            currentIndex = 0;
+            score = 0;
+            answeredCount = 0;
+            selectedOption = null;
+            isAnswered = false;
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function renderQuestion() {
+            if (!currentQuestions.length) return;
+            if (currentIndex >= currentQuestions.length) {
+                showFinalResult();
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const qNum = currentIndex + 1;
+            const total = currentQuestions.length;
+
+            let html = `<div class="question-box">`;
+            html += `<div class="q-text">${qNum}. ${q.q}</div>`;
+            html += `<div class="options-grid" id="optionsGrid">`;
+            q.opts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                const checked = (selectedOption === idx) ? 'checked' : '';
+                const disabled = isAnswered ? 'disabled' : '';
+                html += `<label class="${isAnswered ? 'disabled' : ''}">
+                    <input type="radio" name="question" value="${idx}" ${checked} ${disabled}>
+                    ${letter}. ${opt}
+                </label>`;
+            });
+            html += `</div>`;
+
+            if (isAnswered) {
+                const correct = q.ans;
+                const isCorrect = (selectedOption === correct);
+                let feedbackClass = 'feedback-area';
+                let feedbackText = '';
+                if (selectedOption === null) {
+                    feedbackClass += ' show-answer';
+                    feedbackText = `⚠️ Not answered. Correct answer: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                } else if (isCorrect) {
+                    feedbackClass += ' correct';
+                    feedbackText = `✅ Correct! (${String.fromCharCode(65 + correct)})`;
+                } else {
+                    feedbackClass += ' wrong';
+                    feedbackText = `❌ Incorrect. Correct answer: ${String.fromCharCode(65 + correct)}. ${q.opts[correct]}`;
+                }
+                html += `<div class="${feedbackClass}">${feedbackText}</div>`;
+            }
+
+            html += `</div>`;
+            questionContainer.innerHTML = html;
+
+            if (!isAnswered) {
+                document.querySelectorAll('input[name="question"]').forEach(radio => {
+                    radio.addEventListener('change', function(e) {
+                        selectedOption = parseInt(this.value);
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+
+            submitBtn.disabled = isAnswered || (selectedOption === null);
+            nextBtn.disabled = !isAnswered;
+            if (currentIndex === currentQuestions.length - 1 && isAnswered) {
+                nextBtn.textContent = '🏁 Finish & Show Result';
+            } else {
+                nextBtn.textContent = '➡️ Next Question';
+            }
+            updateScoreAndCounter();
+        }
+
+        function updateScoreAndCounter() {
+            const total = currentQuestions.length;
+            questionCounter.innerHTML = `Question ${currentIndex+1} <small>of ${total}</small>`;
+            scoreDisplay.textContent = `✅ ${score} / ${answeredCount}`;
+        }
+
+        function handleSubmit() {
+            if (isAnswered) return;
+            if (selectedOption === null) {
+                submitBtn.disabled = true;
+                return;
+            }
+            const q = currentQuestions[currentIndex];
+            const isCorrect = (selectedOption === q.ans);
+            if (isCorrect) score++;
+            answeredCount++;
+            isAnswered = true;
+            submitBtn.disabled = true;
+            nextBtn.disabled = false;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function handleNext() {
+            if (!isAnswered) return;
+            if (currentIndex === currentQuestions.length - 1) {
+                showFinalResult();
+                return;
+            }
+            currentIndex++;
+            selectedOption = null;
+            isAnswered = false;
+            submitBtn.disabled = false;
+            nextBtn.disabled = true;
+            renderQuestion();
+            updateScoreAndCounter();
+        }
+
+        function showFinalResult() {
+            const total = currentQuestions.length;
+            const percent = Math.round((score / total) * 100);
+            let grade = '';
+            if (percent >= 90) grade = '🌟 Outstanding!';
+            else if (percent >= 70) grade = '👍 Great job!';
+            else if (percent >= 50) grade = '📖 Keep practicing!';
+            else grade = '💪 Review the topics and try again.';
+            resultContainer.style.display = 'block';
+            resultContainer.innerHTML = `
+                <div>🎯 You answered <strong>${score}</strong> out of <strong>${total}</strong> correctly.</div>
+                <div style="margin-top:0.4rem; font-size:1.3rem;">${percent}% — ${grade}</div>
+                <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">🔄 Click "Shuffle & Retry" to try again.</div>
+            `;
+            questionContainer.innerHTML = '';
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            scoreDisplay.textContent = `✅ ${score} / ${total}`;
+            questionCounter.innerHTML = `🎉 Finished!`;
+        }
+
+        function handleReset() {
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            resultContainer.style.display = 'none';
+            resultContainer.innerHTML = '';
+            resetQuiz();
+        }
+
+        // ----- init -----
+        function init() {
+            resetQuiz();
+            submitBtn.addEventListener('click', handleSubmit);
+            nextBtn.addEventListener('click', handleNext);
+            resetBtn.addEventListener('click', handleReset);
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>
