@@ -1,0 +1,442 @@
+[
+  {
+    "id": "clark-english-1",
+    "prompt": "Which sentence is a statement of FACT?",
+    "options": [
+      "Chocolate is the best flavor.",
+      "The Earth revolves around the sun.",
+      "Math is difficult.",
+      "Blue is a beautiful color."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-2",
+    "prompt": "Which sentence is a statement of OPINION?",
+    "options": [
+      "The Philippines has over 7,000 islands.",
+      "Water freezes at 0°C.",
+      "Filipino food is delicious.",
+      "Jose Rizal is the national hero."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-3",
+    "prompt": "\"I believe that online learning is effective.\" This is a statement of ____.",
+    "options": [
+      "Fact",
+      "Opinion",
+      "Both",
+      "Neither"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-4",
+    "prompt": "What is summarizing?",
+    "options": [
+      "Writing every detail from the text",
+      "Rewriting the text word for word",
+      "Stating the main ideas briefly in your own words",
+      "Copying the first paragraph"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-5",
+    "prompt": "What is the first step in summarizing?",
+    "options": [
+      "Write the conclusion",
+      "Read and understand the text",
+      "Copy all sentences",
+      "Count the number of words"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-6",
+    "prompt": "What color is commonly associated with peace and calm?",
+    "options": [
+      "Red",
+      "Blue",
+      "Yellow",
+      "Black"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-7",
+    "prompt": "What color symbolizes danger or warning?",
+    "options": [
+      "Green",
+      "White",
+      "Red",
+      "Purple"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-8",
+    "prompt": "Which color is often used to represent happiness and energy?",
+    "options": [
+      "Yellow",
+      "Gray",
+      "Brown",
+      "Navy"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-9",
+    "prompt": "What personal information is typically asked on a form?",
+    "options": [
+      "Favorite movie",
+      "Full name and address",
+      "Pet's name",
+      "Dream job"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-10",
+    "prompt": "When filling out a form, you should write ____.",
+    "options": [
+      "In capital letters only",
+      "Clearly and accurately",
+      "With colorful pens",
+      "In cursive only"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-11",
+    "prompt": "Which word is a noun?",
+    "options": [
+      "Run",
+      "Beautiful",
+      "Happiness",
+      "Quickly"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-12",
+    "prompt": "Which is a proper noun?",
+    "options": [
+      "City",
+      "Book",
+      "Manila",
+      "River"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-13",
+    "prompt": "A noun that names a specific person, place, or thing is called a ____.",
+    "options": [
+      "Common noun",
+      "Proper noun",
+      "Abstract noun",
+      "Collective noun"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-14",
+    "prompt": "Which word is a pronoun?",
+    "options": [
+      "She",
+      "Fast",
+      "Red",
+      "House"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-15",
+    "prompt": "What pronoun replaces the noun 'Maria'?",
+    "options": [
+      "He",
+      "She",
+      "It",
+      "They"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-16",
+    "prompt": "Which sentence uses a pronoun correctly?",
+    "options": [
+      "Him went to school.",
+      "Me likes pizza.",
+      "She is my best friend.",
+      "Us are happy."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-17",
+    "prompt": "What is a verb?",
+    "options": [
+      "A person, place, or thing",
+      "An action or state of being",
+      "A word that describes a noun",
+      "A word that connects sentences"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-18",
+    "prompt": "Which word is a verb?",
+    "options": [
+      "Beautiful",
+      "Quickly",
+      "Dance",
+      "Student"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-19",
+    "prompt": "Which is a correct verb sentence?",
+    "options": [
+      "She run fast.",
+      "They plays soccer.",
+      "He sings beautifully.",
+      "We is happy."
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-20",
+    "prompt": "Which word is an adjective?",
+    "options": [
+      "Sweet",
+      "Quickly",
+      "Sings",
+      "Happily"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-21",
+    "prompt": "What is the correct order of adjectives?",
+    "options": [
+      "Opinion, size, age, shape, color, origin, material, purpose",
+      "Size, color, opinion, age, shape",
+      "Color, origin, material, purpose",
+      "Age, shape, color, opinion"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-22",
+    "prompt": "Which has adjectives in correct order?",
+    "options": [
+      "A beautiful old big house",
+      "A big beautiful old house",
+      "A beautiful big old house",
+      "An old big beautiful house"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-23",
+    "prompt": "What does an adverb of manner describe?",
+    "options": [
+      "Where an action happens",
+      "When an action happens",
+      "How an action is done",
+      "How often an action happens"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-24",
+    "prompt": "Which word is an adverb of manner?",
+    "options": [
+      "Quickly",
+      "Yesterday",
+      "Here",
+      "Often"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-25",
+    "prompt": "Which sentence uses an adverb of manner correctly?",
+    "options": [
+      "She danced beautiful.",
+      "She danced beautifully.",
+      "She danced beauty.",
+      "She danced beautify."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-26",
+    "prompt": "What is an independent clause?",
+    "options": [
+      "A clause that cannot stand alone",
+      "A clause that expresses a complete thought",
+      "A clause with no verb",
+      "A clause with no subject"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-27",
+    "prompt": "How many independent clauses are in a compound sentence?",
+    "options": [
+      "One",
+      "Two or more",
+      "Zero",
+      "Three or more"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-28",
+    "prompt": "Which sentence is a compound sentence?",
+    "options": [
+      "She ran.",
+      "She ran and she jumped.",
+      "Although she ran, she fell.",
+      "Before she ran, she stretched."
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-29",
+    "prompt": "What is tone in writing?",
+    "options": [
+      "The feeling the reader gets",
+      "The author's attitude toward the subject",
+      "The length of the text",
+      "The font used"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-30",
+    "prompt": "What is mood in writing?",
+    "options": [
+      "The emotion the reader experiences",
+      "The author's opinion",
+      "The grammar used",
+      "The title of the text"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-31",
+    "prompt": "What is the tone of: 'You have done a remarkable job today.'",
+    "options": [
+      "Sad",
+      "Angry",
+      "Praising",
+      "Fearful"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-32",
+    "prompt": "Which is an example of a nonverbal cue?",
+    "options": [
+      "Speaking loudly",
+      "Smiling",
+      "Writing a letter",
+      "Typing on a keyboard"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-33",
+    "prompt": "What does maintaining eye contact suggest?",
+    "options": [
+      "Disinterest",
+      "Confidence and attention",
+      "Boredom",
+      "Fear"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-34",
+    "prompt": "What is a layout in visual media?",
+    "options": [
+      "The arrangement of text and images on a page",
+      "The color scheme only",
+      "The font style only",
+      "The number of pages"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-35",
+    "prompt": "What does a good layout help with?",
+    "options": [
+      "Making the text longer",
+      "Organizing information clearly",
+      "Adding more colors",
+      "Removing all images"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-36",
+    "prompt": "Which is an audio element?",
+    "options": [
+      "Text",
+      "Image",
+      "Sound effect",
+      "Animation"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-english-37",
+    "prompt": "What is the purpose of background music in multimedia?",
+    "options": [
+      "To distract the viewer",
+      "To set the mood or tone",
+      "To make the video longer",
+      "To replace dialogue"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-38",
+    "prompt": "What is the most important part of a news report?",
+    "options": [
+      "The headline and lead",
+      "The conclusion",
+      "The last paragraph",
+      "The author's name"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-english-39",
+    "prompt": "What does the 'lead' in a news report contain?",
+    "options": [
+      "The opinions of the writer",
+      "The most important information: who, what, when, where, why",
+      "A summary of the entire article",
+      "The ending of the story"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-english-40",
+    "prompt": "How are words arranged in a dictionary?",
+    "options": [
+      "By category",
+      "By length",
+      "Alphabetically",
+      "By difficulty"
+    ],
+    "answer": 2
+  }
+]

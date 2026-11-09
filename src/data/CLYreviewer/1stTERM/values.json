@@ -1,0 +1,552 @@
+[
+  {
+    "id": "values-1",
+    "prompt": "Ayon sa UDHR (1948), lahat ng tao ay ipinanganak na malaya at pantay sa:",
+    "options": [
+      "Dignidad at karapatan",
+      "Yaman at kapangyarihan",
+      "Kultura at tradisyon",
+      "Relihiyon at lahi"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-2",
+    "prompt": "Alin ang hindi kabilang sa mga karapatang pantao ayon sa UDHR?",
+    "options": [
+      "Karapatang mabuhay",
+      "Karapatang magtrabaho",
+      "Karapatang pumatay",
+      "Karapatan sa edukasyon"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "values-3",
+    "prompt": "Ano ang pundasyon ng dignidad ng tao ayon sa aralin?",
+    "options": [
+      "Kayamanan",
+      "Likas na halaga at karapatan",
+      "Antas sa lipunan",
+      "Kapangyarihan"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "values-4",
+    "prompt": "Ayon kay Pope Francis sa Fratelli Tutti, walang sinuman ang dapat maliitin dahil sa:",
+    "options": [
+      "Relihiyon, kasarian, lahi, o kakayahan",
+      "Edad lamang",
+      "Kasarian lamang",
+      "Lahi lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-5",
+    "prompt": "Ilang karapatan ang binanggit sa UDHR sa aralin?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "values-6",
+    "prompt": "Ang karapatang magkaroon ng sapat na pamumuhay ay kinabibilangan ng:",
+    "options": [
+      "Pagkain, tubig, tirahan, at pangangalaga sa kalusugan",
+      "Libreng kotse",
+      "Maraming gadget",
+      "Pagiging sikat"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-7",
+    "prompt": "Ano ang tinutukoy ng LGBTQIA+?",
+    "options": [
+      "Iba't ibang sekswal na oryentasyon at pagkakakilanlan",
+      "Isang relihiyon",
+      "Isang partidong politikal",
+      "Isang paaralan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-8",
+    "prompt": "Aling batas ang nagbibigay ng proteksyon laban sa diskriminasyon at bullying sa mga LGBTQIA+?",
+    "options": [
+      "Child Protection Policy at Anti-Bullying Law",
+      "Magna Carta for PWDs",
+      "RA 11904",
+      "UDHR lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-9",
+    "prompt": "Ano ang dapat nating itaguyod upang labanan ang diskriminasyon sa LGBTQIA+?",
+    "options": [
+      "Pagkakapantay-pantay",
+      "Diskriminasyon",
+      "Pagtanggi",
+      "Pananahimik"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-10",
+    "prompt": "Ayon sa aralin, ang bawat tao ay may karapatang tanggapin anuman ang kanilang:",
+    "options": [
+      "Kasarian at oryentasyon",
+      "Trabaho",
+      "Edad",
+      "Tirahan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-11",
+    "prompt": "Ano ang isang epekto ng kahirapan sa Pilipinas?",
+    "options": [
+      "Kakulangan sa pagkain at edukasyon",
+      "Pagdami ng trabaho",
+      "Pagtaas ng sahod",
+      "Pag-unlad ng bansa"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-12",
+    "prompt": "Sino ang mga Indigenous Peoples (IPs)?",
+    "options": [
+      "Mga katutubong pangkat na may sariling kultura at lupang ninuno",
+      "Mga dayuhan",
+      "Mga pulitiko",
+      "Mga negosyante"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-13",
+    "prompt": "Ano ang pangunahing problema ng mga IPs ayon sa aralin?",
+    "options": [
+      "Diskriminasyon at pagkawala ng lupang ninuno",
+      "Kakulangan sa gadgets",
+      "Labis na kayamanan",
+      "Proteksyon ng pamahalaan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-14",
+    "prompt": "Aling deklarasyon ang nagpoprotekta sa karapatan ng mga IPs?",
+    "options": [
+      "UN Declaration on the Rights of Indigenous Peoples (2007)",
+      "UDHR lamang",
+      "Magna Carta for IPs",
+      "RA 11904"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-15",
+    "prompt": "Ano ang ibig sabihin ng PWD?",
+    "options": [
+      "Person with Disability",
+      "Person with Degree",
+      "People with Dreams",
+      "People with Dignity"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-16",
+    "prompt": "Aling batas ang nagpoprotekta sa karapatan ng mga PWDs?",
+    "options": [
+      "Magna Carta for Persons with Disability (RA 7277)",
+      "Anti-Bullying Law",
+      "Child Protection Policy",
+      "RA 11904"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-17",
+    "prompt": "Ano ang financial literacy?",
+    "options": [
+      "Kakayahang umunawa at gumamit ng wasto ng pera",
+      "Pagkakaroon ng maraming pera",
+      "Paggastos ng lahat ng pera",
+      "Pangungutang ng malaki"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-18",
+    "prompt": "Alin ang hindi kabilang sa mga bahagi ng financial literacy?",
+    "options": [
+      "Kumita ng pera",
+      "Gumastos",
+      "Mag-ipon",
+      "Mag-aksaya"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "values-19",
+    "prompt": "Ano ang dapat unahin sa paggastos?",
+    "options": [
+      "Pangangailangan",
+      "Kagustuhan",
+      "Libangan",
+      "Bagong gadget"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-20",
+    "prompt": "Bakit mahalaga ang pag-iipon?",
+    "options": [
+      "Para sa mga layunin sa hinaharap",
+      "Para makabili agad ng luho",
+      "Para ipakita sa iba",
+      "Para walang gawin"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-21",
+    "prompt": "Ano ang emergency fund?",
+    "options": [
+      "Perang nakalaan para sa hindi inaasahang pangyayari",
+      "Pera para sa bakasyon",
+      "Pera para sa bagong damit",
+      "Pera para sa gadget"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-22",
+    "prompt": "Alin ang tamang kasanayan sa financial literacy?",
+    "options": [
+      "Pangunahing pagbabadyet",
+      "Walang planong paggastos",
+      "Pangungutang nang walang bayad",
+      "Pagtapon ng pera"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-23",
+    "prompt": "Ano ang social media?",
+    "options": [
+      "Mga online platform para sa pakikipag-ugnayan at pagbabahagi ng nilalaman",
+      "Isang uri ng libro",
+      "Isang uri ng telebisyon",
+      "Isang laro"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-24",
+    "prompt": "Ano ang pagkakaiba ng misinformation at disinformation?",
+    "options": [
+      "Ang disinformation ay sadyang panlilinlang; ang misinformation ay hindi sinasadya",
+      "Pareho lang sila",
+      "Ang misinformation ay mas malala",
+      "Walang pagkakaiba"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-25",
+    "prompt": "Ayon sa APA, ang disinformation ay:",
+    "options": [
+      "Hindi totoo at sadyang layuning maglihis",
+      "Hindi sinasadyang maling impormasyon",
+      "Opinyon lamang",
+      "Personal na pananaw"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-26",
+    "prompt": "Ano ang infodemic?",
+    "options": [
+      "Labis na pagkalat ng maling impormasyon lalo na sa kalusugan",
+      "Isang uri ng sakit",
+      "Isang bakuna",
+      "Isang programa sa kalusugan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-27",
+    "prompt": "Alin ang epekto ng fake news?",
+    "options": [
+      "Nagpapalakas ng takot at pagkakabaha-bahagi",
+      "Nagpapabuti ng lipunan",
+      "Nagpapataas ng tiwala",
+      "Nagpapalakas ng demokrasya"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-28",
+    "prompt": "Ano ang identity theft?",
+    "options": [
+      "Pagnanakaw ng pagkakilanlan sa social media",
+      "Pagnanakaw ng pera",
+      "Pagnanakaw ng gamit",
+      "Pagnanakaw ng pagkain"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-29",
+    "prompt": "Alin ang hindi gabay sa wastong paggamit ng social media?",
+    "options": [
+      "Maging magalang",
+      "Suriin ang impormasyon",
+      "Magbahagi ng kahit anong impormasyon",
+      "Protektahan ang privacy"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "values-30",
+    "prompt": "Bakit mahalaga ang mapanuring pag-iisip sa social media?",
+    "options": [
+      "Upang makilala ang totoo sa hindi totoong impormasyon",
+      "Upang makipag-away",
+      "Upang mag-post ng marami",
+      "Upang maging sikat"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-31",
+    "prompt": "Ayon sa aralin, ang pag-ibig ng Diyos ay:",
+    "options": [
+      "Walang kondisyon",
+      "Nakabatay sa ating ginagawa",
+      "Nakabatay sa ating kayamanan",
+      "Nakabatay sa ating katayuan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-32",
+    "prompt": "Ano ang pinakadakilang utos sa paniniwalang Kristiyano?",
+    "options": [
+      "Ibigin ang Diyos at ang kapuwa",
+      "Maging mayaman",
+      "Maging sikat",
+      "Mag-ipon ng maraming pera"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-33",
+    "prompt": "Ayon kay Mikah 6:8, ang tunay na tao ay:",
+    "options": [
+      "Kumilos nang makatarungan, umibig nang may kabaitan, at lumakad nang may kababaang-loob",
+      "Maging mayaman",
+      "Maging makapangyarihan",
+      "Maging sikat"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-34",
+    "prompt": "Bakit mahalaga ang pagkakaroon ng matalik na kaugnayan sa Diyos?",
+    "options": [
+      "Upang maunawaan ang Kanyang pag-ibig at magmahal ng kapwa",
+      "Upang makakuha ng yaman",
+      "Upang maging sikat",
+      "Upang makaiwas sa problema"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-35",
+    "prompt": "Ano ang maaari mong gawin upang palalimin ang iyong pagmamahal sa Diyos?",
+    "options": [
+      "Magnilay at suriin ang iyong mga desisyon",
+      "Mag-ipon ng pera",
+      "Mag-post sa social media",
+      "Manood ng TV"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-36",
+    "prompt": "Sino si Efren Peñaflorida?",
+    "options": [
+      "Nagtatag ng Kariton Klasrum, 2009 CNN Hero",
+      "Isang pulitiko",
+      "Isang artista",
+      "Isang negosyante"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-37",
+    "prompt": "Sino si Cris 'Kesz' Valdez?",
+    "options": [
+      "Nagwagi ng International Children's Peace Prize noong 2012",
+      "Isang modelo",
+      "Isang guro",
+      "Isang doktor"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-38",
+    "prompt": "Ano ang aral mula sa buhay nina Efren Peñaflorida at Kesz Valdez?",
+    "options": [
+      "Ang pagtulong sa kapwa ay mahalaga at may malaking epekto",
+      "Ang yaman ang tanging mahalaga",
+      "Ang kasikatan ang sukatan ng tagumpay",
+      "Ang edukasyon ay hindi kailangan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-39",
+    "prompt": "Ano ang bokasyon ayon sa aralin?",
+    "options": [
+      "Tawag sa buhay at serbisyo — misyon na higit pa sa trabaho",
+      "Isang uri ng trabaho lamang",
+      "Isang hobby",
+      "Isang libangan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-40",
+    "prompt": "Bilang indibidwal, ano ang isa sa iyong mga responsibilidad?",
+    "options": [
+      "Paunlarin ang talento at kakayahan",
+      "Maging tamad",
+      "Pabayaan ang kalusugan",
+      "Hindi mag-aral"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-41",
+    "prompt": "Bilang miyembro ng pamayanan, ano ang dapat mong gawin?",
+    "options": [
+      "Makilahok sa mga gawaing pangkomunidad",
+      "Manatili sa bahay",
+      "Hindi makisali",
+      "Pabayaan ang komunidad"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-42",
+    "prompt": "Bilang tagapangasiwa ng kapaligiran, ano ang iyong tungkulin?",
+    "options": [
+      "Pangalagaan ang kalikasan",
+      "Magtapon ng basura kung saan-saan",
+      "Pabayaan ang polusyon",
+      "Gumamit ng single-use plastic"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-43",
+    "prompt": "Bilang mananampalataya, paano mo maipapakita ang pagmamahal sa Diyos?",
+    "options": [
+      "Sa pamamagitan ng pagtulong sa kapwa at mabubuting gawa",
+      "Sa pamamagitan ng pagiging mayaman",
+      "Sa pamamagitan ng pagiging sikat",
+      "Sa pamamagitan ng pag-iipon"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-44",
+    "prompt": "Bilang tagakonsumo, alin ang dapat mong isabuhay?",
+    "options": [
+      "Reuse, Repair, at Recycle",
+      "Bumili ng maraming bagay",
+      "Itapon lahat",
+      "Suportahan ang mga imported na produkto lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-45",
+    "prompt": "Ano ang epekto ng ilegal na pagmimina?",
+    "options": [
+      "Nasisira ang kagubatan, ilog, at tirahan ng mga katutubo",
+      "Nagpapabuti ng kalikasan",
+      "Nagdaragdag ng biodiversity",
+      "Walang epekto"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-46",
+    "prompt": "Ano ang extinction?",
+    "options": [
+      "Pagkawala ng mga species",
+      "Pagdami ng mga species",
+      "Paglipat ng mga species",
+      "Pagbabago ng klima"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-47",
+    "prompt": "Ano ang epekto ng pagkawala ng biodiversity?",
+    "options": [
+      "Nagagambala ang ekosistema",
+      "Nagpapabuti ng kalikasan",
+      "Walang epekto",
+      "Nagdudulot ng kasaganahan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-48",
+    "prompt": "Ano ang responsibilidad natin sa kalikasan ayon sa aralin?",
+    "options": [
+      "Pangangalaga at proteksyon",
+      "Pagsira",
+      "Pabayaan",
+      "Pagsasamantala"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-49",
+    "prompt": "Ayon sa aralin, ang pagpapakita ng pagmamahal sa ibang tao at nilikha ay:",
+    "options": [
+      "Isang paraan upang masuklian ang pag-ibig ng Diyos",
+      "Hindi kailangan",
+      "Para lamang sa sarili",
+      "Hindi mahalaga"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "values-50",
+    "prompt": "Bakit mahalaga ang pagsasabuhay ng pananampalataya?",
+    "options": [
+      "Upang magkaroon ng makabuluhang buhay at makatulong sa kapwa",
+      "Upang maging mayaman",
+      "Upang maging sikat",
+      "Upang makaiwas sa responsibilidad"
+    ],
+    "answer": 0
+  }
+]

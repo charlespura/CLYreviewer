@@ -1,0 +1,442 @@
+[
+  {
+    "id": "clark-mapeh-1",
+    "prompt": "What stage happens when a child starts experiencing physical and emotional changes?",
+    "options": [
+      "Infancy",
+      "Puberty",
+      "Adulthood",
+      "Old age"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-mapeh-2",
+    "prompt": "Adolescence is the stage between childhood and ___.",
+    "options": [
+      "infancy",
+      "adulthood",
+      "birth",
+      "sleep"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-mapeh-3",
+    "prompt": "Which is an example of proper hygiene?",
+    "options": [
+      "Not taking a bath",
+      "Brushing your teeth",
+      "Wearing dirty clothes",
+      "Never washing your hands"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-mapeh-4",
+    "prompt": "Why is proper hygiene important?",
+    "options": [
+      "To stay clean and healthy",
+      "To become tired",
+      "To get sick",
+      "To become dirty"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-5",
+    "prompt": "Which may happen during puberty?",
+    "options": [
+      "Changes in the body",
+      "Becoming a baby again",
+      "Stopping growth forever",
+      "Never changing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-6",
+    "prompt": "What is stress?",
+    "options": [
+      "A feeling of pressure or worry",
+      "A type of food",
+      "A sport",
+      "A musical instrument"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-7",
+    "prompt": "Which can help manage stress?",
+    "options": [
+      "Resting and talking to a trusted adult",
+      "Ignoring all problems forever",
+      "Being mean to others",
+      "Skipping hygiene"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-8",
+    "prompt": "What is bullying?",
+    "options": [
+      "Repeatedly hurting or mistreating someone",
+      "Helping a classmate",
+      "Playing fairly",
+      "Sharing food"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-9",
+    "prompt": "Kicking someone is an example of ___.",
+    "options": [
+      "physical bullying",
+      "kindness",
+      "cooperation",
+      "hygiene"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-10",
+    "prompt": "Insulting someone is an example of ___.",
+    "options": [
+      "verbal bullying",
+      "balance",
+      "pottery",
+      "coordination"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-11",
+    "prompt": "Excluding someone on purpose can be a form of ___.",
+    "options": [
+      "bullying",
+      "exercise",
+      "hygiene",
+      "music"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-12",
+    "prompt": "If you experience bullying, what is a good thing to do?",
+    "options": [
+      "Tell a trusted adult",
+      "Keep hurting others",
+      "Bully another person",
+      "Ignore danger"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-13",
+    "prompt": "The ability to move quickly and change direction is called ___.",
+    "options": [
+      "agility",
+      "tempo",
+      "pottery",
+      "symbolism"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-14",
+    "prompt": "The ability to control different body movements together is ___.",
+    "options": [
+      "coordination",
+      "bullying",
+      "carving",
+      "puberty"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-15",
+    "prompt": "The ability to stay steady without falling is called ___.",
+    "options": [
+      "balance",
+      "stress",
+      "rhythm",
+      "exclusion"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-16",
+    "prompt": "The ability to move quickly is called ___.",
+    "options": [
+      "speed",
+      "tapestry",
+      "medium",
+      "carving"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-17",
+    "prompt": "Which activity requires balance?",
+    "options": [
+      "Standing on one foot",
+      "Sleeping",
+      "Reading only",
+      "Listening to music"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-18",
+    "prompt": "Which skill helps a player quickly avoid an opponent?",
+    "options": [
+      "Agility",
+      "Pottery",
+      "Hygiene",
+      "Symbolism"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-19",
+    "prompt": "Catching a ball requires good ___.",
+    "options": [
+      "coordination",
+      "tempo",
+      "stress",
+      "puberty"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-20",
+    "prompt": "Running fast from one place to another mainly uses ___.",
+    "options": [
+      "speed",
+      "tapestry",
+      "carving",
+      "rhythm"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-21",
+    "prompt": "Striking and fielding are commonly used in games involving a ___.",
+    "options": [
+      "ball",
+      "pillow",
+      "book",
+      "spoon"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-22",
+    "prompt": "Which is most important for standing steadily on a narrow surface?",
+    "options": [
+      "Balance",
+      "Bullying",
+      "Stress",
+      "Tempo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-23",
+    "prompt": "A repeated design in art is called a ___.",
+    "options": [
+      "pattern",
+      "puberty",
+      "speed",
+      "stress"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-24",
+    "prompt": "When an object represents an idea, it is called ___.",
+    "options": [
+      "symbolism",
+      "hygiene",
+      "agility",
+      "exclusion"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-25",
+    "prompt": "The regular movement or beat in music is called ___.",
+    "options": [
+      "rhythm",
+      "balance",
+      "pottery",
+      "carving"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-26",
+    "prompt": "The speed of music is called ___.",
+    "options": [
+      "tempo",
+      "pattern",
+      "medium",
+      "puberty"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-27",
+    "prompt": "What does 'medium' mean in art?",
+    "options": [
+      "The material used to create artwork",
+      "The speed of music",
+      "A type of bullying",
+      "A physical skill"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-28",
+    "prompt": "Which is an example of an art medium?",
+    "options": [
+      "Paint",
+      "Speed",
+      "Agility",
+      "Stress"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-29",
+    "prompt": "Which term describes the fast or slow speed of a song?",
+    "options": [
+      "Tempo",
+      "Pattern",
+      "Symbolism",
+      "Balance"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-30",
+    "prompt": "Which term describes repeated sounds or beats in music?",
+    "options": [
+      "Rhythm",
+      "Bullying",
+      "Puberty",
+      "Hygiene"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-31",
+    "prompt": "A Bulul statue is traditionally associated with the ___.",
+    "options": [
+      "Ifugao",
+      "Spanish",
+      "American",
+      "Egyptian"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-32",
+    "prompt": "The Manunggul Jar is an important example of ancient Philippine ___.",
+    "options": [
+      "pottery",
+      "basketball",
+      "music only",
+      "modern technology"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-33",
+    "prompt": "Art made by weaving threads or fibers together can be called ___.",
+    "options": [
+      "tapestry",
+      "sculpture",
+      "bullying",
+      "puberty"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-34",
+    "prompt": "Creating objects from clay is called ___.",
+    "options": [
+      "pottery",
+      "speed",
+      "rhythm",
+      "agility"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-35",
+    "prompt": "Making art by cutting or shaping wood or other materials is called ___.",
+    "options": [
+      "carving",
+      "balance",
+      "hygiene",
+      "tempo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-36",
+    "prompt": "A three-dimensional work of art is called a ___.",
+    "options": [
+      "sculpture",
+      "pattern",
+      "rhythm",
+      "stress"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-37",
+    "prompt": "Making cloth by interlacing threads is called ___.",
+    "options": [
+      "textile weaving",
+      "bullying",
+      "striking",
+      "puberty"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-38",
+    "prompt": "Traditional tattooing can be considered a form of ___.",
+    "options": [
+      "cultural art",
+      "physical activity",
+      "hygiene",
+      "bullying"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-39",
+    "prompt": "Which is an example of traditional Philippine visual art?",
+    "options": [
+      "Manunggul Jar",
+      "Running",
+      "Brushing teeth",
+      "Sleeping"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-mapeh-40",
+    "prompt": "Which group contains art-related terms?",
+    "options": [
+      "Pattern, symbolism, rhythm, medium",
+      "Kicking, insulting, exclusion, bullying",
+      "Agility, speed, stress, puberty",
+      "Hygiene, balance, pottery, adolescence"
+    ],
+    "answer": 0
+  }
+]

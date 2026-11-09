@@ -1,0 +1,442 @@
+[
+  {
+    "id": "clark-science-1",
+    "prompt": "Which animal has hair or fur?",
+    "options": [
+      "Fish",
+      "Mammal",
+      "Bird",
+      "Reptile"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-2",
+    "prompt": "Which animal group usually gives birth to live young?",
+    "options": [
+      "Mammals",
+      "Fish",
+      "Birds",
+      "Reptiles"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-3",
+    "prompt": "Which animal group has feathers?",
+    "options": [
+      "Mammals",
+      "Birds",
+      "Fish",
+      "Amphibians"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-4",
+    "prompt": "Which animal group has scaly skin?",
+    "options": [
+      "Reptiles",
+      "Birds",
+      "Mammals",
+      "Insects"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-5",
+    "prompt": "Which animal breathes using gills?",
+    "options": [
+      "Cat",
+      "Fish",
+      "Bird",
+      "Lizard"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-6",
+    "prompt": "Which animals can live both on land and in water?",
+    "options": [
+      "Birds",
+      "Fish",
+      "Amphibians",
+      "Insects"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-science-7",
+    "prompt": "How many legs does an insect usually have?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-8",
+    "prompt": "Which is an example of a mammal?",
+    "options": [
+      "Frog",
+      "Eagle",
+      "Dog",
+      "Snake"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-science-9",
+    "prompt": "Which is an example of a bird?",
+    "options": [
+      "Chicken",
+      "Lizard",
+      "Fish",
+      "Frog"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-10",
+    "prompt": "Which is an example of a reptile?",
+    "options": [
+      "Cat",
+      "Snake",
+      "Butterfly",
+      "Whale"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-11",
+    "prompt": "Which is an example of an amphibian?",
+    "options": [
+      "Frog",
+      "Eagle",
+      "Dog",
+      "Ant"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-12",
+    "prompt": "Which is an example of an insect?",
+    "options": [
+      "Snake",
+      "Butterfly",
+      "Fish",
+      "Whale"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-13",
+    "prompt": "Which microorganism includes mushrooms and yeast?",
+    "options": [
+      "Bacteria",
+      "Fungi",
+      "Mammals",
+      "Reptiles"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-14",
+    "prompt": "What do fungi do to dead organisms?",
+    "options": [
+      "Fly",
+      "Decompose them",
+      "Lay eggs",
+      "Make feathers"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-15",
+    "prompt": "What do decomposers return to the soil?",
+    "options": [
+      "Plastic",
+      "Nutrients",
+      "Metal",
+      "Smoke"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-16",
+    "prompt": "Which microorganisms can sometimes cause diseases?",
+    "options": [
+      "Bacteria",
+      "Birds",
+      "Fish",
+      "Plants"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-17",
+    "prompt": "Are all bacteria harmful?",
+    "options": [
+      "Yes",
+      "No",
+      "Always",
+      "Only at night"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-18",
+    "prompt": "Which plant structure protects a plant from herbivores?",
+    "options": [
+      "Tubers",
+      "Thorns",
+      "Deep roots",
+      "Bulbs"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-19",
+    "prompt": "Which plant may have thorns?",
+    "options": [
+      "Rose",
+      "Potato",
+      "Onion",
+      "Garlic"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-20",
+    "prompt": "Which plant structure stores food underground?",
+    "options": [
+      "Aerial roots",
+      "Thorns",
+      "Tubers",
+      "Leaves"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-science-21",
+    "prompt": "Which is an example of a tuber?",
+    "options": [
+      "Potato",
+      "Rose",
+      "Orchid",
+      "Mangrove"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-22",
+    "prompt": "Which plant structure stores nutrients and helps regrowth?",
+    "options": [
+      "Bulbs",
+      "Thorns",
+      "Aerial roots",
+      "Deep roots"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-23",
+    "prompt": "Which plant is an example of a bulb?",
+    "options": [
+      "Onion",
+      "Rose",
+      "Cactus",
+      "Mango"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-24",
+    "prompt": "Which plant is also an example of a bulb?",
+    "options": [
+      "Garlic",
+      "Potato",
+      "Mangrove",
+      "Lotus"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-25",
+    "prompt": "What structure grows horizontally underground and can produce new shoots?",
+    "options": [
+      "Rhizome",
+      "Thorn",
+      "Feather",
+      "Gill"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-26",
+    "prompt": "What kind of roots help a plant obtain oxygen from the air?",
+    "options": [
+      "Deep roots",
+      "Aerial roots",
+      "Tubers",
+      "Bulbs"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-27",
+    "prompt": "Which plants commonly have aerial roots?",
+    "options": [
+      "Mangroves",
+      "Potatoes",
+      "Onions",
+      "Roses"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-28",
+    "prompt": "Which is another example of a plant with aerial roots?",
+    "options": [
+      "Orchid",
+      "Garlic",
+      "Potato",
+      "Cactus"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-29",
+    "prompt": "What kind of roots help plants reach underground water?",
+    "options": [
+      "Aerial roots",
+      "Deep roots",
+      "Thorns",
+      "Bulbs"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-30",
+    "prompt": "Deep roots are especially useful for plants living in ________.",
+    "options": [
+      "dry areas",
+      "the sky",
+      "refrigerators",
+      "oceans"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-31",
+    "prompt": "Mangroves commonly grow in ________.",
+    "options": [
+      "flooded areas",
+      "deserts",
+      "mountains only",
+      "dry rooms"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-32",
+    "prompt": "Why do mangroves have aerial roots?",
+    "options": [
+      "To obtain oxygen from the air",
+      "To make feathers",
+      "To catch fish",
+      "To produce plastic"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-33",
+    "prompt": "Which plant can grow well in flooded areas?",
+    "options": [
+      "Lotus",
+      "Rose",
+      "Cactus",
+      "Pine tree"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-34",
+    "prompt": "What does mass tell us?",
+    "options": [
+      "How colorful an object is",
+      "How much matter an object contains",
+      "How fast an object moves",
+      "How loud an object is"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-35",
+    "prompt": "What instrument is used to measure mass?",
+    "options": [
+      "Thermometer",
+      "Ruler",
+      "Balance",
+      "Clock"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-science-36",
+    "prompt": "Which animal is cold-blooded and can live on land and in water?",
+    "options": [
+      "Frog",
+      "Dog",
+      "Eagle",
+      "Cat"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-37",
+    "prompt": "Which animal group has six legs and three main body parts?",
+    "options": [
+      "Mammals",
+      "Insects",
+      "Birds",
+      "Fish"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-38",
+    "prompt": "Which specialized plant structure would best help a plant survive a lack of rain?",
+    "options": [
+      "Deep roots",
+      "Feathers",
+      "Gills",
+      "Fur"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-science-39",
+    "prompt": "Which specialized structure helps protect a cactus from animals that may eat it?",
+    "options": [
+      "Tubers",
+      "Thorns",
+      "Bulbs",
+      "Aerial roots"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-science-40",
+    "prompt": "Which statement is TRUE?",
+    "options": [
+      "Fish breathe using feathers.",
+      "Birds have gills.",
+      "Fungi help break down dead organisms.",
+      "Mammals have six legs."
+    ],
+    "answer": 2
+  }
+]

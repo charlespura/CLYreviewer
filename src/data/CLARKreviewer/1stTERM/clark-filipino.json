@@ -1,0 +1,442 @@
+[
+  {
+    "id": "clark-filipino-1",
+    "prompt": "Anong uri ng teksto ang nagsasalaysay ng isang pangyayari o kuwento?",
+    "options": [
+      "Impormatibo",
+      "Naratibo",
+      "Prosidyural",
+      "Argumentatibo"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-2",
+    "prompt": "Anong uri ng teksto ang pangunahing layunin ay magbigay ng impormasyon?",
+    "options": [
+      "Naratibo",
+      "Argumentatibo",
+      "Impormatibo",
+      "Prosidyural"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-filipino-3",
+    "prompt": "Anong uri ng teksto ang naglalahad ng mga hakbang o panuto?",
+    "options": [
+      "Prosidyural",
+      "Naratibo",
+      "Impormatibo",
+      "Argumentatibo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-4",
+    "prompt": "Anong uri ng teksto ang naglalahad ng paninindigan o argumento?",
+    "options": [
+      "Naratibo",
+      "Impormatibo",
+      "Prosidyural",
+      "Argumentatibo"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "clark-filipino-5",
+    "prompt": "Ang isang kuwento tungkol sa isang batang naglakbay ay anong uri ng teksto?",
+    "options": [
+      "Naratibo",
+      "Impormatibo",
+      "Prosidyural",
+      "Argumentatibo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-6",
+    "prompt": "Ang artikulong nagpapaliwanag tungkol sa mga planeta ay tekstong _____.",
+    "options": [
+      "Naratibo",
+      "Impormatibo",
+      "Prosidyural",
+      "Argumentatibo"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-7",
+    "prompt": "Ang recipe ng pagluluto ay halimbawa ng tekstong _____.",
+    "options": [
+      "Naratibo",
+      "Argumentatibo",
+      "Prosidyural",
+      "Impormatibo"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-filipino-8",
+    "prompt": "Ang sanaysay na nagbibigay ng opinyon at dahilan ay tekstong _____.",
+    "options": [
+      "Argumentatibo",
+      "Naratibo",
+      "Prosidyural",
+      "Impormatibo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-9",
+    "prompt": "Alin ang pangunahing layunin ng tekstong naratibo?",
+    "options": [
+      "Magbigay ng hakbang",
+      "Magsalaysay ng kuwento",
+      "Magbigay ng utos",
+      "Magbigay ng larawan"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-10",
+    "prompt": "Alin ang pangunahing layunin ng tekstong impormatibo?",
+    "options": [
+      "Magbigay ng impormasyon",
+      "Magsalaysay ng kuwento",
+      "Magbigay ng pagbati",
+      "Magbigay ng panuto lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-11",
+    "prompt": "Alin ang pinakamainam na halimbawa ng tekstong prosidyural?",
+    "options": [
+      "Kuwento tungkol sa aso",
+      "Balita tungkol sa panahon",
+      "Mga hakbang sa paggawa ng proyekto",
+      "Opinyon tungkol sa paaralan"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-filipino-12",
+    "prompt": "Alin ang pinakamainam na halimbawa ng tekstong argumentatibo?",
+    "options": [
+      "Mga hakbang sa pagluluto",
+      "Kuwento ng isang bata",
+      "Pagbibigay ng paninindigan tungkol sa isang isyu",
+      "Listahan ng mga hayop"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-filipino-13",
+    "prompt": "Ano ang multimedia?",
+    "options": [
+      "Paggamit ng iba't ibang media upang maghatid ng mensahe",
+      "Isang uri lamang ng larawan",
+      "Isang liham",
+      "Isang kuwento lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-14",
+    "prompt": "Anong elemento ng multimedia ang binubuo ng mga salita o pahayag?",
+    "options": [
+      "Audio",
+      "Teksto",
+      "Animasyon",
+      "Grapika"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-15",
+    "prompt": "Alin ang halimbawa ng grapika?",
+    "options": [
+      "Musika",
+      "Larawan",
+      "Pangalan",
+      "Boses lamang"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-16",
+    "prompt": "Ano ang audio?",
+    "options": [
+      "Mga tunog o musika",
+      "Mga larawan",
+      "Mga salita",
+      "Mga sulat-kamay"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-17",
+    "prompt": "Ano ang animasyon?",
+    "options": [
+      "Mga tunog lamang",
+      "Mga larawang o video clip na gumagalaw",
+      "Mga nakasulat na salita",
+      "Isang liham"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-18",
+    "prompt": "Ano ang gamit ng grapika?",
+    "options": [
+      "Tumutulong magpaliwanag ng impormasyon",
+      "Nagbibigay lamang ng tunog",
+      "Sumusulat ng liham",
+      "Nagbibigay ng lagda"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-19",
+    "prompt": "Ano ang maaaring idagdag ng audio sa isang mensahe?",
+    "options": [
+      "Emosyon o konteksto",
+      "Lagda",
+      "Pamuhatan",
+      "Petsa lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-20",
+    "prompt": "Alin ang halimbawa ng interaktibong elemento?",
+    "options": [
+      "Clickable button",
+      "Papel",
+      "Lapis",
+      "Kuwaderno"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-21",
+    "prompt": "Ano ang ginagawa ng interaktibong elemento?",
+    "options": [
+      "Nagbibigay ng pagkakataong makisali o makipag-interaksiyon",
+      "Nagbibigay lamang ng tunog",
+      "Nagbibigay lamang ng larawan",
+      "Nagbibigay ng petsa"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-22",
+    "prompt": "Ano ang isang halimbawa ng interaktibong elemento?",
+    "options": [
+      "Form",
+      "Kuwento",
+      "Tula",
+      "Lagda"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-23",
+    "prompt": "Ano ang pangunahing gamit ng subtitle?",
+    "options": [
+      "Magpalakas ng musika",
+      "Tumulong upang maging malinaw ang impormasyon",
+      "Gumawa ng larawan",
+      "Magbigay ng lagda"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-24",
+    "prompt": "Bakit mahalaga ang multimedia?",
+    "options": [
+      "Dahil mas madaling maunawaan ang impormasyon",
+      "Dahil nagpapahaba lamang ito ng teksto",
+      "Dahil hindi ito nagbibigay ng mensahe",
+      "Dahil para lamang ito sa laro"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-25",
+    "prompt": "Alin ang HINDI elemento ng multimedia?",
+    "options": [
+      "Teksto",
+      "Audio",
+      "Grapika",
+      "Lagda"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "clark-filipino-26",
+    "prompt": "Alin ang elemento na gumagamit ng mga larawan, icon, at guhit?",
+    "options": [
+      "Audio",
+      "Grapika",
+      "Subtitle",
+      "Lagda"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-27",
+    "prompt": "Ano ang pangunahing layunin ng liham pangkaibigan?",
+    "options": [
+      "Mangumusta o makipag-ugnayan sa kaibigan",
+      "Magbigay ng recipe",
+      "Magbigay ng utos",
+      "Magbenta ng produkto"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-28",
+    "prompt": "Ano ang tawag sa bahagi ng liham na may lokasyon at petsa?",
+    "options": [
+      "Lagda",
+      "Katawan",
+      "Pamuhatan",
+      "Bating Pangwakas"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-filipino-29",
+    "prompt": "Ano ang tawag sa pagbati sa sinusulatan?",
+    "options": [
+      "Pamuhatan",
+      "Bating Panimula",
+      "Katawan ng Liham",
+      "Lagda"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-30",
+    "prompt": "Ano ang pangunahing mensahe ng sumulat?",
+    "options": [
+      "Katawan ng Liham",
+      "Pamuhatan",
+      "Lagda",
+      "Bating Panimula"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-31",
+    "prompt": "Ano ang tawag sa magalang na pagtatapos ng liham?",
+    "options": [
+      "Pamuhatan",
+      "Bating Pangwakas",
+      "Katawan",
+      "Petsa"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-32",
+    "prompt": "Ano ang tawag sa pangalan o pirma ng sumulat?",
+    "options": [
+      "Lagda",
+      "Pamuhatan",
+      "Bating Panimula",
+      "Katawan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-33",
+    "prompt": "Alin ang halimbawa ng bating panimula?",
+    "options": [
+      "Nagmamahal,",
+      "Mahal kong Kaibigan,",
+      "Quezon City, Agosto 31, 2026",
+      "Juan Dela Cruz"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-34",
+    "prompt": "Alin ang halimbawa ng bating pangwakas?",
+    "options": [
+      "Mahal kong Kaibigan,",
+      "Magandang araw",
+      "Nagmamahal,",
+      "Quezon City"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-filipino-35",
+    "prompt": "Saan makikita ang pangalan ng sumulat?",
+    "options": [
+      "Pamuhatan",
+      "Katawan",
+      "Lagda",
+      "Bating Panimula"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-filipino-36",
+    "prompt": "Aling bahagi ng liham ang nagsasaad kung saan at kailan ito isinulat?",
+    "options": [
+      "Pamuhatan",
+      "Lagda",
+      "Katawan",
+      "Bating Pangwakas"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-37",
+    "prompt": "Alin ang tamang pagkakasunod-sunod ng mga bahagi ng liham?",
+    "options": [
+      "Lagda, Katawan, Pamuhatan",
+      "Pamuhatan, Bating Panimula, Katawan, Bating Pangwakas, Lagda",
+      "Katawan, Lagda, Pamuhatan",
+      "Bating Pangwakas, Pamuhatan, Katawan"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-filipino-38",
+    "prompt": "Aling bahagi ng liham ang maaaring maglaman ng 'Kumusta ka na?'",
+    "options": [
+      "Katawan ng Liham",
+      "Pamuhatan",
+      "Lagda",
+      "Petsa"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-filipino-39",
+    "prompt": "Alin ang HINDI bahagi ng liham pangkaibigan?",
+    "options": [
+      "Pamuhatan",
+      "Lagda",
+      "Bating Panimula",
+      "Graph"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "clark-filipino-40",
+    "prompt": "Bakit mahalaga ang liham pangkaibigan?",
+    "options": [
+      "Nagbibigay ito ng paraan upang makipag-ugnayan at mangumusta",
+      "Ginagamit lamang ito sa pagluluto",
+      "Ginagamit lamang ito sa pagsukat",
+      "Wala itong mensahe"
+    ],
+    "answer": 0
+  }
+]

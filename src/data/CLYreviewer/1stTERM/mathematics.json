@@ -1,0 +1,552 @@
+[
+  {
+    "id": "mathematics-1",
+    "prompt": "The Law of Sines is used to solve oblique triangles when given:",
+    "options": [
+      "SSS only",
+      "SAS only",
+      "AAS or ASA",
+      "SSS and SAS"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "mathematics-2",
+    "prompt": "Which formula represents the Law of Sines?",
+    "options": [
+      "a² = b² + c² – 2bc cos A",
+      "a/sin A = b/sin B = c/sin C",
+      "sin A / a = sin B / b = sin C / c",
+      "Both b and c"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "mathematics-3",
+    "prompt": "The Law of Cosines is used when given:",
+    "options": [
+      "SSS only",
+      "SAS only",
+      "Both SSS and SAS",
+      "AAS only"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "mathematics-4",
+    "prompt": "What is the formula for side a using Law of Cosines?",
+    "options": [
+      "a² = b² + c² – 2bc cos A",
+      "a² = b² + c² + 2bc cos A",
+      "a = b + c – 2bc cos A",
+      "a² = b² – c² + 2bc cos A"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-5",
+    "prompt": "Which case is known as the ambiguous case in oblique triangles?",
+    "options": [
+      "AAS",
+      "SSA",
+      "SAS",
+      "ASA"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-6",
+    "prompt": "In the ambiguous case (SSA), if angle A is acute and a < h, how many triangles are formed?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "infinite"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-7",
+    "prompt": "In SSA with acute angle A, if a = h, what type of triangle is formed?",
+    "options": [
+      "No triangle",
+      "One right triangle",
+      "Two triangles",
+      "One obtuse triangle"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-8",
+    "prompt": "In the ambiguous case with acute angle A, if h < a < b, how many triangles are formed?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "mathematics-9",
+    "prompt": "For an obtuse angle in SSA, if a ≤ b, how many triangles?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "depends"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-10",
+    "prompt": "What is the height formula h in the ambiguous case?",
+    "options": [
+      "h = a sin B",
+      "h = b sin A",
+      "h = c sin A",
+      "h = a sin C"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-11",
+    "prompt": "What is the area formula for an oblique triangle with sides b, c and included angle A?",
+    "options": [
+      "½ bc sin A",
+      "½ ac sin B",
+      "½ ab sin C",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "mathematics-12",
+    "prompt": "Given b = 8 in, c = 12 in, A = 35°. What is the area? (Use sin 35° ≈ 0.5736)",
+    "options": [
+      "27.5 in²",
+      "32.4 in²",
+      "41.2 in²",
+      "18.6 in²"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-13",
+    "prompt": "Given a = 14 in, c = 10.5 in, B = 60°. Area = ½ ac sin B. What is the area? (sin 60° ≈ 0.8660)",
+    "options": [
+      "63.7 in²",
+      "72.3 in²",
+      "54.2 in²",
+      "48.9 in²"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-14",
+    "prompt": "Which theorem states that the sum of angles in a triangle is 180°?",
+    "options": [
+      "Angle Sum Theorem",
+      "Pythagorean Theorem",
+      "Law of Sines",
+      "Law of Cosines"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-15",
+    "prompt": "In a triangle, if A = 35°, B = 85°, what is C?",
+    "options": [
+      "60°",
+      "70°",
+      "50°",
+      "80°"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-16",
+    "prompt": "In Law of Cosines, to find an angle, which formula is derived?",
+    "options": [
+      "cos A = (b² + c² – a²) / (2bc)",
+      "cos A = (a² + b² – c²) / (2ab)",
+      "cos A = (a² + c² – b²) / (2ac)",
+      "cos A = (b² – c²) / (2bc)"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-17",
+    "prompt": "Ariane measures a tree: angle from ground to top = 35°, tree inclination with ground = 85°, distance from base = 100 ft. What is the tree height? (sin 35°≈0.574, sin 60°≈0.866)",
+    "options": [
+      "57.4 ft",
+      "66.2 ft",
+      "72.8 ft",
+      "83.5 ft"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-18",
+    "prompt": "Two aircraft from point X: distances 50 km and 72 km, angle between them 49°. What is the distance between aircraft? (cos 49°≈0.656)",
+    "options": [
+      "48.2 km",
+      "54.4 km",
+      "62.1 km",
+      "45.6 km"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-19",
+    "prompt": "Two roads intersect at B, angle 45.3°. Building A is 3 km from B, building C is 6 km from B. Find AC. (cos 45.3°≈0.703)",
+    "options": [
+      "3.8 km",
+      "4.4 km",
+      "5.2 km",
+      "6.1 km"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-20",
+    "prompt": "A triangle has sides a=6, b=8, c=10. Which law is best to find angle A?",
+    "options": [
+      "Law of Sines",
+      "Law of Cosines",
+      "Pythagorean",
+      "Angle Sum"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-21",
+    "prompt": "A triangle has A=40°, B=60°, side a=10. Which law is used to find side b?",
+    "options": [
+      "Law of Cosines",
+      "Law of Sines",
+      "Pythagorean",
+      "Area formula"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-22",
+    "prompt": "In real-world problems, what unit must be included in the final answer?",
+    "options": [
+      "Only degree sign",
+      "Proper unit of measurement",
+      "No units",
+      "Only number"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-23",
+    "prompt": "What is the height (h) formula when using Law of Sines with side b and angle A?",
+    "options": [
+      "h = b sin A",
+      "h = a sin B",
+      "h = c sin C",
+      "h = b cos A"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-24",
+    "prompt": "A triangle has sides a=7, b=9, C=50°. Find the area using ½ ab sin C. (sin 50°≈0.766)",
+    "options": [
+      "24.1",
+      "30.2",
+      "26.8",
+      "21.5"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-25",
+    "prompt": "A quadratic inequality is a second-degree inequality that can be written as:",
+    "options": [
+      "ax² + bx + c = 0",
+      "ax² + bx + c > 0",
+      "ax + b > 0",
+      "ax² + b = 0"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-26",
+    "prompt": "Which is a quadratic inequality?",
+    "options": [
+      "2x + 3 > 0",
+      "x² – 4x + 3 < 0",
+      "x² – 4 = 0",
+      "3x – 5 = 0"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-27",
+    "prompt": "What is the standard form for solving quadratic inequalities?",
+    "options": [
+      "ax² + bx + c = 0",
+      "ax² + bx + c ≥ 0",
+      "ax² + bx + c = 0 for roots",
+      "ax² + bx + c ≠ 0"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "mathematics-28",
+    "prompt": "What are the critical values used to divide the number line?",
+    "options": [
+      "Zeros or roots",
+      "Intercepts only",
+      "Vertex only",
+      "Y-intercept"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-29",
+    "prompt": "When solving a quadratic inequality, what do you do after finding the roots?",
+    "options": [
+      "Plot and test intervals",
+      "Immediately write the solution",
+      "Find the vertex",
+      "Graph only"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-30",
+    "prompt": "In interval notation, what does (−∞, −3) ∪ (6, ∞) represent?",
+    "options": [
+      "x < -3 or x > 6",
+      "-3 < x < 6",
+      "x ≥ -3",
+      "x ≤ 6"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-31",
+    "prompt": "Solve: x² – 5x + 6 > 0. Which intervals satisfy?",
+    "options": [
+      "(-∞,2) ∪ (3,∞)",
+      "(2,3)",
+      "(-∞,3) ∪ (2,∞)",
+      "(-∞,2) ∩ (3,∞)"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-32",
+    "prompt": "For the inequality x² – 4x + 3 ≤ 0, the solution in interval notation is:",
+    "options": [
+      "[1,3]",
+      "(-∞,1] ∪ [3,∞)",
+      "(1,3)",
+      "[-3,-1]"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-33",
+    "prompt": "What is the solution set of x² – 9 > 0?",
+    "options": [
+      "(-∞,-3) ∪ (3,∞)",
+      "(-3,3)",
+      "[-3,3]",
+      "(-∞,3)"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-34",
+    "prompt": "In set-builder notation: {x | x < -2 or x > 5} is the same as:",
+    "options": [
+      "(-∞,-2) ∪ (5,∞)",
+      "[-2,5]",
+      "(-∞,-2] ∪ [5,∞)",
+      "(-2,5)"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-35",
+    "prompt": "Which symbol is used for a closed circle on the number line?",
+    "options": [
+      "< or >",
+      "≤ or ≥",
+      "=",
+      "≠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-36",
+    "prompt": "When testing intervals, you substitute a test point into the inequality. What is the goal?",
+    "options": [
+      "To find which intervals satisfy the inequality",
+      "To find the roots",
+      "To find the vertex",
+      "To graph the parabola"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-37",
+    "prompt": "Solve: 6x² – 7x > 20. The roots are x = -4/3 and x = 5/2. Which interval is part of the solution?",
+    "options": [
+      "(-∞, -4/3) ∪ (5/2, ∞)",
+      "(-4/3, 5/2)",
+      "(-∞, -4/3)",
+      "(5/2, ∞)"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-38",
+    "prompt": "What is the first step in solving a quadratic inequality?",
+    "options": [
+      "Graph the parabola",
+      "Write in standard form",
+      "Find the vertex",
+      "Test a point"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-39",
+    "prompt": "A quadratic inequality in two variables has a boundary that is a:",
+    "options": [
+      "Line",
+      "Circle",
+      "Parabola",
+      "Ellipse"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "mathematics-40",
+    "prompt": "The general form of a quadratic inequality in two variables is:",
+    "options": [
+      "Ax + By + C > 0",
+      "Ax² + Bxy + Cy² + Dx + Ey + F > 0",
+      "Ax² + By² + C = 0",
+      "Ax² + Bx + C > 0"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-41",
+    "prompt": "What is the first step in solving a quadratic inequality in two variables?",
+    "options": [
+      "Find the vertex",
+      "Write the inequality as an equation y = ax² + bx + c",
+      "Test a point",
+      "Shade the region"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-42",
+    "prompt": "What does the inequality sign determine in graphing quadratic inequalities?",
+    "options": [
+      "Whether the parabola opens up or down",
+      "Whether the shaded region is inside or outside the parabola",
+      "The x-intercepts",
+      "The vertex"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-43",
+    "prompt": "In graphing, how do you find the vertex (h, k)?",
+    "options": [
+      "h = -b/2a, k = c – b²/4a",
+      "h = b/2a, k = c – b²/4a",
+      "h = -b/a, k = c",
+      "h = b/a, k = c/a"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-44",
+    "prompt": "What is the boundary of a quadratic inequality in two variables?",
+    "options": [
+      "The line y = mx + b",
+      "The parabola from the associated equation",
+      "The x-axis",
+      "The y-axis"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-45",
+    "prompt": "When graphing y < x² – 4, what type of line is used for the boundary?",
+    "options": [
+      "Solid line",
+      "Dashed line",
+      "Dotted line only",
+      "No line"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "mathematics-46",
+    "prompt": "When graphing y ≥ x² – 4, the boundary is a:",
+    "options": [
+      "Solid line",
+      "Dashed line",
+      "Dotted line",
+      "No boundary"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-47",
+    "prompt": "After graphing the parabola, what is the next step?",
+    "options": [
+      "Choose a test point not on the boundary",
+      "Shade the boundary",
+      "Find the vertex",
+      "Write the solution set"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-48",
+    "prompt": "If the test point satisfies the inequality, the solution region is:",
+    "options": [
+      "The side containing the test point",
+      "The opposite side",
+      "Both sides",
+      "Only the boundary"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-49",
+    "prompt": "What is the solution region for a quadratic inequality in two variables?",
+    "options": [
+      "A set of points in the coordinate plane",
+      "A single point",
+      "A line",
+      "No solution"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "mathematics-50",
+    "prompt": "In solving two-variable inequalities, what is a key difference from one-variable?",
+    "options": [
+      "The solution is a region, not just intervals on a line",
+      "Only numbers are used",
+      "There is no test point",
+      "Graphs are not used"
+    ],
+    "answer": 0
+  }
+]

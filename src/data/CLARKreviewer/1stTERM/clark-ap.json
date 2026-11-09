@@ -1,0 +1,442 @@
+[
+  {
+    "id": "clark-ap-1",
+    "prompt": "Ano ang tawag sa kabuuan ng paraan ng pamumuhay ng isang pangkat ng tao?",
+    "options": [
+      "Ekonomiya",
+      "Kalinangan",
+      "Politika",
+      "Heograpiya"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-2",
+    "prompt": "Alin ang kabilang sa kalinangan?",
+    "options": [
+      "Wika at tradisyon",
+      "Klima lamang",
+      "Laki ng lupain",
+      "Dami ng populasyon lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-3",
+    "prompt": "Ilang pangunahing uri ng kalinangan ang tinatalakay sa inyong reviewer?",
+    "options": [
+      "Isa",
+      "Dalawa",
+      "Tatlo",
+      "Apat"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-4",
+    "prompt": "Alin ang halimbawa ng materyal na kalinangan?",
+    "options": [
+      "Paniniwala",
+      "Wika",
+      "Gusali",
+      "Tradisyon"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-ap-5",
+    "prompt": "Alin ang halimbawa ng di-materyal na kalinangan?",
+    "options": [
+      "Damit",
+      "Bahay",
+      "Palamuti",
+      "Paniniwala"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "clark-ap-6",
+    "prompt": "Ano ang Manunggul Jar?",
+    "options": [
+      "Isang uri ng sandata",
+      "Isang sinaunang banga",
+      "Isang uri ng bahay",
+      "Isang sasakyang pandagat"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-7",
+    "prompt": "Saan natagpuan ang Manunggul Jar?",
+    "options": [
+      "Tabon Cave",
+      "Banaue",
+      "Intramuros",
+      "Maynila"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-8",
+    "prompt": "Ano ang mahalagang ipinapakita ng Manunggul Jar?",
+    "options": [
+      "Sinaunang paniniwala tungkol sa kamatayan at kabilang-buhay",
+      "Sinaunang sistema ng pagsasaka",
+      "Sinaunang paraan ng pakikipagdigma",
+      "Sinaunang paraan ng pagbubuwis"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-9",
+    "prompt": "Ang Manunggul Jar ay patunay ng mataas na antas ng ____ ng mga sinaunang Pilipino.",
+    "options": [
+      "teknolohiya at sining",
+      "pagmimina lamang",
+      "politika lamang",
+      "kalakalan lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-10",
+    "prompt": "Ang mga pigura sa takip ng Manunggul Jar ay may kaugnayan sa ____.",
+    "options": [
+      "paglalakbay sa kabilang-buhay",
+      "pagsasaka",
+      "pangingisda",
+      "pangangaso"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-11",
+    "prompt": "Anong relihiyon ang dumating at lumaganap sa ilang bahagi ng Pilipinas bago dumating ang mga Espanyol?",
+    "options": [
+      "Hinduismo",
+      "Budismo",
+      "Islam",
+      "Kristiyanismo"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-ap-12",
+    "prompt": "Saang bahagi ng Pilipinas unang naging malakas ang impluwensiya ng Islam?",
+    "options": [
+      "Hilagang Luzon",
+      "Mindanao at Sulu",
+      "Cordillera",
+      "Batanes"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-13",
+    "prompt": "Sino ang mga taong may malaking papel sa pagpapalaganap ng Islam sa Timog Pilipinas?",
+    "options": [
+      "Mga misyonerong Muslim at mangangalakal",
+      "Mga conquistador",
+      "Mga Amerikano",
+      "Mga Kastila"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-14",
+    "prompt": "Ano ang isa sa mga dahilan kung bakit mabilis na lumaganap ang Islam sa ilang pamayanan?",
+    "options": [
+      "Kalakalan at pakikipag-ugnayan",
+      "Sapilitang edukasyon ng mga Kastila",
+      "Pagdating ng mga Amerikano",
+      "Pagtatayo ng mga riles"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-15",
+    "prompt": "Ang Islam ay isang relihiyong nagmula sa ____.",
+    "options": [
+      "India",
+      "Arabia",
+      "China",
+      "Japan"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-16",
+    "prompt": "Ilan ang Arkan ng Islam o Five Pillars of Islam?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-ap-17",
+    "prompt": "Ano ang tawag sa pagpapahayag ng pananampalataya sa Islam?",
+    "options": [
+      "Zakat",
+      "Hajj",
+      "Shahada",
+      "Sawm"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-ap-18",
+    "prompt": "Ano ang Zakat?",
+    "options": [
+      "Pag-aayuno",
+      "Pagbibigay ng kawanggawa",
+      "Paglalakbay",
+      "Panalangin"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-19",
+    "prompt": "Ano ang Sawm?",
+    "options": [
+      "Pag-aayuno",
+      "Paglalakbay sa Mecca",
+      "Pagbibigay ng kawanggawa",
+      "Pagpapahayag ng pananampalataya"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-20",
+    "prompt": "Ano ang Hajj?",
+    "options": [
+      "Pag-aayuno",
+      "Paglalakbay sa Mecca",
+      "Pagbibigay ng buwis",
+      "Pangangalakal"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-21",
+    "prompt": "Ilang beses sa isang araw isinasagawa ang obligadong pagdarasal ng isang Muslim?",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-ap-22",
+    "prompt": "Ano ang tawag sa obligadong pagdarasal sa Islam?",
+    "options": [
+      "Salah",
+      "Zakat",
+      "Hajj",
+      "Sawm"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-23",
+    "prompt": "Ano ang Sultanato?",
+    "options": [
+      "Uri ng sinaunang pamahalaan na pinamumunuan ng Sultan",
+      "Uri ng relihiyon",
+      "Uri ng sasakyang pandagat",
+      "Uri ng sining"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-24",
+    "prompt": "Sino ang namumuno sa isang Sultanato?",
+    "options": [
+      "Datu",
+      "Rajah",
+      "Sultan",
+      "Gobernador"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "clark-ap-25",
+    "prompt": "Alin ang naging mahalagang sentro ng Sultanato sa Pilipinas?",
+    "options": [
+      "Sulu",
+      "Baguio",
+      "Ilocos",
+      "Bicol"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-26",
+    "prompt": "Ano ang malaking papel ng Sultanato sa Timog Pilipinas?",
+    "options": [
+      "Pamamahala at pagpapaunlad ng kalakalan",
+      "Pagtatayo ng mga tren",
+      "Pagpapalaganap ng Kristiyanismo",
+      "Pagbuo ng mga modernong lungsod"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-27",
+    "prompt": "Ang Sultanato ng Sulu ay naging mahalagang sentro ng ____.",
+    "options": [
+      "kalakalan",
+      "pagmimina ng ginto lamang",
+      "paggawa ng kotse",
+      "industriya ng tela lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-28",
+    "prompt": "Ano ang isang pangunahing dahilan ng pakikipag-ugnayan ng sinaunang Pilipinas sa ibang bansa sa Asya?",
+    "options": [
+      "Kalakalan",
+      "Turismo",
+      "Industriyalisasyon",
+      "Kolonisasyon ng Amerika"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-29",
+    "prompt": "Alin sa mga sumusunod ang bansang may sinaunang ugnayan sa Pilipinas?",
+    "options": [
+      "China",
+      "Canada",
+      "Brazil",
+      "Mexico"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-30",
+    "prompt": "Ano ang naidulot ng pakikipagkalakalan sa ibang bansa?",
+    "options": [
+      "Palitan ng produkto at kultura",
+      "Pagkawala ng lahat ng tradisyon",
+      "Pagkakaroon agad ng modernong teknolohiya",
+      "Pagtigil ng mga pamayanan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-31",
+    "prompt": "Ang palitan ng ideya, kaugalian, at paniniwala sa pagitan ng mga bansa ay tinatawag na ____.",
+    "options": [
+      "pagpapalitan ng kultura",
+      "digmaan",
+      "migrasyon lamang",
+      "pagbubuwis"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-32",
+    "prompt": "Ano ang mahalagang papel ng kababaihan sa ilang sinaunang pamayanan sa Pilipinas?",
+    "options": [
+      "Wala silang anumang papel",
+      "May mahalagang papel sa pamilya, ekonomiya, at lipunan",
+      "Sila lamang ang maaaring mamuno",
+      "Sila lamang ang nakikipagdigma"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "clark-ap-33",
+    "prompt": "Sino ang maaaring magkaroon ng mahalagang papel sa mga gawaing pangkalakalan at tahanan?",
+    "options": [
+      "Kababaihan",
+      "Mga dayuhan lamang",
+      "Mga sundalo lamang",
+      "Mga pinuno lamang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-34",
+    "prompt": "Ano ang ipinapakita ng pagkakaroon ng mahalagang papel ng kababaihan sa sinaunang lipunan?",
+    "options": [
+      "May ambag sila sa pag-unlad ng pamayanan",
+      "Hindi sila bahagi ng lipunan",
+      "Wala silang karapatan",
+      "Hindi sila nagtatrabaho"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-35",
+    "prompt": "Ano ang maaaring makaapekto sa relihiyon at tradisyon ng isang sinaunang pamayanan?",
+    "options": [
+      "Pakikipag-ugnayan sa ibang kultura",
+      "Laki ng notebook",
+      "Uri ng modernong sasakyan",
+      "Social media"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-36",
+    "prompt": "Alin ang halimbawa ng sinaunang sining?",
+    "options": [
+      "Pag-ukit",
+      "Computer animation",
+      "Digital photography",
+      "Video editing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-37",
+    "prompt": "Bakit gumagamit ng palamuti ang mga sinaunang Pilipino?",
+    "options": [
+      "Para sa kagandahan at pagpapakita ng kultura o katayuan",
+      "Para lamang sa paglalaro",
+      "Para gumawa ng sasakyan",
+      "Para sa modernong teknolohiya"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-38",
+    "prompt": "Alin ang halimbawa ng arkitekturang sinaunang Pilipino?",
+    "options": [
+      "Bahay kubo",
+      "Condominium",
+      "Skyscraper",
+      "Shopping mall"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-39",
+    "prompt": "Ang mga disenyo sa sinaunang sining at arkitektura ay maaaring magpakita ng ____.",
+    "options": [
+      "kultura at paniniwala",
+      "presyo ng produkto",
+      "modernong teknolohiya",
+      "internet connection"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "clark-ap-40",
+    "prompt": "Bakit mahalagang pag-aralan ang kalinangan ng sinaunang Pilipino?",
+    "options": [
+      "Upang maunawaan at mapahalagahan ang ating kasaysayan at kultura",
+      "Upang makalimutan ang nakaraan",
+      "Upang palitan ang lahat ng tradisyon",
+      "Upang malaman lamang ang pangalan ng mga lugar"
+    ],
+    "answer": 0
+  }
+]

@@ -1,0 +1,552 @@
+[
+  {
+    "id": "orange-economy-1",
+    "prompt": "What is the Orange Economy?",
+    "options": [
+      "Businesses from art, culture & creativity",
+      "Agriculture exports",
+      "Financial services",
+      "Mining industry"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-2",
+    "prompt": "Which domain includes movies, TV, and music?",
+    "options": [
+      "Audiovisual",
+      "Design",
+      "Publishing",
+      "Cultural Sites"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-3",
+    "prompt": "The Philippine Creative Industries Act is also known as:",
+    "options": [
+      "RA 11904",
+      "RA 10931",
+      "RA 11648",
+      "RA 11223"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-4",
+    "prompt": "How many domains are in RA 11904?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "orange-economy-5",
+    "prompt": "Which domain covers software and apps requiring user input?",
+    "options": [
+      "Digital Interactive Media",
+      "Audiovisual",
+      "Creative Services",
+      "Design"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-6",
+    "prompt": "Karaoke translates literally to:",
+    "options": [
+      "Empty orchestra",
+      "Sing along",
+      "Voice box",
+      "Melody machine"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-7",
+    "prompt": "Who patented the Sing-Along System (Videoke) in 1975?",
+    "options": [
+      "Roberto del Rosario",
+      "Daisuke Inoue",
+      "Jose Rizal",
+      "Fernando Poe Jr."
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-8",
+    "prompt": "The Phonograph was invented in:",
+    "options": [
+      "1877",
+      "1901",
+      "1925",
+      "1950"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-9",
+    "prompt": "Which instrument changed music and gave birth to Rock 'n' Roll?",
+    "options": [
+      "Electric Guitar",
+      "Synthesizer",
+      "Piano",
+      "Violin"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-10",
+    "prompt": "Multitrack recording allows:",
+    "options": [
+      "Piece-by-piece studio recording",
+      "Live concert recording",
+      "Vinyl pressing",
+      "Radio broadcast"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-11",
+    "prompt": "AutoTune is used for:",
+    "options": [
+      "Pitch manipulation",
+      "Volume boost",
+      "Reverb effect",
+      "Noise reduction"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-12",
+    "prompt": "Which era allowed bedroom talents to go global without major studios?",
+    "options": [
+      "PC & Internet",
+      "Vinyl era",
+      "Radio era",
+      "Cassette era"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-13",
+    "prompt": "Videoke is an interactive Filipino iteration of:",
+    "options": [
+      "Karaoke",
+      "Jukebox",
+      "MP3 player",
+      "Radio"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-14",
+    "prompt": "Game music can boost focus by increasing:",
+    "options": [
+      "Dopamine",
+      "Serotonin",
+      "Adrenaline",
+      "Cortisol"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-15",
+    "prompt": "Composing modular sound 'cues' is a best practice for:",
+    "options": [
+      "Video Game Music",
+      "Pop music",
+      "Classical",
+      "Jazz"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-16",
+    "prompt": "Which domain covers Broadway and musical theater?",
+    "options": [
+      "Performing Arts",
+      "Audiovisual",
+      "Design",
+      "Publishing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-17",
+    "prompt": "Traditional Cultural Expressions is which domain?",
+    "options": [
+      "Domain 8",
+      "Domain 3",
+      "Domain 5",
+      "Domain 9"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-18",
+    "prompt": "Cultural Sites is domain number:",
+    "options": [
+      "9",
+      "7",
+      "6",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-19",
+    "prompt": "The Synthesizer replicates:",
+    "options": [
+      "Orchestral sounds",
+      "Guitar sounds",
+      "Percussion",
+      "Human voice"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-20",
+    "prompt": "Which Philippine industry faces scarcity of local software developers?",
+    "options": [
+      "Digital Interactive Media",
+      "Audiovisual",
+      "Publishing",
+      "Design"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-21",
+    "prompt": "Videoke scoring system is based on:",
+    "options": [
+      "AI & pitch/echo",
+      "Audience claps",
+      "Decibel meter",
+      "Tempo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-22",
+    "prompt": "Karaoke was invented in:",
+    "options": [
+      "Japan",
+      "Philippines",
+      "USA",
+      "Korea"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-23",
+    "prompt": "Which is NOT a domain under RA 11904?",
+    "options": [
+      "Finance",
+      "Audiovisual",
+      "Design",
+      "Publishing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-24",
+    "prompt": "Music Technology includes all EXCEPT:",
+    "options": [
+      "Agriculture",
+      "Phonograph",
+      "Synthesizer",
+      "Multitrack"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-25",
+    "prompt": "The Electric Guitar was popularized in the:",
+    "options": [
+      "1940s",
+      "1920s",
+      "1960s",
+      "1890s"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-26",
+    "prompt": "What does the Digital Interactive Media domain reject?",
+    "options": [
+      "Passive audience",
+      "User input",
+      "Active participation",
+      "Software"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-27",
+    "prompt": "Which is a rising frontier in the Philippines?",
+    "options": [
+      "Digital Interactive Media",
+      "Mining",
+      "Agriculture",
+      "Fishing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-28",
+    "prompt": "Microtransaction resistance is a challenge in:",
+    "options": [
+      "Philippine game market",
+      "Movie industry",
+      "Publishing",
+      "Tourism"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-29",
+    "prompt": "Which best practice involves playing the game to target emotions?",
+    "options": [
+      "Playtesting",
+      "Looping",
+      "Sampling",
+      "Mastering"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-30",
+    "prompt": "The Vocoder is used for:",
+    "options": [
+      "Modifying vocal intonation",
+      "Reverb",
+      "Delay",
+      "Compression"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-31",
+    "prompt": "Which domain includes Creative Services?",
+    "options": [
+      "Domain 3",
+      "Domain 1",
+      "Domain 6",
+      "Domain 8"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-32",
+    "prompt": "Design Domains is which number?",
+    "options": [
+      "4",
+      "2",
+      "5",
+      "7"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-33",
+    "prompt": "Publishing and Printed Media is Domain:",
+    "options": [
+      "5",
+      "3",
+      "6",
+      "9"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-34",
+    "prompt": "Which is NOT part of Audiovisual Domain?",
+    "options": [
+      "Sculpture",
+      "Film",
+      "TV Shows",
+      "Music"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-35",
+    "prompt": "The Philippine Creative Industries Act was enacted in:",
+    "options": [
+      "2022",
+      "2020",
+      "2021",
+      "2019"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-36",
+    "prompt": "Which domain covers tourism and heritage?",
+    "options": [
+      "Cultural Sites",
+      "Performing Arts",
+      "Design",
+      "Publishing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-37",
+    "prompt": "Interactive media requires:",
+    "options": [
+      "Active user input",
+      "Passive viewing",
+      "One-way communication",
+      "Broadcast only"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-38",
+    "prompt": "Which Filipino invention is related to music?",
+    "options": [
+      "Videoke",
+      "Patis",
+      "Jeepney",
+      "Bayanihan"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-39",
+    "prompt": "Game music composition draws inspiration from:",
+    "options": [
+      "Orchestral & EDM",
+      "Country & folk",
+      "Jazz & blues",
+      "Heavy metal"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-40",
+    "prompt": "Karaoke was invented by:",
+    "options": [
+      "Daisuke Inoue",
+      "Roberto del Rosario",
+      "Yamaha",
+      "Sony"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-41",
+    "prompt": "Which is a traditional cultural expression?",
+    "options": [
+      "Folk dance",
+      "Digital art",
+      "Video game",
+      "Film"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-42",
+    "prompt": "The global patent for Sing-Along System is held by:",
+    "options": [
+      "Filipino inventor",
+      "Japanese inventor",
+      "American inventor",
+      "Korean inventor"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-43",
+    "prompt": "Which technology enabled infinite orchestral sounds?",
+    "options": [
+      "Synthesizer",
+      "Electric Guitar",
+      "Phonograph",
+      "Multitrack"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-44",
+    "prompt": "Which sector benefits from intellectual property exports?",
+    "options": [
+      "Creative Industries",
+      "Agriculture",
+      "Mining",
+      "Construction"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-45",
+    "prompt": "What is a key challenge for Philippine game developers?",
+    "options": [
+      "Scarcity of trained developers",
+      "Too many developers",
+      "Cheap labor",
+      "Government support"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-46",
+    "prompt": "The term 'Videoke' is associated with:",
+    "options": [
+      "Philippines",
+      "Japan",
+      "Korea",
+      "USA"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-47",
+    "prompt": "Which domain includes 2D/3D animation?",
+    "options": [
+      "Audiovisual",
+      "Design",
+      "Publishing",
+      "Digital Interactive"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-48",
+    "prompt": "Which act promotes creative industries in the Philippines?",
+    "options": [
+      "RA 11904",
+      "RA 10066",
+      "RA 9165",
+      "RA 8550"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-49",
+    "prompt": "Which is a form of music technology?",
+    "options": [
+      "Multitrack Recording",
+      "Printing press",
+      "Camera",
+      "Loom"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "orange-economy-50",
+    "prompt": "The Orange Economy generates wealth from:",
+    "options": [
+      "Art, culture, creativity",
+      "Real estate",
+      "Manufacturing",
+      "Finance"
+    ],
+    "answer": 0
+  }
+]

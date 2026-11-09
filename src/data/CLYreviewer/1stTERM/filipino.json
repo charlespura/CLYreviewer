@@ -1,0 +1,552 @@
+[
+  {
+    "id": "filipino-1",
+    "prompt": "Sino ang may-akda ng El Filibusterismo?",
+    "options": [
+      "Andres Bonifacio",
+      "Jose Rizal",
+      "Marcelo H. del Pilar",
+      "Graciano Lopez Jaena"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "filipino-2",
+    "prompt": "Kailan nailathala ang El Filibusterismo?",
+    "options": [
+      "1887",
+      "1891",
+      "1896",
+      "1872"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "filipino-3",
+    "prompt": "Saan nailimbag ang El Filibusterismo?",
+    "options": [
+      "Madrid, Spain",
+      "Ghent, Belgium",
+      "Paris, France",
+      "Berlin, Germany"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "filipino-4",
+    "prompt": "Sino ang inialayan ni Rizal ng El Filibusterismo?",
+    "options": [
+      "Mga mag-aaral",
+      "GOMBURZA",
+      "Mga prayle",
+      "Kapitan Heneral"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "filipino-5",
+    "prompt": "Ano ang pangyayaring nagbigay-inspirasyon kay Rizal na isulat ang El Filibusterismo?",
+    "options": [
+      "Pag-aalsa sa Cavite (1872)",
+      "Pagbitay kay Rizal",
+      "Digmaang Pilipino-Amerikano",
+      "Pagdating ng mga Amerikano"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-6",
+    "prompt": "Kailan ginilitan ang GOMBURZA?",
+    "options": [
+      "Pebrero 17, 1872",
+      "Enero 1, 1872",
+      "Disyembre 30, 1896",
+      "Hunyo 12, 1898"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-7",
+    "prompt": "Sino ang mayamang mag-aalahas at tagapayo ng Kapitan Heneral?",
+    "options": [
+      "Simoun",
+      "Basilio",
+      "Isagani",
+      "Kapitan Tiyago"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-8",
+    "prompt": "Sino ang pinakamataas na opisyal sa Pilipinas na kumakatawan sa hari ng Espanya?",
+    "options": [
+      "Kapitan Heneral",
+      "Alkalde Mayor",
+      "Gobernador Heneral",
+      "Teniente"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-9",
+    "prompt": "Sino ang prayleng guro na may mataas na antas ng pangangatwiran at nagmamalasakit sa mga Pilipino?",
+    "options": [
+      "Padre Sibyla",
+      "Padre Fernandez",
+      "Padre Camorra",
+      "Padre Salvi"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "filipino-10",
+    "prompt": "Sino ang nagpanggap na matalino at natatanging nag-iisip para sa kapakanan ng lahat?",
+    "options": [
+      "Ben Zayb",
+      "Don Custodio",
+      "Padre Irene",
+      "Kapitan Heneral"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "filipino-11",
+    "prompt": "Sinong pari ang nagsamantala kay Huli?",
+    "options": [
+      "Padre Camorra",
+      "Padre Florentino",
+      "Padre Salvi",
+      "Padre Sibyla"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-12",
+    "prompt": "Sino ang amain ni Isagani na napilitang magpari para sa kagustuhan ng kanyang ina?",
+    "options": [
+      "Padre Florentino",
+      "Padre Fernandez",
+      "Padre Irene",
+      "Padre Salvi"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-13",
+    "prompt": "Sino ang dating kompesor ni Maria Clara at naging obispo ng Maynila?",
+    "options": [
+      "Padre Salvi",
+      "Padre Sibyla",
+      "Padre Irene",
+      "Padre Camorra"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-14",
+    "prompt": "Sino ang abogadong sanggunian ng mga prayle?",
+    "options": [
+      "Ben Zayb",
+      "Don Custodio",
+      "Padre Irene",
+      "Kapitan Heneral"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-15",
+    "prompt": "Sino ang anak ni Sisa at katipan ni Huli?",
+    "options": [
+      "Basilio",
+      "Isagani",
+      "Placido Penitente",
+      "Macaraig"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-16",
+    "prompt": "Sino ang kasintahan ni Paulita Gomez na may mataas na pangarap para sa bayan?",
+    "options": [
+      "Isagani",
+      "Basilio",
+      "Placido",
+      "Sandoval"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-17",
+    "prompt": "Sino ang pinakamatalino sa kanyang klase sa Batangas ngunit nawalan ng gana sa pag-aaral?",
+    "options": [
+      "Placido Penitente",
+      "Macaraig",
+      "Pecson",
+      "Tadeo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-18",
+    "prompt": "Sino ang mayaman at pinakamasigasig sa pagpapatayo ng akademya?",
+    "options": [
+      "Macaraig",
+      "Basilio",
+      "Isagani",
+      "Sandoval"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-19",
+    "prompt": "Sino ang Kastilang salungat sa kanyang mga kababayan at may pagmamalasakit sa mga Pilipino?",
+    "options": [
+      "Sandoval",
+      "Juanito Pelaez",
+      "Ben Zayb",
+      "Don Custodio"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-20",
+    "prompt": "Sino ang tamad at natutuwa kapag walang pasok?",
+    "options": [
+      "Tadeo",
+      "Pecson",
+      "Placido",
+      "Juanito"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-21",
+    "prompt": "Sino si Tandang Selo?",
+    "options": [
+      "Ama ni Kabesang Tales",
+      "Ama ni Huli",
+      "Kapatid ni Tales",
+      "Lolo ni Basilio"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-22",
+    "prompt": "Ano ang tunay na pangalan ni Kabesang Tales?",
+    "options": [
+      "Telesforo de Dios",
+      "Tandang Selo",
+      "Tano",
+      "Juan de Dios"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-23",
+    "prompt": "Sino ang kasintahan ni Basilio na nagpaalila upang matubos ang ama?",
+    "options": [
+      "Huli",
+      "Paulita Gomez",
+      "Maria Clara",
+      "Pepay"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-24",
+    "prompt": "Sino ang kapatid ni Huli na naging guwardiya sibil?",
+    "options": [
+      "Tano",
+      "Basilio",
+      "Isagani",
+      "Tandang Selo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-25",
+    "prompt": "Sino ang panginoon ni Huli nang magpaalila ito?",
+    "options": [
+      "Hermana Penchang",
+      "Donya Victorina",
+      "Kapitan Tiyago",
+      "Kabesang Andang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-26",
+    "prompt": "Sino ang kutsero ni Simoun na pinarusahan dahil walang cedula?",
+    "options": [
+      "Sinong",
+      "Basilio",
+      "Kapitan Basilio",
+      "Tandang Selo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-27",
+    "prompt": "Sino ang negosyanteng Tsino na gustong magkaroon ng embassy ng kanyang bayan?",
+    "options": [
+      "Quiroga",
+      "Mr. Leeds",
+      "Camaroncocido",
+      "Kapitan ng Barko"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-28",
+    "prompt": "Sino ang mayamang dayuhan at mahikero?",
+    "options": [
+      "Mr. Leeds",
+      "Quiroga",
+      "Simoun",
+      "Ben Zayb"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-29",
+    "prompt": "Sino ang tinawag na 'halabos na hipon'?",
+    "options": [
+      "Camaroncocido",
+      "Juanito Pelaez",
+      "Don Custodio",
+      "Ben Zayb"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-30",
+    "prompt": "Sino ang mananayaw na ginamit ng mga mag-aaral na panunuhol?",
+    "options": [
+      "Pepay",
+      "Huli",
+      "Paulita Gomez",
+      "Hermana Penchang"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-31",
+    "prompt": "Saan naglalayag ang Bapor Tabo sa Kabanata 1?",
+    "options": [
+      "Ilog Pasig",
+      "Lawa ng Laguna",
+      "Look ng Maynila",
+      "Ilog Pampanga"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-32",
+    "prompt": "Ano ang panukala ni Simoun para mapabilis ang paglalakbay sa ilog?",
+    "options": [
+      "Gumawa ng tuwid na kanal",
+      "Mag-alaga ng pato",
+      "Maghukay ng lagusan",
+      "Gumamit ng mas malaking bapor"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-33",
+    "prompt": "Ano ang iminungkahi ni Don Custodio bilang alternatibo?",
+    "options": [
+      "Mag-alaga ng pato",
+      "Gumawa ng kanal",
+      "Gumamit ng tren",
+      "Magtayo ng tulay"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-34",
+    "prompt": "Sino ang mga mag-aaral na nag-usap sa ilalim ng kubyerta?",
+    "options": [
+      "Basilio at Isagani",
+      "Placido at Juanito",
+      "Macaraig at Sandoval",
+      "Pecson at Tadeo"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-35",
+    "prompt": "Ano ang panukala ng mga mag-aaral sa Kabanata 2?",
+    "options": [
+      "Akademya ng Wikang Kastila",
+      "Pagsasara ng mga paaralan",
+      "Pagpapalit ng kurikulum",
+      "Pagtatayo ng bagong unibersidad"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-36",
+    "prompt": "Ano ang ikinahihiya ng mga prayle tungkol kay Padre Florentino?",
+    "options": [
+      "Nasa ilalim siya ng kubyerta kasama ang mga karaniwang tao",
+      "Siya ay Pilipino",
+      "Siya ay mayaman",
+      "Siya ay masyadong relihiyoso"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-37",
+    "prompt": "Saan pumunta si Basilio sa Kabanata 6?",
+    "options": [
+      "Sementeryo ng San Diego",
+      "Bahay ni Kapitan Tiyago",
+      "Unibersidad",
+      "Tahanan ni Sisa"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-38",
+    "prompt": "Sino ang nakilala ni Basilio sa gubat na naghuhukay?",
+    "options": [
+      "Simoun",
+      "Kabesang Tales",
+      "Tandang Selo",
+      "Kapitan Basilio"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-39",
+    "prompt": "Ano ang tunay na pagkakakilanlan ni Simoun?",
+    "options": [
+      "Crisostomo Ibarra",
+      "Kapitan Tiyago",
+      "Padre Salvi",
+      "Don Custodio"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-40",
+    "prompt": "Ano ang nangyari kay Tandang Selo sa Kabanata 8?",
+    "options": [
+      "Naging pipi",
+      "Namatay",
+      "Nakulong",
+      "Nawala"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-41",
+    "prompt": "Ano ang ipinagpalit ni Kabesang Tales sa baril ni Simoun?",
+    "options": [
+      "Locket ni Maria Clara",
+      "Kanyang lupa",
+      "Kanyang bahay",
+      "Kanyang alahas"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-42",
+    "prompt": "Sino ang napatay sa Kabanata 10?",
+    "options": [
+      "Bagong may-ari ng lupa, asawa, at prayleng administrador",
+      "Kabesang Tales",
+      "Tandang Selo",
+      "Huli"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-43",
+    "prompt": "Saan nangyari ang Kabanata 11?",
+    "options": [
+      "Los Baños",
+      "San Diego",
+      "Maynila",
+      "Tiyani"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-44",
+    "prompt": "Ano ang pinag-usapan sa Kabanata 11 bukod sa larong tresillo?",
+    "options": [
+      "Akademya ng Wikang Kastila",
+      "Pagpapalalim ng ilog",
+      "Pag-aalsa",
+      "Kasalan ni Paulita"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-45",
+    "prompt": "Sino ang pinakamatalino sa kanyang bayan ngunit nawalan ng gana sa pag-aaral?",
+    "options": [
+      "Placido Penitente",
+      "Basilio",
+      "Isagani",
+      "Macaraig"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-46",
+    "prompt": "Ano ang ginawa ni Placido nang siya ay ipahiya ni Padre Millon?",
+    "options": [
+      "Walk-out sa klase",
+      "Natahimik",
+      "Umiyak",
+      "Nag-sorry"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-47",
+    "prompt": "Sino ang abogadong kinausap ni Isagani para sa kanilang panukala?",
+    "options": [
+      "Ginoong Pasta",
+      "Don Custodio",
+      "Padre Irene",
+      "Kapitan Heneral"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-48",
+    "prompt": "Ano ang payo ni Ginoong Pasta kay Isagani?",
+    "options": [
+      "Mag-aral at mamuhay nang tahimik",
+      "Maging rebolusyonaryo",
+      "Lumabas ng bansa",
+      "Huwag mag-aral"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-49",
+    "prompt": "Ano ang sinisimbolo ng Bapor Tabo?",
+    "options": [
+      "Lipunang Pilipino at pamahalaang kolonyal",
+      "Kalakalan",
+      "Relihiyon",
+      "Edukasyon"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "filipino-50",
+    "prompt": "Ano ang sinisimbolo ng mga alahas ni Simoun?",
+    "options": [
+      "Pambubulag sa lipunan sa pamamagitan ng karangyaan",
+      "Kahirapan",
+      "Katarungan",
+      "Pag-asa"
+    ],
+    "answer": 0
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "mathematics",
+    "title": "Mathematics",
+    "description": "Triangles, trigonometry & problem solving",
+    "player": "clyde",
+    "category": "math",
+    "term": "1st term",
+    "questionFile": "CLYreviewer/1stTERM/mathematics.json"
+  },
+  {
+    "id": "english",
+    "title": "English",
+    "description": "Language, literature & communication",
+    "player": "clyde",
+    "category": "language",
+    "term": "1st term",
+    "questionFile": "CLYreviewer/1stTERM/english.json"
+  },
+  {
+    "id": "filipino",
+    "title": "Filipino",
+    "description": "Wika, panitikan at pag-unawa",
+    "player": "clyde",
+    "category": "language",
+    "term": "1st term",
+    "questionFile": "CLYreviewer/1stTERM/filipino.json"
+  },
+  {
+    "id": "values",
+    "title": "Values Education",
+    "description": "Character, choices & everyday values",
+    "player": "clyde",
+    "category": "humanities",
+    "term": "1st term",
+    "questionFile": "CLYreviewer/1stTERM/values.json"
+  },
+  {
+    "id": "clark-science",
+    "title": "Science",
+    "description": "Animals, living things & discovery",
+    "player": "clark",
+    "category": "science",
+    "term": "1st term",
+    "questionFile": "CLARKreviewer/1stTERM/clark-science.json"
+  },
+  {
+    "id": "clark-english",
+    "title": "English",
+    "description": "Build your language superpowers",
+    "player": "clark",
+    "category": "language",
+    "term": "1st term",
+    "questionFile": "CLARKreviewer/1stTERM/clark-english.json"
+  },
+  {
+    "id": "clark-filipino",
+    "title": "Filipino",
+    "description": "Pagbasa, wika at mga kuwento",
+    "player": "clark",
+    "category": "language",
+    "term": "1st term",
+    "questionFile": "CLARKreviewer/1stTERM/clark-filipino.json"
+  },
+  {
+    "id": "clark-ap",
+    "title": "Araling Panlipunan",
+    "description": "People, places & our community",
+    "player": "clark",
+    "category": "humanities",
+    "term": "1st term",
+    "questionFile": "CLARKreviewer/1stTERM/clark-ap.json"
+  },
+  {
+    "id": "clark-mapeh",
+    "title": "MAPEH",
+    "description": "Music, arts, movement & health",
+    "player": "clark",
+    "category": "arts",
+    "term": "1st term",
+    "questionFile": "CLARKreviewer/1stTERM/clark-mapeh.json"
+  },
+  {
+    "id": "chemistry",
+    "title": "Chemical Reactions",
+    "description": "Explore the science of transformation",
+    "player": "unassigned",
+    "category": "science",
+    "term": "1st term",
+    "questionFile": "unassigned/1stTERM/chemistry.json"
+  },
+  {
+    "id": "orange-economy",
+    "title": "Orange Economy",
+    "description": "Where creativity meets opportunity",
+    "player": "unassigned",
+    "category": "arts",
+    "term": "1st term",
+    "questionFile": "unassigned/1stTERM/orange-economy.json"
+  }
+]

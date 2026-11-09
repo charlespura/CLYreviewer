@@ -1,0 +1,570 @@
+[
+  {
+    "id": "chemistry-1",
+    "prompt": "Which best describes the chemical reaction happening in plants during photosynthesis?",
+    "options": [
+      "Carbon dioxide + water → glucose + oxygen",
+      "Glucose + oxygen → carbon dioxide + water",
+      "Metal + acid → salt + hydrogen",
+      "Salt + water → acid + base"
+    ],
+    "answer": 0,
+    "context": "🌿 Plants on the balcony use sunlight to produce their own food."
+  },
+  {
+    "id": "chemistry-2",
+    "prompt": "What type of reaction is photosynthesis?",
+    "options": [
+      "Combination (Synthesis)",
+      "Decomposition",
+      "Single Replacement",
+      "Combustion"
+    ],
+    "answer": 0,
+    "context": "Plants convert CO₂ and H₂O into glucose and O₂ using light energy."
+  },
+  {
+    "id": "chemistry-3",
+    "prompt": "Why is photosynthesis important for the environment?",
+    "options": [
+      "It produces oxygen and supports the food chain",
+      "It releases carbon dioxide",
+      "It causes air pollution",
+      "It depletes nutrients"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-4",
+    "prompt": "What type of reaction combines two or more substances to form a single product?",
+    "options": [
+      "Combination",
+      "Decomposition",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-5",
+    "prompt": "What is the general formula for a combination reaction?",
+    "options": [
+      "A + B → AB",
+      "AB → A + B",
+      "A + BC → AC + B",
+      "AB + CD → AD + CB"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-6",
+    "prompt": "Which is an example of a combination reaction?",
+    "options": [
+      "2H₂ + O₂ → 2H₂O",
+      "2H₂O₂ → 2H₂O + O₂",
+      "Zn + 2HCl → ZnCl₂ + H₂",
+      "AgNO₃ + NaCl → AgCl + NaNO₃"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-7",
+    "prompt": "The Haber process combines Nitrogen and Hydrogen to create Ammonia (NH₃). What type of reaction is this?",
+    "options": [
+      "Combination",
+      "Decomposition",
+      "Single Replacement",
+      "Combustion"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-8",
+    "prompt": "What is the equation for the Haber process?",
+    "options": [
+      "N₂ + 3H₂ → 2NH₃",
+      "N₂ + H₂ → NH₃",
+      "2N₂ + 3H₂ → 2NH₃",
+      "N₂ + 2H₂ → 2NH₃"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-9",
+    "prompt": "Combination reactions are important in the fertilizer industry because:",
+    "options": [
+      "They help crops grow faster and increase food production",
+      "They release harmful gases",
+      "They deplete soil nutrients",
+      "They cause acid rain"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-10",
+    "prompt": "What type of reaction breaks down a single compound into simpler substances?",
+    "options": [
+      "Decomposition",
+      "Combination",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-11",
+    "prompt": "What is the general formula for decomposition?",
+    "options": [
+      "AB → A + B",
+      "A + B → AB",
+      "A + BC → AC + B",
+      "AB + CD → AD + CB"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-12",
+    "prompt": "Hydrogen peroxide decomposes into water and oxygen. What type of reaction is this?",
+    "options": [
+      "Decomposition",
+      "Combination",
+      "Single Replacement",
+      "Combustion"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-13",
+    "prompt": "Which best describes digestion as a chemical process?",
+    "options": [
+      "New substances are formed from food",
+      "Food only changes shape",
+      "Food is physically crushed only",
+      "Food disappears completely"
+    ],
+    "answer": 0,
+    "context": "🧬 Digestion involves many chemical reactions inside the body."
+  },
+  {
+    "id": "chemistry-14",
+    "prompt": "During digestion, large food molecules are broken down into smaller nutrients. This is an example of:",
+    "options": [
+      "Decomposition",
+      "Combination",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-15",
+    "prompt": "Decomposition reactions help break down dead plants and animals. This process:",
+    "options": [
+      "Returns nutrients to the soil",
+      "Causes soil erosion",
+      "Releases toxic gases",
+      "Decreases soil fertility"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-16",
+    "prompt": "Rotting is a natural and slow process of which reaction type?",
+    "options": [
+      "Decomposition",
+      "Combination",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-17",
+    "prompt": "What is often needed to break apart a compound in decomposition?",
+    "options": [
+      "Heat, light, or electricity",
+      "Another compound",
+      "A catalyst only",
+      "Water only"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-18",
+    "prompt": "Food scraps break down in a compost pit. What type of reaction is this?",
+    "options": [
+      "Decomposition",
+      "Combination",
+      "Single Replacement",
+      "Combustion"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-19",
+    "prompt": "What type of reaction occurs when one element replaces another in a compound?",
+    "options": [
+      "Single Replacement",
+      "Double Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-20",
+    "prompt": "What is the general formula for single replacement?",
+    "options": [
+      "A + BC → AC + B",
+      "AB + CD → AD + CB",
+      "A + B → AB",
+      "AB → A + B"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-21",
+    "prompt": "Zinc + hydrochloric acid → zinc chloride + hydrogen. What type of reaction is this?",
+    "options": [
+      "Single Replacement",
+      "Double Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-22",
+    "prompt": "What is the equation for zinc reacting with hydrochloric acid?",
+    "options": [
+      "Zn + 2HCl → ZnCl₂ + H₂",
+      "Zn + HCl → ZnCl + H",
+      "Zn + 2HCl → ZnCl₂ + H₂O",
+      "Zn + HCl → ZnO + H₂"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-23",
+    "prompt": "In a single replacement reaction, a more reactive element takes the place of a less reactive one. This is based on:",
+    "options": [
+      "Activity series",
+      "pH scale",
+      "Periodic table",
+      "Reactivity series"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-24",
+    "prompt": "Copper + silver nitrate → copper nitrate + silver. What type of reaction is this?",
+    "options": [
+      "Single Replacement",
+      "Double Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0,
+    "context": "Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag"
+  },
+  {
+    "id": "chemistry-25",
+    "prompt": "Aluminum foil placed in a copper chloride solution undergoes which type of reaction?",
+    "options": [
+      "Single Replacement",
+      "Double Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-26",
+    "prompt": "Acid + Metal → Salt + Hydrogen gas. This is an example of:",
+    "options": [
+      "Single Replacement",
+      "Double Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-27",
+    "prompt": "Magnesium + Sulfuric acid → Magnesium sulfate + Hydrogen. This is:",
+    "options": [
+      "Single Replacement",
+      "Double Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-28",
+    "prompt": "What type of reaction occurs when two compounds exchange parts to form two new compounds?",
+    "options": [
+      "Double Replacement",
+      "Single Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-29",
+    "prompt": "What is the general formula for double replacement?",
+    "options": [
+      "AB + CD → AD + CB",
+      "A + BC → AC + B",
+      "A + B → AB",
+      "AB → A + B"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-30",
+    "prompt": "Silver nitrate + sodium chloride → silver chloride + sodium nitrate. What type of reaction is this?",
+    "options": [
+      "Double Replacement",
+      "Single Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-31",
+    "prompt": "What is the equation for silver nitrate and sodium chloride?",
+    "options": [
+      "AgNO₃ + NaCl → AgCl + NaNO₃",
+      "AgNO₃ + NaCl → AgNO₃ + NaCl",
+      "AgNO₃ + NaCl → Ag₂Cl + NaNO₃",
+      "AgNO₃ + NaCl → AgCl₂ + NaNO₃"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-32",
+    "prompt": "Barium chloride + sodium sulfate → barium sulfate + sodium chloride. This is:",
+    "options": [
+      "Double Replacement",
+      "Single Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-33",
+    "prompt": "What indicates a double replacement reaction has occurred?",
+    "options": [
+      "Formation of a precipitate",
+      "Release of gas",
+      "Color change",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "chemistry-34",
+    "prompt": "Neutralization reaction between an acid and a base is an example of:",
+    "options": [
+      "Double Replacement",
+      "Single Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-35",
+    "prompt": "Acid + Base → Salt + Water is what type of reaction?",
+    "options": [
+      "Double Replacement",
+      "Single Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-36",
+    "prompt": "What type of reaction occurs when a substance reacts with oxygen and releases heat and light?",
+    "options": [
+      "Combustion",
+      "Combination",
+      "Decomposition",
+      "Single Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-37",
+    "prompt": "What is the general formula for combustion?",
+    "options": [
+      "Fuel + O₂ → CO₂ + H₂O + Energy",
+      "Fuel + O₂ → CO₂ + Energy",
+      "Fuel + O₂ → H₂O + Energy",
+      "Fuel + O₂ → CO₂ + H₂O"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-38",
+    "prompt": "A candle burns continuously while producing light and heat. Which substances are reacting?",
+    "options": [
+      "Wax vapor and oxygen",
+      "Wax and water",
+      "Wick and metal",
+      "Air and water"
+    ],
+    "answer": 0,
+    "context": "🕯️ A candle burns continuously while producing light and heat."
+  },
+  {
+    "id": "chemistry-39",
+    "prompt": "Which is an example of a combustion reaction?",
+    "options": [
+      "CH₄ + 2O₂ → CO₂ + 2H₂O",
+      "2H₂ + O₂ → 2H₂O",
+      "Zn + 2HCl → ZnCl₂ + H₂",
+      "AgNO₃ + NaCl → AgCl + NaNO₃"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-40",
+    "prompt": "Burning propane (LPG) for cooking is what type of reaction?",
+    "options": [
+      "Combustion",
+      "Combination",
+      "Decomposition",
+      "Single Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-41",
+    "prompt": "What is released during combustion reactions?",
+    "options": [
+      "Heat and light",
+      "Only heat",
+      "Only light",
+      "Sound and heat"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-42",
+    "prompt": "Combustion reactions are essential for energy production but contribute to:",
+    "options": [
+      "Air pollution and climate change",
+      "Water pollution",
+      "Soil erosion",
+      "Deforestation"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-43",
+    "prompt": "Magnesium ribbon burns with a bright white flame. What type of reaction is this?",
+    "options": [
+      "Combustion",
+      "Combination",
+      "Decomposition",
+      "Single Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-44",
+    "prompt": "What gas is responsible for the bubbles produced during wine fermentation?",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Hydrogen",
+      "Nitrogen"
+    ],
+    "answer": 0,
+    "context": "🍷 Fermentation produces bubbles during the early stage of wine making."
+  },
+  {
+    "id": "chemistry-45",
+    "prompt": "What does the smell of food being grilled indicate?",
+    "options": [
+      "New compounds are being formed",
+      "No change is happening",
+      "Food is freezing",
+      "Air is being removed"
+    ],
+    "answer": 0,
+    "context": "🍖 Food releases aroma while being grilled."
+  },
+  {
+    "id": "chemistry-46",
+    "prompt": "Acids reacting with carbonates lead to the weathering of rocks and deterioration of buildings. This is:",
+    "options": [
+      "Acid-carbonate reaction",
+      "Combustion",
+      "Photosynthesis",
+      "Respiration"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-47",
+    "prompt": "Respiration is essential for releasing energy. What type of reaction is respiration?",
+    "options": [
+      "Combustion (slow oxidation)",
+      "Combination",
+      "Decomposition",
+      "Single Replacement"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-48",
+    "prompt": "Which reaction is vital for maintaining life on Earth by producing oxygen?",
+    "options": [
+      "Photosynthesis",
+      "Respiration",
+      "Combustion",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-49",
+    "prompt": "When barium chloride is mixed with sodium sulfate, a white solid forms. What type of reaction?",
+    "options": [
+      "Double Replacement",
+      "Single Replacement",
+      "Combination",
+      "Decomposition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-50",
+    "prompt": "Decomposition reactions help break down dead organisms and return nutrients to the soil. This is:",
+    "options": [
+      "Useful for the environment",
+      "Harmful to the environment",
+      "Neither",
+      "Both useful and harmful"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "chemistry-51",
+    "prompt": "Which reaction type is described as 'like mixing ingredients to make one final product'?",
+    "options": [
+      "Combination",
+      "Decomposition",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "answer": 0
+  }
+]

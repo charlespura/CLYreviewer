@@ -1,0 +1,552 @@
+[
+  {
+    "id": "english-1",
+    "prompt": "Which element refers to the time and place where the story happens?",
+    "options": [
+      "Characters",
+      "Setting",
+      "Plot",
+      "Conflict"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-2",
+    "prompt": "What is the logical sequence of events that make up the narrative?",
+    "options": [
+      "Theme",
+      "Plot",
+      "Setting",
+      "POV"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-3",
+    "prompt": "Which point of view uses 'I' and the narrator is inside the story?",
+    "options": [
+      "First-person",
+      "Second-person",
+      "Third-person limited",
+      "Third-person omniscient"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-4",
+    "prompt": "In third-person omniscient, the narrator knows:",
+    "options": [
+      "Only one character's thoughts",
+      "All characters' thoughts",
+      "No one's thoughts",
+      "Only actions"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-5",
+    "prompt": "What is the central message or universal lesson of a story?",
+    "options": [
+      "Plot",
+      "Conflict",
+      "Theme",
+      "Setting"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-6",
+    "prompt": "Which type of conflict involves a character struggling against social norms?",
+    "options": [
+      "Character vs Character",
+      "Character vs Self",
+      "Character vs Society",
+      "Character vs Nature"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-7",
+    "prompt": "In The Iliad, Achilles fighting Hector is an example of:",
+    "options": [
+      "Character vs Self",
+      "Character vs Society",
+      "Character vs Character",
+      "Character vs Nature"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-8",
+    "prompt": "Odysseus battling storms and Poseidon's anger is:",
+    "options": [
+      "Character vs Self",
+      "Character vs Character",
+      "Character vs Nature",
+      "Character vs Society"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-9",
+    "prompt": "A complex character who shows various emotions and traits is:",
+    "options": [
+      "Flat",
+      "Round",
+      "Static",
+      "Stock"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-10",
+    "prompt": "A character who remains the same from beginning to end is:",
+    "options": [
+      "Dynamic",
+      "Round",
+      "Static",
+      "Protagonist"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-11",
+    "prompt": "What is direct characterization?",
+    "options": [
+      "Narrator explicitly describes traits",
+      "Traits revealed through actions",
+      "Traits shown through dialogue",
+      "Traits inferred from thoughts"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-12",
+    "prompt": "Indirect characterization reveals traits through:",
+    "options": [
+      "Actions, speech, thoughts, appearance, and reactions",
+      "Direct description only",
+      "The narrator's opinion",
+      "The title"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-13",
+    "prompt": "A deuteragonist is:",
+    "options": [
+      "The main character",
+      "The villain",
+      "A secondary character who supports the main",
+      "A flat character"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-14",
+    "prompt": "A foil character is used to:",
+    "options": [
+      "Highlight another character's traits through contrast",
+      "Provide comic relief",
+      "Be the antagonist",
+      "Be the protagonist"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-15",
+    "prompt": "What is the exposition in a plot?",
+    "options": [
+      "The turning point",
+      "Introduction of setting, characters, and background",
+      "The final resolution",
+      "The most intense moment"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-16",
+    "prompt": "Which part of the plot builds tension through conflicts?",
+    "options": [
+      "Exposition",
+      "Rising Action",
+      "Climax",
+      "Falling Action"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-17",
+    "prompt": "What is in medias res?",
+    "options": [
+      "Beginning in the middle of the action",
+      "Chronological order",
+      "Ending with a twist",
+      "Linear progression"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-18",
+    "prompt": "A circular plot ends by:",
+    "options": [
+      "Returning to the beginning with new understanding",
+      "Reaching a climax",
+      "Introducing new characters",
+      "Resolving all conflicts"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-19",
+    "prompt": "Which plot structure uses loosely connected incidents?",
+    "options": [
+      "Linear",
+      "Parallel",
+      "Episodic",
+      "In medias res"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-20",
+    "prompt": "The Odyssey alternates between Odysseus's journey and Penelope's life. This is:",
+    "options": [
+      "Parallel",
+      "Circular",
+      "Episodic",
+      "Linear"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-21",
+    "prompt": "What is an adaptation?",
+    "options": [
+      "Transforming a literary work into another form",
+      "A direct copy of a story",
+      "A summary of a plot",
+      "A sequel"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-22",
+    "prompt": "In film, showing is preferred over telling because:",
+    "options": [
+      "It allows the audience to observe and interpret",
+      "It is cheaper",
+      "It is easier",
+      "It uses fewer actors"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-23",
+    "prompt": "Which is an example of showing?",
+    "options": [
+      "John was angry",
+      "John slammed the door and clenched his fists",
+      "John felt sad",
+      "John was happy"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-24",
+    "prompt": "A film script uses which tense?",
+    "options": [
+      "Past tense",
+      "Present tense",
+      "Future tense",
+      "Perfect tense"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-25",
+    "prompt": "Which is NOT part of the theatrical trinity?",
+    "options": [
+      "Spectacle",
+      "Dialogue",
+      "Music",
+      "Narration"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "english-26",
+    "prompt": "In film, mise-en-scène refers to:",
+    "options": [
+      "Everything placed within the frame",
+      "Camera movement",
+      "Sound design",
+      "Editing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-27",
+    "prompt": "Historical context refers to:",
+    "options": [
+      "The time period when the work was written",
+      "The author's life experiences",
+      "The language used",
+      "The reader's background"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-28",
+    "prompt": "Biographical context is about:",
+    "options": [
+      "How the author's life influenced the work",
+      "The social structures of the time",
+      "The historical setting",
+      "The translation"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-29",
+    "prompt": "Which context examines social structures, customs, and beliefs?",
+    "options": [
+      "Historical",
+      "Biographical",
+      "Sociocultural",
+      "Linguistic"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-30",
+    "prompt": "Linguistic context deals with:",
+    "options": [
+      "How language shapes meaning and translation issues",
+      "The author's psychology",
+      "The reader's emotions",
+      "The plot structure"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-31",
+    "prompt": "Postcolonial literature aims to:",
+    "options": [
+      "Preserve cultural traditions and challenge colonial viewpoints",
+      "Promote colonial rule",
+      "Ignore cultural identity",
+      "Focus only on Western values"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-32",
+    "prompt": "Damrosch's World Literature Theory is also known as:",
+    "options": [
+      "The Traveling Story Approach",
+      "The Colonial History Approach",
+      "The Reader's Experience Approach",
+      "The Comparing Culture Approach"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-33",
+    "prompt": "Reader-Response Theory focuses on:",
+    "options": [
+      "How the reader's background affects understanding",
+      "The author's intent",
+      "The historical context",
+      "The linguistic features"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-34",
+    "prompt": "Which theory examines the experiences of colonized people?",
+    "options": [
+      "Reader-Response",
+      "Postcolonial Theory",
+      "Comparative Framework",
+      "Damrosch's Theory"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-35",
+    "prompt": "A maxim is a:",
+    "options": [
+      "Short, clear statement of general truth or rule",
+      "Long narrative",
+      "Type of poem",
+      "Film technique"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-36",
+    "prompt": "'Know thyself' is an example of which philosophical perspective?",
+    "options": [
+      "Eastern Philosophy",
+      "Western Philosophy",
+      "African Philosophy",
+      "Indigenous Philosophy"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-37",
+    "prompt": "'A journey of a thousand miles begins with a single step' reflects:",
+    "options": [
+      "Western Philosophy",
+      "Eastern Philosophy",
+      "African Philosophy",
+      "Indigenous Philosophy"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-38",
+    "prompt": "'I am because we are' (Ubuntu) is from:",
+    "options": [
+      "Western Philosophy",
+      "Eastern Philosophy",
+      "African Philosophy",
+      "Indigenous Philosophy"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-39",
+    "prompt": "Which philosophical perspective emphasizes connection to the land?",
+    "options": [
+      "Western",
+      "Eastern",
+      "African",
+      "Indigenous"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "english-40",
+    "prompt": "What does Ubuntu emphasize?",
+    "options": [
+      "Community and humanity toward others",
+      "Individualism",
+      "Material wealth",
+      "Competition"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-41",
+    "prompt": "Dialogue in a story can reveal all EXCEPT:",
+    "options": [
+      "Character personality",
+      "Plot advancement",
+      "The author's personal life",
+      "Cultural context"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "english-42",
+    "prompt": "Alliteration is the repetition of:",
+    "options": [
+      "Initial consonant sounds",
+      "Vowel sounds",
+      "End sounds",
+      "Whole words"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-43",
+    "prompt": "Assonance is the repetition of:",
+    "options": [
+      "Consonant sounds",
+      "Vowel sounds",
+      "Initial sounds",
+      "Rhyming words"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "english-44",
+    "prompt": "Onomatopoeia is exemplified by words like:",
+    "options": [
+      "Buzz, hiss, bang",
+      "Peter, Piper",
+      "Rain, Spain",
+      "Blank, think"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-45",
+    "prompt": "In iambic pentameter, each line has:",
+    "options": [
+      "Five pairs of unstressed and stressed syllables",
+      "Four pairs",
+      "Six pairs",
+      "Seven pairs"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-46",
+    "prompt": "Japanese Tanka poetry relies mainly on:",
+    "options": [
+      "Syllable count",
+      "Rhyme",
+      "Meter",
+      "Alliteration"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-47",
+    "prompt": "Which is NOT a mode in the multimodal nature of film?",
+    "options": [
+      "Visual Mode",
+      "Audio Mode",
+      "Textual Mode",
+      "Narrative Mode"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "english-48",
+    "prompt": "Montage is a cinematic technique that:",
+    "options": [
+      "Puts different images together to create new meaning",
+      "Uses long takes",
+      "Focuses on dialogue",
+      "Uses a single shot"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-49",
+    "prompt": "What does sound design in film include?",
+    "options": [
+      "Music, sound effects, and ambient sound",
+      "Dialogue only",
+      "Camera movements",
+      "Lighting"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "english-50",
+    "prompt": "Which film tradition is known for vibrant colors and musical sequences?",
+    "options": [
+      "Italian Neorealism",
+      "French New Wave",
+      "Bollywood",
+      "Japanese Cinema"
+    ],
+    "answer": 2
+  }
+]
