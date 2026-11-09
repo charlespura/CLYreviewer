@@ -19,30 +19,7 @@ Clyde Justin is configured as Grade 9 and Clark as Grade 5, using the example gr
 
 ## Person / term / subject organization
 
-Original HTML reviewers:
-
-```text
-CLYreviewer/                    Clyde Justin
-  1stTERM/
-    index.html
-    Mathematics.html
-    English.html
-    Filipino.html
-    Esp.html
-  2ndTERM/                      Ready for future subjects
-CLARKreviewer/                  Clark
-  index.html                    Redirect to the first-term subject list
-  1stTERM/
-    index.html
-    science1STTERMreviewer.html
-    english1STTERMreviewer.html
-    filipino1STTERMreviewer.html
-    ap1STTERMreviewer.html
-    mapeh1STterm.html
-  2ndTERM/                      Ready for future subjects
-```
-
-The React app uses the same hierarchy for its question data:
+All subjects live in JSON question banks, grouped by student and term:
 
 ```text
 src/data/
@@ -58,7 +35,7 @@ src/data/
   index.ts                      Player definitions and recursive bank loader
 ```
 
-Chemistry and Orange Economy are unassigned because their original HTML files are outside either person's folder. They are hidden from both libraries until explicitly assigned. All 501 questions are retained. The school-term selector filters the library for the chosen person. The second term starts empty, with no invented questions.
+Chemistry and Orange Economy remain unassigned until their student ownership is specified. They are hidden from both libraries until explicitly assigned. All 501 questions are retained. The school-term selector filters the library for the chosen person. The second term starts empty, with no invented questions.
 
 ## Add a second-term subject
 
@@ -91,7 +68,7 @@ Chemistry and Orange Economy are unassigned because their original HTML files ar
 
 `clyde` is the stable internal ID for **Clyde Justin**; `clark` is Clark. Keeping this ID preserves existing Clyde scores. Use `unassigned` for reviewers whose student ownership is unknown; these are hidden from both libraries. Categories are `science`, `math`, `language`, `humanities`, and `arts`. Each reviewer ID must be unique across people and terms, and match its question filename. Answers use zero-based option indexes. An optional `context` string adds a question hint or scenario.
 
-3. Run `npm run check:data` and `npm run build`. No UI component edits are needed. Add legacy HTML subjects to the corresponding person's term folder only if you also want standalone HTML versions; the React app reads the JSON data.
+3. Run `npm run check:data` and `npm run build`. No UI component edits are needed. Add all new subjects as JSON files; the React components render them.
 
 ## App architecture
 
@@ -101,9 +78,8 @@ Chemistry and Orange Economy are unassigned because their original HTML files ar
 - `src/App.tsx`: player and term selection, navigation, library, and history.
 - `src/styles.css`: responsive styling and Tailwind layers.
 - `scripts/check-data.mjs`: validates metadata, folder ownership, terms, and questions.
-- `scripts/migrate-legacy.mjs`: one-time import from original first-term HTML. Rerunning overwrites first-term JSON and the catalog; do not run it for routine subject additions.
 
-Questions and options shuffle per attempt. Each correct answer earns 10 XP. Finished attempts save separately by player, with unique reviewer IDs distinguishing terms. Unfinished attempts are discarded on exit. Scores are stored in this browser and do not sync between devices. The original landing page is backed up in `legacy/index.html`; the two standalone shared HTML files remain at the project root. Educational content was imported as supplied, not independently fact-checked.
+Questions and options shuffle per attempt. Each correct answer earns 10 XP. Finished attempts save separately by player, with unique reviewer IDs distinguishing terms. Unfinished attempts are discarded on exit. Scores are stored in this browser and do not sync between devices. Legacy standalone pages and their importer have been removed; all 501 imported questions remain in JSON. Educational content was imported as supplied, not independently fact-checked.
 
 ## Profile entry flow
 
@@ -115,8 +91,8 @@ Use **Change term** in the sidebar or page header to return to the current stude
 
 The workflow in `.github/workflows/deploy.yml` validates questions, builds the React app, and deploys `dist/` on pushes to `main` or manual runs. In repository Settings > Pages, keep Source set to **GitHub Actions**. Commit and push the source, lockfile, and workflow to start deployment. Check the Actions tab for a successful deployment before visiting https://charlespura.github.io/CLYreviewer/.
 
-CI builds with `npm run build -- --base /CLYreviewer/` so assets use the repository path. Regular local builds retain relative paths for XAMPP. Profile and term URLs use hash routing, so refreshing them works on static Pages hosting. The workflow publishes the React app, not the archived standalone HTML pages. Progress remains local to each visitor's browser. No custom secrets are required; deployment uses GitHub's workflow token.
+CI builds with `npm run build -- --base /CLYreviewer/` so assets use the repository path. Regular local builds retain relative paths for XAMPP. Profile and term URLs use hash routing, so refreshing them works on static Pages hosting. The workflow publishes the compiled React application. Progress remains local to each visitor's browser. No custom secrets are required; deployment uses GitHub's workflow token.
 
-## Why GitHub previously showed mostly HTML
+## React source and Vite entry
 
-The original monolithic HTML pages are retained as reference copies. Their size dominated GitHub's language statistics even though the deployed application uses React, TypeScript, Vite, and Tailwind. `.gitattributes` excludes only those legacy references from language statistics with `linguist-detectable=false`. The real Vite `index.html` and active application source remain counted. Push this file to the default branch for GitHub to recalculate its language bar. React, Vite, and Tailwind are frameworks/tools rather than language labels, so expect language names such as TypeScript, CSS, JavaScript, and a small amount of HTML.
+All screens are React TypeScript components in `src/`. Question content is JSON under `src/data/`. Styling uses Tailwind and `src/styles.css`. Legacy HTML pages and the language-statistics overrides have been removed. The only source HTML file is the minimal root `index.html` required by this Vite browser app to mount `src/main.tsx`. It contains no reviewer UI or question content. Vite also emits a compiled `dist/index.html` for static hosting; `dist/` is ignored by Git.

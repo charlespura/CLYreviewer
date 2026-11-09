@@ -1,9 +1,0 @@
-# Retained legacy HTML is reference material, not the active React application.
-# Exclude only these backups from GitHub language statistics.
-/legacy/** linguist-detectable=false
-/CLYreviewer/**/*.html linguist-detectable=false
-/CLARKreviewer/**/*.html linguist-detectable=false
-/ChemicalReactions.html linguist-detectable=false
-/OrangeEconomy.html linguist-detectable=false
-
-# The root index.html remains the genuine Vite entry point and is counted.
